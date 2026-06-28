@@ -1,0 +1,6 @@
+﻿# Responsive-Personal-Portfolio
+
+I built a responsive personal portfolio website to showcase my projects, skills, and experience as a computer science student.
+Using HTML, CSS, and JavaScript, I designed a modern interface with custom visual effects and smooth navigation.
+The site is optimized for all devices and deployed online for recruiters to view my work.
+
