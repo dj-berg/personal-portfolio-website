@@ -1451,9 +1451,9 @@ header {
     }
 
     .about-photo {
-        width: min(78vw, 300px);
-        max-width: 300px;
-        transform: translateY(18px);
+        width: min(60vw, 220px);
+        max-width: 220px;
+        transform: translateY(16px);
     }
 
     .about-bubble {
@@ -1650,9 +1650,9 @@ header {
     }
 
     .about-photo {
-        width: min(78vw, 292px);
-        max-width: 292px;
-    }
+        width: min(60vw, 220px);
+        max-width: 220px;
+    }   
 
     .about-blob {
         width: 270px;
@@ -1704,7 +1704,7 @@ header {
     }
 
     .about-photo {
-        max-width: 255px;
+        max-width: 210px;
     }
 
     .about-blob {
