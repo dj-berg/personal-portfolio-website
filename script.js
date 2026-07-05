@@ -1,15 +1,67 @@
 /* =========================================
    Daniel Berg Portfolio Script
+   Clean, organized, and lightweight
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================
-       MOBILE MENU
+       DOM ELEMENTS
     ========================================= */
 
     const menuIcon = document.getElementById("menu-icon");
     const navList = document.querySelector(".navlist");
+
+    const homeLinks = document.querySelectorAll('a[href="#home"]');
+    const navLinks = document.querySelectorAll("header .navlist a");
+    const sections = document.querySelectorAll("section");
+
+    /* =========================================
+       HELPER FUNCTIONS
+    ========================================= */
+
+    function closeMobileMenu() {
+        if (!menuIcon || !navList) return;
+
+        navList.classList.remove("open");
+        menuIcon.classList.add("bx-menu");
+        menuIcon.classList.remove("bx-x");
+    }
+
+    function updateActiveSection() {
+
+        let currentSection = "";
+
+        sections.forEach(section => {
+
+            const sectionTop = section.offsetTop - 160;
+            const sectionHeight = section.offsetHeight;
+
+            const isCurrentSection =
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight;
+
+            if (isCurrentSection) {
+                currentSection = section.id;
+            }
+        });
+
+        if (!currentSection && sections.length > 0) {
+            currentSection = sections[0].id;
+        }
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === `#${currentSection}`) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
 
     if (menuIcon && navList) {
 
@@ -25,77 +77,46 @@ document.addEventListener("DOMContentLoaded", () => {
        HOME / LOGO SCROLL FIX
     ========================================= */
 
-    document.querySelectorAll('a[href="#home"]').forEach(link => {
-        link.addEventListener("click", e => {
-            e.preventDefault();
+    homeLinks.forEach(link => {
 
-            if (navList && menuIcon) {
-                navList.classList.remove("open");
-                menuIcon.classList.add("bx-menu");
-                menuIcon.classList.remove("bx-x");
-            }
+        link.addEventListener("click", event => {
+
+            event.preventDefault();
+
+            closeMobileMenu();
 
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
+
         });
+
     });
 
     /* =========================================
-       CLOSE MOBILE MENU ON OTHER LINKS
+       CLOSE MOBILE MENU ON NAVIGATION
     ========================================= */
 
-    document.querySelectorAll(".navlist a").forEach(link => {
+    navLinks.forEach(link => {
+
         link.addEventListener("click", () => {
-            if (link.getAttribute("href") !== "#home" && navList && menuIcon) {
-                navList.classList.remove("open");
-                menuIcon.classList.add("bx-menu");
-                menuIcon.classList.remove("bx-x");
+
+            if (link.getAttribute("href") !== "#home") {
+                closeMobileMenu();
             }
+
         });
+
     });
 
     /* =========================================
-       ACTIVE NAV LINK
+       INITIALIZE
     ========================================= */
-
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("header .navlist a");
-
-    function updateActiveSection() {
-
-        let currentSection = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 160;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-                currentSection = section.getAttribute("id");
-            }
-        });
-
-        if (!currentSection && sections.length > 0) {
-            currentSection = sections[0].getAttribute("id");
-        }
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (link.getAttribute("href") === `#${currentSection}`) {
-                link.classList.add("active");
-            }
-        });
-    }
 
     window.addEventListener("scroll", updateActiveSection);
     window.addEventListener("resize", updateActiveSection);
+
     updateActiveSection();
 
 });

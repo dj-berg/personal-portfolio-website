@@ -114,7 +114,6 @@ section {
     scroll-margin-top: 0;
 }
 
-/* Disabled background effect layers, preserved for script compatibility */
 #rain-canvas,
 .lightning {
     display: none !important;
@@ -421,22 +420,22 @@ header {
 
 .img-box {
     position: relative;
-    width: min(50vw, 760px);
-    height: min(50vw, 620px);
+    width: min(34vw, 460px);   
+    height: min(40vw, 540px);  
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    transform: translateX(1rem) translateY(-2rem);
+    transform: translateX(1rem) translateY(0);
 }
 
 .img-box img {
     position: relative;
     z-index: 3;
-    width: 850px;
-    max-width: none;
+    width: min(32vw, 400px);  
+    max-width: 400px;         
     height: auto;
     object-fit: contain;
-    transform: translateY(-8rem);
+    transform: translateY(0);
     filter: drop-shadow(0 0 26px rgba(34, 214, 232, 0.25));
 }
 
@@ -550,7 +549,7 @@ header {
 
 .about-visual {
     position: relative;
-    min-height: 390px;
+    min-height: 430px;
     max-width: 500px;
     margin: 0 auto;
     display: flex;
@@ -560,8 +559,8 @@ header {
 
 .about-blob {
     position: absolute;
-    width: 400px;
-    height: 315px;
+    width: 420px;
+    height: 335px;
     border-radius: 65% 35% 72% 28% / 38% 58% 42% 62%;
     background:
         radial-gradient(circle at 42% 48%, rgba(255, 250, 190, 1) 0%, rgba(255, 191, 66, 0.95) 16%, rgba(255, 94, 35, 0.82) 34%, rgba(132, 61, 43, 0.78) 55%, rgba(25, 22, 25, 0.95) 74%, transparent 100%);
@@ -594,9 +593,9 @@ header {
 .about-photo {
     position: relative;
     z-index: 2;
-    width: 285px;
+    width: 255px;
     height: auto;
-    transform: translateY(34px);
+    transform: translateY(10px);
     filter: drop-shadow(0 16px 24px rgba(31, 27, 46, 0.3));
 }
 
@@ -1108,28 +1107,8 @@ header {
 }
 
 /* ========================================
-   14. Desktop Refinements
+   14. Large Desktop Refinements
 ======================================== */
-
-@media (min-width: 1101px) {
-    .about,
-    .focus,
-    .skills,
-    .portfolio,
-    .experience,
-    .contact {
-        min-height: calc(100vh - var(--header-height));
-    }
-
-    .focus-header,
-    .skills-header,
-    .portfolio-header,
-    .experience-header,
-    .contact-header {
-        max-width: 1050px;
-        margin-bottom: 2rem;
-    }
-}
 
 @media (min-width: 1400px) {
     header,
@@ -1160,10 +1139,38 @@ header {
 }
 
 /* ========================================
-   15. Tablet / Small Laptop
+   15. Desktop Refinements
+======================================== */
+
+@media (min-width: 1101px) {
+    .about,
+    .focus,
+    .skills,
+    .portfolio,
+    .experience,
+    .contact {
+        min-height: calc(100vh - var(--header-height));
+    }
+
+    .focus-header,
+    .skills-header,
+    .portfolio-header,
+    .experience-header,
+    .contact-header {
+        max-width: 1050px;
+        margin-bottom: 2rem;
+    }
+}
+
+/* ========================================
+   16. Tablet / Small Laptop
 ======================================== */
 
 @media (min-width: 768px) and (max-width: 1100px) {
+    body {
+        padding-top: var(--header-height);
+    }
+
     header {
         padding-left: var(--page-x-mobile);
         padding-right: var(--page-x-mobile);
@@ -1202,7 +1209,14 @@ header {
     }
 
     .img-box {
-        max-width: 420px;
+        width: min(38vw, 390px);
+        height: min(46vw, 460px);
+        transform: translateX(0.5rem);
+    }
+
+    .img-box img {
+        width: min(34vw, 320px);
+        max-width: 320px;
     }
 
     .about-layout {
@@ -1218,6 +1232,25 @@ header {
         text-align: center;
     }
 
+    .about-visual {
+        min-height: 390px;
+        max-width: 470px;
+    }
+
+    .about-blob {
+        width: 360px;
+        height: 290px;
+    }
+
+    .about-photo {
+        width: 225px;
+        transform: translateY(8px);
+    }
+
+    .about-bubble {
+        width: 140px;
+    }
+
     .focus-grid,
     .skills-grid,
     .portfolio-grid,
@@ -1227,7 +1260,7 @@ header {
 }
 
 /* ========================================
-   16. Mobile Navigation + Layout
+   17. Mobile Navigation + Layout
 ======================================== */
 
 @media (max-width: 767px) {
@@ -1285,7 +1318,6 @@ header {
         scroll-margin-top: var(--mobile-header-height);
     }
 
-    /* Mobile hero: single source of truth */
     .home {
         min-height: auto;
         padding: 2.15rem 5% 3rem;
@@ -1323,35 +1355,29 @@ header {
     }
 
     .img-box {
-        position: relative;
-        width: min(84vw, 330px);
-        max-width: 330px;
-        height: 335px;
-        min-height: 335px;
+        width: min(82vw, 300px);
+        max-width: 300px;
+        height: 380px;
+        min-height: 380px;
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        overflow: visible;
         transform: none;
     }
 
     .img-box img {
-        position: relative;
-        z-index: 3;
-        width: 118%;
-        max-width: 360px;
+        width: min(76vw, 255px);
+        max-width: 255px;
         height: auto;
-        object-fit: contain;
-        transform: translateY(-8px);
-        filter: drop-shadow(0 0 24px rgba(34, 214, 232, 0.26));
+        transform: none;
     }
 
     .liquid-shape {
         position: absolute;
-        top: 12px;
+        top: 28px;
         left: 50%;
-        width: min(86vw, 330px);
-        height: 330px;
+        width: min(80vw, 280px);
+        height: 280px;
         z-index: 1;
         pointer-events: none;
         opacity: 0.94;
@@ -1405,7 +1431,6 @@ header {
         padding: 4rem var(--page-x-mobile) 3.5rem;
     }
 
-    /* Mobile about */
     .about {
         padding-top: 3rem;
     }
@@ -1438,29 +1463,26 @@ header {
     }
 
     .about-visual {
-        width: min(92vw, 350px);
-        max-width: 350px;
-        min-height: 355px;
-        margin: 0 auto;
-        overflow: visible;
+        width: min(92vw, 340px);
+        max-width: 340px;
+        min-height: 360px;
     }
 
     .about-blob {
-        width: 280px;
-        height: 225px;
+        width: 265px;
+        height: 215px;
     }
 
     .about-photo {
-        width: min(60vw, 220px);
-        max-width: 220px;
-        transform: translateY(16px);
+        width: min(52vw, 175px);
+        max-width: 175px;
+        transform: translateY(10px);
     }
 
     .about-bubble {
-        width: 126px;
-        padding: 0.58rem 0.55rem;
-        border-radius: 17px;
-        background: rgba(248, 242, 255, 0.34);
+        width: 112px;
+        padding: 0.5rem 0.45rem;
+        border-radius: 16px;
     }
 
     .about-bubble h4 {
@@ -1472,17 +1494,19 @@ header {
     }
 
     .bubble-education {
-        top: 8px;
+        top: 6px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .bubble-interests {
-        left: 0;
-        bottom: 28px;
+        left: 4px;
+        bottom: 18px;
     }
 
     .bubble-focus {
-        right: 0;
-        bottom: 28px;
+        right: 4px;
+        bottom: 18px;
     }
 
     .about-right .about-subtitle {
@@ -1607,7 +1631,7 @@ header {
 }
 
 /* ========================================
-   17. Small Phone Scaling
+   18. Standard Small Phones
 ======================================== */
 
 @media (max-width: 430px) {
@@ -1619,51 +1643,114 @@ header {
         font-size: clamp(1.8rem, 8.3vw, 2.12rem);
     }
 
-    .img-box {
-        width: min(84vw, 320px);
-        max-width: 320px;
-        height: 320px;
-        min-height: 320px;
-    }
-
-    .img-box img {
-        width: 118%;
-        max-width: 355px;
-        transform: translateY(-8px);
-    }
-
-    .liquid-shape {
-        top: 12px;
-        width: min(86vw, 320px);
-        height: 320px;
-    }
-
     .home-content p,
     .hero-tags {
         max-width: 370px;
     }
 
+    .img-box {
+        width: min(82vw, 285px);
+        max-width: 285px;
+        height: 360px;
+        min-height: 360px;
+    }
+
+    .img-box img {
+        width: min(74vw, 240px);
+        max-width: 240px;
+    }
+
+    .liquid-shape {
+        top: 18px;
+        width: min(80vw, 280px);
+        height: 280px;
+    }
+
     .about-visual {
-        width: min(92vw, 340px);
-        max-width: 340px;
-        min-height: 350px;
+        width: min(88vw, 300px);
+        max-width: 300px;
+        min-height: 310px;
     }
 
     .about-photo {
-        width: min(60vw, 220px);
-        max-width: 220px;
-    }   
+        width: min(50vw, 165px);
+        max-width: 165px;
+    }
 
     .about-blob {
-        width: 270px;
-        height: 218px;
+        width: 235px;
+        height: 190px;
+    }
+
+    .about-bubble {
+        width: 105px;
     }
 
     .bubble-interests,
     .bubble-focus {
-        bottom: 28px;
+        bottom: 16px;
     }
 }
+
+/* ========================================
+   19. Extra Small Phones
+======================================== */
+
+@media (max-width: 390px) {
+    .home {
+        padding-top: 1.65rem;
+    }
+
+    .home-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .home-content p,
+    .hero-tags {
+        max-width: 325px;
+    }
+
+    .img-box {
+        width: min(82vw, 275px);
+        max-width: 275px;
+        height: 345px;
+        min-height: 345px;
+    }
+
+    .img-box img {
+        width: min(72vw, 230px);
+        max-width: 230px;
+        transform: none;
+    }
+
+    .liquid-shape {
+        top: 18px;
+        width: 265px;
+        height: 265px;
+    }
+
+    .about-visual {
+        max-width: 280px;
+        min-height: 295px;
+    }
+
+    .about-photo {
+        max-width: 170px;
+    }
+
+    .about-blob {
+        width: 220px;
+        height: 180px;
+    }
+
+    .about-bubble {
+        width: 110px;
+    }
+}
+
+/* ========================================
+   20. Very Small Phones
+======================================== */
 
 @media (max-width: 360px) {
     .hero-kicker {
@@ -1671,52 +1758,53 @@ header {
     }
 
     .home-content h1 {
-        font-size: 1.62rem;
+        font-size: 1.58rem;
     }
 
     .home-content p,
     .hero-tags {
-        max-width: 310px;
+        max-width: 300px;
     }
 
     .img-box {
-        width: min(84vw, 292px);
-        max-width: 292px;
-        height: 300px;
-        min-height: 300px;
-    }
-
-    .img-box img {
-        width: 116%;
-        max-width: 320px;
-        transform: translateY(-6px);
-    }
-
-    .liquid-shape {
-        top: 12px;
-        width: 292px;
-        height: 292px;
-    }
-
-    .about-visual {
-        max-width: 305px;
+        width: min(82vw, 255px);
+        max-width: 255px;
+        height: 325px;
         min-height: 325px;
     }
 
+    .img-box img {
+        width: min(70vw, 215px);
+        max-width: 215px;
+        transform: none;
+    }
+
+    .liquid-shape {
+        top: 18px;
+        width: 245px;
+        height: 245px;
+    }
+
+    .about-visual {
+        max-width: 255px;
+        min-height: 275px;
+    }
+
     .about-photo {
-        max-width: 210px;
+        max-width: 160px;
     }
 
     .about-blob {
-        width: 240px;
-        height: 205px;
+        width: 200px;
+        height: 165px;
     }
 
     .about-bubble {
-        width: 112px;
+        width: 100px;
     }
 
     .contact-main-card {
         padding: 1.25rem;
     }
 }
+
