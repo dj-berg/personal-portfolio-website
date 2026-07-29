@@ -112,6 +112,13 @@
     <link
         href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         rel="stylesheet">
+
+    <!-- EmailJS Browser SDK -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        defer>
+    </script>
+
 </head>
 
 <body>
@@ -129,7 +136,8 @@
                 <li><a href="#focus">Focus Areas</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Work</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -144,80 +152,89 @@
     </header>
 
     <!-- HOME SECTION -->
-    <section id="home" class="home">
+<section id="home" class="home">
 
-        <div class="home-content">
+    <div class="home-content">
 
-            <span class="hero-kicker">
-                Software • IT • Security
-            </span>
+        <span class="hero-kicker">
+            Computer Science • IT • Cybersecurity
+        </span>
 
-            <h1>Hi! I'm Daniel J. Berg</h1>
+        <h1>Hi! I'm Daniel J. Berg</h1>
 
-            <div class="profile-inline">
-                <img
-                    src="home.png"
-                    alt="Daniel Berg portrait"
-                    decoding="async">
-            </div>
-
-            <p>
-                I'm a Computer Science (Cybersecurity) student at Arizona State University
-                building a career in software engineering, IT systems, cybersecurity, cloud,
-                analytics, and AI. I enjoy solving practical problems, leveraging modern
-                AI-assisted development tools, and building reliable, maintainable solutions
-                through continuous learning, collaboration, and hands-on experience.
-            </p>
-
-            <div class="hero-tags">
-                <span>Software Engineering</span>
-                <span>Cybersecurity</span>
-                <span>Cloud & AI</span>
-                <span>IT Systems</span>
-                <span>Technical Analytics</span>
-                <span>AI-Assisted Development</span>
-            </div>
-
-            <div class="btn-box">
-                <a
-                    href="DJB Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn">
-                    Resume
-                </a>
-
-                <a href="#contact" class="btn">
-                    Contact Me
-                </a>
-            </div>
+        <!-- Mobile Profile Image -->
+        <div class="profile-inline">
+            <img
+                src="home.png"
+                alt="Daniel Berg portrait"
+                decoding="async">
         </div>
 
-        <div class="home-img desktop-only">
-            <div class="img-box">
+        <p>
+            I'm a Computer Science (Cybersecurity) student at Arizona State University
+            and an Applications Engineer Intern at University of Phoenix, gaining
+            professional experience in software development and enterprise technology.
+            I'm building toward a career in IT, with interests in systems, networking,
+            cybersecurity, and cloud technologies.
+        </p>
 
-                <img
-                    src="home.png"
-                    alt="Daniel Berg"
-                    decoding="async">
-
-                <div class="liquid-shape" aria-hidden="true">
-                    <svg
-                        viewBox="0 0 500 500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="100%">
-
-                        <path
-                            fill="#12f7ff"
-                            d="M421.8,291.7Q393,333,368,372Q343,411,296.5,444Q250,477,212,429.5Q174,382,130.5,363Q87,344,85.5,297Q84,250,63,190Q42,130,103,115.5Q164,101,207,79Q250,57,288,88Q326,119,383.5,129.5Q441,140,466,195Q491,250,421.8,291.7Z">
-                        </path>
-                    </svg>
-                </div>
-
-            </div>
+        <div class="hero-tags">
+            <span>IT Systems</span>
+            <span>Networking</span>
+            <span>Cybersecurity</span>
+            <span>Cloud</span>
+            <span>Software Development</span>
         </div>
 
-    </section>
+        <div class="btn-box">
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+
+            <a
+                href="resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn">
+                Resume
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Desktop Profile Image -->
+    <div class="home-img desktop-only">
+
+        <div class="img-box">
+
+            <img
+                src="home.png"
+                alt="Daniel Berg portrait"
+                decoding="async">
+
+            <div class="liquid-shape" aria-hidden="true">
+
+                <svg
+                    viewBox="0 0 500 500"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100%">
+
+                    <path
+                        fill="#12f7ff"
+                        d="M421.8,291.7Q393,333,368,372Q343,411,296.5,444Q250,477,212,429.5Q174,382,130.5,363Q87,344,85.5,297Q84,250,63,190Q42,130,103,115.5Q164,101,207,79Q250,57,288,88Q326,119,383.5,129.5Q441,140,466,195Q491,250,421.8,291.7Z">
+                    </path>
+
+                </svg>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
@@ -232,7 +249,35 @@
 
                 <div class="about-visual">
 
-                    <div class="about-blob" aria-hidden="true"></div>
+                    <!-- Decorative Teal / Aqua Blob -->
+                    <div class="about-blob" aria-hidden="true">
+                        <svg
+                            viewBox="0 0 500 500"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="100%"
+                            height="100%">
+
+                            <defs>
+                                <linearGradient
+                                    id="aboutBlobGradient"
+                                    x1="0%"
+                                    y1="0%"
+                                    x2="100%"
+                                    y2="100%">
+
+                                    <stop offset="0%" stop-color="#A7FFF1"></stop>
+                                    <stop offset="42%" stop-color="#4DE0D2"></stop>
+                                    <stop offset="100%" stop-color="#1496A5"></stop>
+                                </linearGradient>
+                            </defs>
+
+                            <path
+                                fill="url(#aboutBlobGradient)"
+                                d="M421.8,291.7Q393,333,368,372Q343,411,296.5,444Q250,477,212,429.5Q174,382,130.5,363Q87,344,85.5,297Q84,250,63,190Q42,130,103,115.5Q164,101,207,79Q250,57,288,88Q326,119,383.5,129.5Q441,140,466,195Q491,250,421.8,291.7Z">
+                            </path>
+
+                        </svg>
+                    </div>
 
                     <img
                         src="about.png"
@@ -244,19 +289,19 @@
                     <div class="about-bubble bubble-education">
                         <i class='bx bxs-graduation'></i>
                         <h4>Education</h4>
-                        <p>Arizona State University</p>
-                    </div>
-
-                    <div class="about-bubble bubble-focus">
-                        <i class='bx bx-briefcase'></i>
-                        <h4>Focus</h4>
-                        <p>Computer Science (Cybersecurity)</p>
+                        <p>ASU Computer Science</p>
                     </div>
 
                     <div class="about-bubble bubble-interests">
                         <i class='bx bx-target-lock'></i>
-                        <h4>Interests</h4>
-                        <p>Software • IT • Security</p>
+                        <h4>Career Direction</h4>
+                        <p>IT • Systems • Security</p>
+                    </div>
+
+                    <div class="about-bubble bubble-focus">
+                        <i class='bx bx-briefcase'></i>
+                        <h4>Current Role</h4>
+                        <p>Applications Engineer Intern</p>
                     </div>
 
                 </div>
@@ -265,29 +310,40 @@
             <div class="about-right">
 
                 <span class="about-subtitle">
-                    Software • IT • Security
+                    Continuous Learning • Problem Solving • Growth
                 </span>
 
                 <h2 class="about-title">
-                    Driven by Technology, Growth, and Problem Solving
+                    Passionate About Building Technology That Makes an Impact
                 </h2>
 
                 <div class="about-text-card">
 
                     <p>
-                        What drives me is the process of growth. I enjoy taking on challenges,
-                        solving problems step by step, and improving through hands-on experience.
-                        Whether I'm developing software, supporting IT systems, or contributing
-                        within a collaborative engineering team, I strive to bring curiosity,
-                        consistency, and a strong problem-solving mindset.
+                        I'm a Computer Science (Cybersecurity) student at Arizona State
+                        University with a passion for learning, solving problems, and
+                        continuously improving my technical skills. I enjoy understanding
+                        how technology works and finding practical solutions that help
+                        people and organizations succeed.
                     </p>
 
                     <p>
-                        I enjoy learning emerging technologies and incorporating AI-assisted
-                        development into my workflow to improve research, debugging,
-                        documentation, testing, and productivity while maintaining strong
-                        engineering fundamentals. Outside of technology, I enjoy fitness,
-                        sports, video games, and spending time with animals, especially cats.
+                        Currently, I'm gaining professional experience as an Applications
+                        Engineer Intern at University of Phoenix, where I collaborate with
+                        an Agile engineering team to develop enterprise software and
+                        contribute throughout the software development lifecycle. This
+                        experience has strengthened my communication, teamwork, and
+                        technical problem-solving skills while giving me valuable insight
+                        into how modern technology teams operate.
+                    </p>
+
+                    <p>
+                        As I continue building my career, I'm working toward opportunities
+                        in Information Technology, where I can combine my software
+                        foundation with hands-on experience in IT systems, networking,
+                        cybersecurity, and cloud technologies. I enjoy learning new tools,
+                        embracing challenges, and continually expanding my knowledge
+                        through projects, certifications, and real-world experience.
                     </p>
 
                 </div>
@@ -301,55 +357,110 @@
     <section id="focus" class="focus">
 
         <div class="focus-header">
-            <span class="focus-subtitle">Areas of Interest</span>
+            <span class="focus-subtitle">Professional Direction</span>
 
             <h2 class="focus-title">Focus Areas</h2>
 
             <p class="focus-intro">
-                Areas of technology I'm actively studying, building experience in,
-                and pursuing professionally as modern software, security, cloud,
-                and AI-driven workflows continue to evolve.
+                I'm passionate about building practical technical skills across the
+                areas that power modern organizations. My current experience spans
+                enterprise software development while I continue expanding my expertise
+                in IT infrastructure, networking, cloud technologies, and cybersecurity.
             </p>
         </div>
 
         <div class="focus-grid">
 
-            <div class="focus-card">
-                <i class='bx bx-code-alt'></i>
-                <h3>Software Engineering</h3>
-                <p>
-                    Building applications, solving problems through code, and creating
-                    practical software solutions through projects and continuous learning.
-                </p>
-            </div>
+            <article class="focus-card">
+                <i class='bx bx-desktop' aria-hidden="true"></i>
 
-            <div class="focus-card">
-                <i class='bx bx-shield-quarter'></i>
-                <h3>Cybersecurity & IT Systems</h3>
-                <p>
-                    Exploring security principles, troubleshooting, system administration,
-                    and technologies that support reliable and secure environments.
-                </p>
-            </div>
+                <h3>IT Systems</h3>
 
-            <div class="focus-card">
-                <i class='bx bx-cloud'></i>
-                <h3>Cloud Technologies</h3>
                 <p>
-                    Learning cloud platforms, infrastructure concepts, and scalable
-                    technologies used across modern organizations.
+                    Building hands-on experience configuring Windows environments,
+                    Active Directory, Microsoft 365, hardware, operating systems,
+                    and enterprise IT support while strengthening my troubleshooting
+                    and system administration skills.
                 </p>
-            </div>
 
-            <div class="focus-card">
-                <i class='bx bx-line-chart'></i>
-                <h3>AI & Intelligent Technologies</h3>
+                <div class="focus-divider" aria-hidden="true"></div>
+
+                <ul class="focus-tools" aria-label="IT Systems technologies">
+                    <li>Windows</li>
+                    <li>Active Directory</li>
+                    <li>Microsoft 365</li>
+                    <li>Hardware Support</li>
+                    <li>Troubleshooting</li>
+                </ul>
+            </article>
+
+            <article class="focus-card">
+                <i class='bx bx-network-chart' aria-hidden="true"></i>
+
+                <h3>Networking</h3>
+
                 <p>
-                    Applying modern AI tools, data analysis, automation, and intelligent
-                    workflows to improve software development, productivity,
-                    and technical decision making.
+                    Learning how devices communicate through TCP/IP, DNS, DHCP,
+                    routing, switching, and virtualization while building
+                    enterprise-style home lab environments.
                 </p>
-            </div>
+
+                <div class="focus-divider" aria-hidden="true"></div>
+
+                <ul class="focus-tools" aria-label="Networking technologies">
+                    <li>TCP/IP</li>
+                    <li>DNS</li>
+                    <li>DHCP</li>
+                    <li>Routing</li>
+                    <li>Switching</li>
+                    <li>VMware</li>
+                </ul>
+            </article>
+
+            <article class="focus-card">
+                <i class='bx bx-shield-quarter' aria-hidden="true"></i>
+
+                <h3>Cybersecurity</h3>
+
+                <p>
+                    Developing a security-first mindset by studying secure systems,
+                    identity management, vulnerability assessment, and network
+                    protection through my Computer Science cybersecurity concentration.
+                </p>
+
+                <div class="focus-divider" aria-hidden="true"></div>
+
+                <ul class="focus-tools" aria-label="Cybersecurity topics">
+                    <li>Access Control</li>
+                    <li>Network Security</li>
+                    <li>Vulnerability Assessment</li>
+                    <li>Secure Systems</li>
+                    <li>Risk Awareness</li>
+                </ul>
+            </article>
+
+            <article class="focus-card">
+                <i class='bx bx-code-alt' aria-hidden="true"></i>
+
+                <h3>Software Development</h3>
+
+                <p>
+                    Applying Java, JavaScript, React, AWS, Git, and Agile development
+                    practices to build and improve enterprise applications while
+                    collaborating with cross-functional engineering teams.
+                </p>
+
+                <div class="focus-divider" aria-hidden="true"></div>
+
+                <ul class="focus-tools" aria-label="Software development technologies">
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>AWS</li>
+                    <li>Git</li>
+                    <li>Agile</li>
+                </ul>
+            </article>
 
         </div>
 
@@ -358,226 +469,695 @@
     <!-- EXPERIENCE SECTION -->
     <section id="experience" class="experience">
 
-    <div class="experience-header">
-        <span class="experience-subtitle">Professional Background</span>
+        <div class="experience-header">
+            <span class="experience-subtitle">Professional Background</span>
 
-        <h2 class="experience-title">Experience</h2>
-    </div>
+            <h2 class="experience-title">Experience</h2>
 
-    <div class="timeline">
-
-        <!-- University of Phoenix -->
-        <div class="timeline-item">
-
-            <div class="company-header">
-
-                <img
-                    src="uopx.png"
-                    alt="University of Phoenix Logo"
-                    class="company-logo"
-                    loading="lazy"
-                    decoding="async">
-
-                <div>
-                    <h4>University of Phoenix</h4>
-                    <h3>Applications Engineer Intern</h3>
-                    <span>May 2026 – Present</span>
-                </div>
-
-            </div>
-
-            <p>
-                Collaborated with a 9-member engineering team to develop, test, and deploy production enhancements for Phoenix.edu, contributing to the Job Explorer and Career Profile platforms while following Agile software development practices.
+            <p class="experience-intro">
+                Experience in enterprise software development, Agile collaboration,
+                customer service, and fast-paced team operations.
             </p>
-
-            <p class="experience-skills">
-                Developed experience with Java, JavaScript, React, AWS, Git, Bitbucket, Jira, VS Code, AI-assisted software development, debugging, testing, code reviews, technical documentation, version control, Agile engineering workflows, and professional communication using Slack, Microsoft Teams, and Outlook.
-            </p>
-
         </div>
 
-        <!-- Walmart -->
-        <div class="timeline-item">
+        <div class="timeline">
 
-            <div class="company-header">
+            <!-- University of Phoenix -->
+            <article class="timeline-item featured-experience">
 
-                <img
-                    src="wal.png"
-                    alt="Walmart Logo"
-                    class="company-logo"
-                    loading="lazy"
-                    decoding="async">
+                <div class="company-header">
 
-                <div>
-                    <h4>Walmart</h4>
-                    <h3>Personal Shopper Associate</h3>
-                    <span>May 2025 – Present</span>
+                    <img
+                        src="uopx.png"
+                        alt="University of Phoenix logo"
+                        class="company-logo"
+                        loading="lazy"
+                        decoding="async">
+
+                    <div class="company-info">
+                        <h4>University of Phoenix</h4>
+                        <h3>Applications Engineer Intern</h3>
+                        <span>May 2026 – Present</span>
+                    </div>
+
                 </div>
 
-            </div>
+                <p class="experience-summary">
+                    Contribute to enterprise web applications for Phoenix.edu as part
+                    of a 9-member cross-functional Agile engineering team.
+                </p>
 
-            <p>
-                Worked with a team of approximately 10 associates in a fast-paced environment to accurately prepare customer orders and provide friendly, efficient service during customer pickup.
-            </p>
+                <ul class="experience-highlights">
+                    <li>
+                        Developed, tested, and delivered production enhancements for
+                        Job Explorer and Career Profile using Java, JavaScript, React,
+                        AWS, Git, and Bitbucket.
+                    </li>
 
-            <p class="experience-skills">
-                Developed customer service, communication, teamwork, multitasking, adaptability, time management, conflict resolution, and problem-solving skills while consistently delivering a positive customer experience.
-            </p>
+                    <li>
+                        Contributed across 10+ Agile sprints and 50+ daily stand-ups
+                        while collaborating with engineers, product management, UI/UX,
+                        QA, and technical leadership.
+                    </li>
+
+                    <li>
+                        Participated throughout the software development lifecycle,
+                        including planning, implementation, local testing, code reviews,
+                        staging validation, deployment, and production verification.
+                    </li>
+
+                    <li>
+                        Used GitHub Copilot, ChatGPT, Claude, and OpenCode to support
+                        development, debugging, research, and technical documentation.
+                    </li>
+                </ul>
+
+                <div class="experience-divider" aria-hidden="true"></div>
+
+                <ul class="experience-tools" aria-label="University of Phoenix technologies">
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>AWS</li>
+                    <li>Git</li>
+                    <li>Bitbucket</li>
+                    <li>Jira</li>
+                    <li>Agile</li>
+                    <li>AI Tools</li>
+                </ul>
+
+            </article>
+
+            <!-- Walmart -->
+            <article class="timeline-item">
+
+                <div class="company-header">
+
+                    <img
+                        src="wal.png"
+                        alt="Walmart logo"
+                        class="company-logo"
+                        loading="lazy"
+                        decoding="async">
+
+                    <div class="company-info">
+                        <h4>Walmart</h4>
+                        <h3>Personal Shopper Associate</h3>
+                        <span>May 2025 – Present</span>
+                    </div>
+
+                </div>
+
+                <p class="experience-summary">
+                    Fulfill online customer orders while working with a team of
+                    approximately 10 associates in a fast-paced retail environment.
+                </p>
+
+                <ul class="experience-highlights">
+                    <li>
+                        Prepare 50+ customer orders per shift while maintaining
+                        approximately 99% order accuracy.
+                    </li>
+
+                    <li>
+                        Pick, organize, stage, and quality-check orders to support
+                        accurate and efficient customer pickup.
+                    </li>
+
+                    <li>
+                        Verify and deliver completed orders to customer vehicles while
+                        providing friendly and professional service.
+                    </li>
+
+                    <li>
+                        Coordinate with teammates to prioritize orders, manage pickup
+                        flow, and maintain efficient daily operations.
+                    </li>
+                </ul>
+
+                <div class="experience-divider" aria-hidden="true"></div>
+
+                <ul class="experience-tools" aria-label="Walmart professional skills">
+                    <li>Customer Service</li>
+                    <li>Communication</li>
+                    <li>Teamwork</li>
+                    <li>Organization</li>
+                    <li>Time Management</li>
+                    <li>Quality Control</li>
+                </ul>
+
+            </article>
 
         </div>
-
-    </div>
 
     </section>
 
     <!-- SKILLS SECTION -->
     <section id="skills" class="skills">
 
-    <div class="skills-header">
+        <div class="skills-header">
 
-        <span class="skills-subtitle">
-            Technical & Professional Strengths
-        </span>
+            <span class="skills-subtitle">
+                Technical & Professional Strengths
+            </span>
 
-        <h2 class="skills-title">
-            Skills
-        </h2>
+            <h2 class="skills-title">
+                Skills
+            </h2>
 
-        <p class="skills-intro">
-            A combination of software, IT, cybersecurity, and professional skills
-            developed through coursework, internship experience, certifications,
-            personal projects, AI-assisted learning, and continuous professional growth.
-        </p>
-
-    </div>
-
-    <div class="skills-grid">
-
-        <div class="skills-card">
-
-            <i class='bx bx-code-alt'></i>
-
-            <h3>Software Development</h3>
-
-            <p>
-                Python, Java, JavaScript, React, HTML, CSS, Git, GitHub,
-                VS Code, debugging, and AI-assisted development workflows.
+            <p class="skills-intro">
+                Technologies and professional strengths developed through coursework,
+                internship experience, hands-on projects, certification study, and
+                continuous technical learning.
             </p>
 
         </div>
 
-        <div class="skills-card">
+        <div class="skills-grid">
 
-            <i class='bx bx-desktop'></i>
+            <article class="skills-card">
 
-            <h3>IT Support & Systems</h3>
+                <i class='bx bx-code-alt' aria-hidden="true"></i>
 
-            <p>
-                Technical troubleshooting, Windows & Linux fundamentals,
-                hardware and software support, networking concepts,
-                system configuration, and CompTIA A+ (In Progress).
-            </p>
+                <h3>Programming & Development</h3>
+
+                <ul class="skills-list" aria-label="Programming and development skills">
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>SQL</li>
+                    <li>REST APIs</li>
+                    <li>Git</li>
+                    <li>Bitbucket</li>
+                </ul>
+
+            </article>
+
+            <article class="skills-card">
+
+                <i class='bx bx-desktop' aria-hidden="true"></i>
+
+                <h3>IT Support & Systems</h3>
+
+                <ul class="skills-list" aria-label="IT support and systems skills">
+                    <li>Windows</li>
+                    <li>Windows Server</li>
+                    <li>Active Directory</li>
+                    <li>Microsoft 365</li>
+                    <li>Hardware Support</li>
+                    <li>Software Troubleshooting</li>
+                    <li>System Configuration</li>
+                    <li>VMware Workstation</li>
+                    <li>PowerShell</li>
+                </ul>
+
+            </article>
+
+            <article class="skills-card">
+
+                <i class='bx bx-network-chart' aria-hidden="true"></i>
+
+                <h3>Networking</h3>
+
+                <ul class="skills-list" aria-label="Networking skills">
+                    <li>TCP/IP</li>
+                    <li>DNS</li>
+                    <li>DHCP</li>
+                    <li>VPN</li>
+                    <li>Routing</li>
+                    <li>Switching</li>
+                    <li>Network Troubleshooting</li>
+                    <li>Virtualization</li>
+                </ul>
+
+            </article>
+
+            <article class="skills-card">
+
+                <i class='bx bx-cloud' aria-hidden="true"></i>
+
+                <h3>Cloud, DevOps & AI</h3>
+
+                <ul class="skills-list" aria-label="Cloud DevOps and AI skills">
+                    <li>AWS</li>
+                    <li>GitHub</li>
+                    <li>Bitbucket</li>
+                    <li>Docker</li>
+                    <li>Linux</li>
+                    <li>GitHub Copilot</li>
+                    <li>ChatGPT</li>
+                    <li>Claude</li>
+                    <li>OpenCode</li>
+                </ul>
+
+            </article>
+
+            <article class="skills-card">
+
+                <i class='bx bx-shield-quarter' aria-hidden="true"></i>
+
+                <h3>Cybersecurity</h3>
+
+                <ul class="skills-list" aria-label="Cybersecurity skills">
+                    <li>Identity & Access Management</li>
+                    <li>Network Security</li>
+                    <li>Vulnerability Assessment</li>
+                    <li>Access Control</li>
+                    <li>Encryption Fundamentals</li>
+                    <li>OWASP Top 10</li>
+                    <li>Secure Computing Practices</li>
+                    <li>Risk Awareness</li>
+                </ul>
+
+            </article>
+
+            <article class="skills-card">
+
+                <i class='bx bx-group' aria-hidden="true"></i>
+
+                <h3>Professional Skills</h3>
+
+                <ul class="skills-list" aria-label="Professional skills">
+                    <li>Problem Solving</li>
+                    <li>Communication</li>
+                    <li>Team Collaboration</li>
+                    <li>Customer Service</li>
+                    <li>Adaptability</li>
+                    <li>Technical Documentation</li>
+                    <li>Agile</li>
+                    <li>Time Management</li>
+                </ul>
+
+            </article>
 
         </div>
-
-        <div class="skills-card">
-
-            <i class='bx bx-shield-quarter'></i>
-
-            <h3>Cybersecurity</h3>
-
-            <p>
-                Security fundamentals, cybersecurity concepts,
-                risk awareness, secure computing practices,
-                access control, and security best practices.
-            </p>
-
-        </div>
-
-        <div class="skills-card">
-
-            <i class='bx bx-cloud'></i>
-
-            <h3>Cloud, AI & Automation</h3>
-
-            <p>
-                Cloud fundamentals, AI-assisted development,
-                prompt engineering, workflow automation,
-                technology research, and emerging technologies.
-            </p>
-
-        </div>
-
-        <div class="skills-card">
-
-            <i class='bx bx-bulb'></i>
-
-            <h3>Problem Solving & Analytics</h3>
-
-            <p>
-                Analytical thinking, AI-assisted problem solving,
-                debugging, technical research, process improvement,
-                data interpretation, and solution design.
-            </p>
-
-        </div>
-
-        <div class="skills-card">
-
-            <i class='bx bx-group'></i>
-
-            <h3>Professional Skills</h3>
-
-            <p>
-                Communication, teamwork, adaptability,
-                customer service, continuous learning,
-                and time management.
-            </p>
-
-        </div>
-
-    </div>
 
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="portfolio" class="portfolio">
+    <section id="projects" class="portfolio projects">
 
         <div class="portfolio-header">
-            <span class="portfolio-subtitle">Projects • Certifications</span>
+            <span class="portfolio-subtitle">Featured Technical Work</span>
 
-            <h2 class="portfolio-title">Work</h2>
+            <h2 class="portfolio-title">Projects</h2>
 
             <p class="portfolio-intro">
-                Projects, certifications, and technical work demonstrating software
-                engineering, IT, cybersecurity, cloud technologies, AI-assisted
-                development, and continuous professional growth.
+                Selected software, cloud, robotics, and IT infrastructure projects
+                demonstrating hands-on development, technical problem solving,
+                collaboration, and continuous growth.
             </p>
         </div>
 
-        <div class="portfolio-grid">
+        <div class="project-group">
 
-            <div class="project-card">
-                <h3>Enterprise IT & Security Management System</h3>
-                <p>
-                    Full-stack enterprise application for managing users, devices, support tickets,
-                    and security events through a centralized dashboard. Built with secure authentication,
-                    REST APIs, database integration, and modern software engineering practices
-                    supported by AI-assisted research, debugging, and documentation workflows.
-                </p>
-                <span>In Progress</span>
+            <div class="project-group-header">
+                <span>Software & Engineering</span>
+                
             </div>
 
-            <div class="project-card">
-                <h3>CompTIA A+ Certification</h3>
-                <p>
-                    Industry-recognized certification demonstrating foundational knowledge of IT support,
-                    computer hardware, operating systems, networking, troubleshooting, and security.
-                    Validates the skills needed to install, configure, maintain, and support a wide range of IT
-                    systems and end-user devices.
-                </p>
-                <span>In Progress</span>
+            <div class="portfolio-grid projects-grid">
+
+                <!-- Enterprise Feature Flag Management Platform -->
+                <article class="project-card featured-project">
+
+                    <div class="project-card-header">
+                        <i class='bx bx-git-branch' aria-hidden="true"></i>
+                        <span class="project-status status-near-complete">
+                            Near Completion
+                        </span>
+                    </div>
+
+                    <h3>Enterprise Feature Flag Management Platform</h3>
+
+                    <p>
+                        Developed and validated an event-driven feature flag platform
+                        that enables applications to receive live feature updates without
+                        redeployment. Integrated AWS services, DynamoDB, Amazon MSK,
+                        Centrifugo, and a browser-based consumer application to demonstrate
+                        the complete real-time delivery workflow.
+                    </p>
+
+                    <ul class="project-highlights">
+                        <li>
+                            Built and polished a web interface for viewing and managing
+                            feature flag values.
+                        </li>
+                        <li>
+                            Connected DynamoDB, Amazon MSK, Centrifugo, and Server-Sent
+                            Events (SSE) to push automatic browser updates without page
+                            refreshes or repeated polling.
+                        </li>
+                        <li>
+                            Resolved integration issues involving CORS, Server-Sent Events
+                            handling, cloud networking, and service connectivity.
+                        </li>
+                    </ul>
+
+                    <div class="project-divider" aria-hidden="true"></div>
+
+                    <ul class="project-tools" aria-label="Feature flag project technologies">
+                        <li>AWS</li>
+                        <li>DynamoDB</li>
+                        <li>Amazon MSK</li>
+                        <li>Centrifugo</li>
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>SSE</li>
+                        <li>Git</li>
+                    </ul>
+
+                </article>
+                <!-- Personal Portfolio Website -->
+                <article class="project-card">
+
+                    <div class="project-pages">
+
+                        <!-- Page 1: Project Overview -->
+                        <div class="project-page active">
+
+                            <div class="project-card-header">
+                                <i class='bx bx-window-alt' aria-hidden="true"></i>
+
+                                <span class="project-status status-complete">
+                                    Completed
+                                </span>
+                            </div>
+
+                            <h3>Personal Portfolio Website</h3>
+
+                            <p>
+                                Designed, developed, and deployed a responsive personal
+                                portfolio website to present my experience, technical skills,
+                                projects, and professional development through a polished and
+                                accessible interface.
+                            </p>
+
+                            <ul class="project-highlights">
+                                <li>
+                                    Created a responsive multi-section layout for desktop,
+                                    tablet, and mobile devices.
+                                </li>
+
+                                <li>
+                                    Implemented interactive navigation, animations, reusable
+                                    cards, and consistent UI components.
+                                </li>
+
+                                <li>
+                                    Deployed the website through GitHub Pages with a custom
+                                    domain, HTTPS, and search-engine metadata.
+                                </li>
+                            </ul>
+
+                            <div class="project-divider" aria-hidden="true"></div>
+
+                            <ul
+                                class="project-tools"
+                                aria-label="Portfolio website technologies">
+
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Responsive Design</li>
+                                <li>GitHub Pages</li>
+                                <li>UI/UX</li>
+                                <li>SEO</li>
+                            </ul>
+
+                        </div>
+
+                        <!-- Page 2: Project Documentation -->
+                        <div class="project-page">
+
+                            <img
+                                src="website.png"
+                                alt="Responsive personal portfolio website shown on a mobile device"
+                                class="project-image project-image-website"
+                                loading="lazy"
+                                decoding="async">
+
+                            <div class="project-docs">
+
+                                <h4>Website Documentation</h4>
+
+                                <p>
+                                    Built from scratch using HTML, CSS, and JavaScript,
+                                    then deployed through GitHub Pages with a custom domain.
+                                </p>
+
+                                <ul class="project-highlights">
+                                    <li>Responsive desktop, tablet, and mobile layouts</li>
+                                    <li>Reusable cards and consistent interface styling</li>
+                                    <li>Interactive navigation and project documentation</li>
+                                    <li>SEO metadata, HTTPS, and accessibility improvements</li>
+                                </ul>
+
+                                <a
+                                    href="https://github.com/dj-berg/personal-portfolio-website"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn project-repo-btn"
+                                    aria-label="View the portfolio website repository on GitHub">
+
+                                    <i class='bx bxl-github' aria-hidden="true"></i>
+                                    View GitHub Repository
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="project-next"
+                        type="button"
+                        aria-label="View project documentation">
+
+                        <i class='bx bx-chevron-right' aria-hidden="true"></i>
+                    </button>
+
+                </article>
+
+
+                <!-- Autonomous Search and Rescue Robot -->
+                <article class="project-card">
+
+                    <div class="project-pages">
+
+                    <!-- Page 1 -->
+                    <div class="project-page active">
+
+                    <div class="project-card-header">
+                        <i class='bx bx-bot' aria-hidden="true"></i>
+                        <span class="project-status status-complete">
+                            Completed
+                        </span>
+                    </div>
+
+                    <h3>Autonomous Search & Rescue Vehicle</h3>
+
+                    <p>
+                        Collaborated on a four-person FSE 100 engineering team over several
+                        months to design, program, test, and refine an autonomous LEGO
+                        Mindstorms robot using MATLAB.
+                    </p>
+
+                    <ul class="project-highlights">
+                        <li>
+                            Programmed sensor-based navigation and left-or-right turning
+                            behavior using MATLAB.
+                        </li>
+                        <li>
+                            Configured the robot to stop for three seconds after detecting
+                            red and open its claw after detecting green.
+                        </li>
+                        <li>
+                            Tested and refined the robot until it could retrieve a passenger
+                            and return safely to its starting point.
+                        </li>
+                    </ul>
+
+                    <div class="project-divider" aria-hidden="true"></div>
+
+                    <ul class="project-tools" aria-label="Autonomous robot project skills">
+                        <li>MATLAB</li>
+                        <li>LEGO Mindstorms</li>
+                        <li>Color Sensors</li>
+                        <li>Motion Sensors</li>
+                        <li>Robotics</li>
+                        <li>Teamwork</li>
+                        <li>Testing</li>
+                    </ul>
+
+                    </div>
+
+                    <!-- Page 2 -->
+                    <div class="project-page">
+
+                        <img
+                            src="robot.png"
+                            alt="Autonomous Search & Rescue Vehicle engineering team"
+                            class="project-image"
+                            loading="lazy"
+                            decoding="async">
+
+                        <div class="project-docs">
+
+                            <h4>Engineering Documentation</h4>
+
+                            <p>
+                                Four-person engineering team presenting our completed
+                                autonomous search-and-rescue vehicle developed using
+                                LEGO Mindstorms EV3 and MATLAB.
+                            </p>
+
+                            <ul class="project-highlights">
+                                <li>Autonomous navigation</li>
+                                <li>Color sensor decision making</li>
+                                <li>Object retrieval mechanism</li>
+                                <li>Iterative engineering testing</li>
+                                <li>Team-based design process</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    </div>
+
+                    <button class="project-next" aria-label="View project documentation">
+                        <i class='bx bx-chevron-right'></i>
+                    </button>
+
+                </article>
+
             </div>
+
+        </div>
+
+        <div class="project-group it-project-group">
+
+            <div class="project-group-header">
+                <span>Information Technology</span>
+                
+            </div>
+
+            <div class="portfolio-grid projects-grid single-project-grid">
+
+                <!-- Enterprise IT Infrastructure Lab -->
+                <article class="project-card early-project">
+
+                    <div class="project-card-header">
+                        <i class='bx bx-server' aria-hidden="true"></i>
+                        <span class="project-status status-early">
+                            In Progress
+                        </span>
+                    </div>
+
+                    <h3>Enterprise IT Infrastructure Lab</h3>
+
+                    <p>
+                        Beginning a structured virtual enterprise lab to practice the
+                        foundational systems, networking, administration, and troubleshooting
+                        skills used in entry-level IT support environments.
+                    </p>
+
+                    <ul class="project-highlights">
+                        <li>
+                            Set up a Windows Server virtual machine in VMware Workstation
+                            and began configuring the server environment.
+                        </li>
+                        <li>
+                            Practicing through guided CourseCareers IT training scenarios
+                            while documenting completed configurations and troubleshooting.
+                        </li>
+                        <li>
+                            Planning to expand the lab with Active Directory, DNS, DHCP,
+                            user administration, Group Policy, and Windows client management.
+                        </li>
+                    </ul>
+
+                    <div class="project-divider" aria-hidden="true"></div>
+
+                    <ul class="project-tools" aria-label="Enterprise IT lab technologies">
+                        <li>VMware Workstation</li>
+                        <li>Windows Server</li>
+                        <li>IT Support</li>
+                        <li>Networking</li>
+                        <li>Troubleshooting</li>
+                        <li>Documentation</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="certifications">
+
+        <div class="certifications-header">
+            <span class="certifications-subtitle">Professional Development</span>
+
+            <h2 class="certifications-title">Certifications</h2>
+
+            <p class="certifications-intro">
+                Industry certification preparation supporting my transition into
+                entry-level IT support and future systems, networking, and
+                cybersecurity opportunities.
+            </p>
+        </div>
+
+        <div class="certifications-grid">
+
+            <article class="certification-card">
+
+                <div class="certification-icon">
+                    <i class='bx bx-certification' aria-hidden="true"></i>
+                </div>
+
+                <div class="certification-content">
+
+                    <div class="certification-heading">
+                        <div>
+                            <span class="certification-provider">CompTIA</span>
+                            <h3>CompTIA A+</h3>
+                        </div>
+
+                        <span class="certification-status">
+                            In Progress
+                        </span>
+                    </div>
+
+                    <p>
+                        Beginning preparation for the CompTIA A+ certification to build
+                        and validate foundational knowledge in computer hardware,
+                        operating systems, networking, troubleshooting, security,
+                        virtualization, and end-user support.
+                    </p>
+
+                    <div class="certification-divider" aria-hidden="true"></div>
+
+                    <ul class="certification-topics" aria-label="CompTIA A+ study topics">
+                        <li>Hardware</li>
+                        <li>Operating Systems</li>
+                        <li>Networking</li>
+                        <li>Troubleshooting</li>
+                        <li>Security</li>
+                        <li>IT Support</li>
+                    </ul>
+
+                </div>
+
+            </article>
 
         </div>
 
@@ -603,19 +1183,87 @@
         <div class="contact-main-card">
 
             <div class="contact-cta">
-                <h3>Get In Touch</h3>
 
-                <p>Email is the best way to reach me.</p>
+                <h3>Send Me a Message</h3>
 
-                <a
-                    href="mailto:danielberg313@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Daniel,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0A"
-                    class="contact-email-btn"
-                    aria-label="Send Daniel Berg an email">
+                <p>
+                    Have a question, internship opportunity, or would like to connect?
+                    Fill out the form below and I'll get back to you as soon as possible.
+                </p>
 
-                    <i class='bx bx-envelope'></i>
-                    Send Email
+                <form
+                    id="contact-form"
+                    class="contact-form">
 
-                </a>
+                    <div class="contact-form-row">
+
+                        <div class="contact-form-group">
+                            <label for="contact-name">Name</label>
+
+                            <input
+                                type="text"
+                                id="contact-name"
+                                name="from_name"
+                                placeholder="Your name"
+                                autocomplete="name"
+                                required>
+                        </div>
+
+                        <div class="contact-form-group">
+                            <label for="contact-email">Email</label>
+
+                            <input
+                                type="email"
+                                id="contact-email"
+                                name="reply_to"
+                                placeholder="your@email.com"
+                                autocomplete="email"
+                                required>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-form-group">
+                        <label for="contact-subject">Subject</label>
+
+                        <input
+                            type="text"
+                            id="contact-subject"
+                            name="subject"
+                            placeholder="e.g. job opportunity, question, etc."
+                            required>
+                    </div>
+
+                    <div class="contact-form-group">
+                        <label for="contact-message">Message</label>
+
+                        <textarea
+                            id="contact-message"
+                            name="message"
+                            rows="6"
+                            placeholder="Write your message..."
+                            required></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="contact-email-btn"
+                        aria-label="Send message to Daniel Berg">
+
+                        <i class='bx bx-send' aria-hidden="true"></i>
+                        Send Message
+
+                    </button>
+
+                    <p
+                        id="contact-form-status"
+                        class="contact-form-status"
+                        role="status"
+                        aria-live="polite">
+                    </p>
+
+                </form>
+
             </div>
 
             <div class="contact-divider"></div>
@@ -712,9 +1360,82 @@
     <!-- FOOTER -->
     <footer class="footer">
         <p class="copyright">
-            © 2026 Daniel J. Berg. All Rights Reserved.
+            © 2026 Daniel J. Berg. All rights reserved.
+        </p>
+
+        <p class="footer-built">
+            Designed, developed, and deployed by Daniel J. Berg.
         </p>
     </footer>
+
+
+    <!-- EMAILJS CONTACT FORM -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const contactForm = document.getElementById("contact-form");
+            const statusMessage = document.getElementById("contact-form-status");
+            const submitButton = contactForm?.querySelector('button[type="submit"]');
+
+            if (!contactForm || !statusMessage || !submitButton) {
+                return;
+            }
+
+            const EMAILJS_SERVICE_ID = "service_3uvsbni";
+            const EMAILJS_TEMPLATE_ID = "template_h9nlekg";
+            const EMAILJS_PUBLIC_KEY = "VkVXmCBWffsrQg6wy";
+
+            contactForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                if (
+                    EMAILJS_SERVICE_ID.startsWith("YOUR_") ||
+                    EMAILJS_TEMPLATE_ID.startsWith("YOUR_") ||
+                    EMAILJS_PUBLIC_KEY.startsWith("YOUR_")
+                ) {
+                    statusMessage.textContent =
+                        "EmailJS still needs your Service ID, Template ID, and Public Key.";
+                    statusMessage.className =
+                        "contact-form-status contact-form-status-error";
+                    return;
+                }
+
+                const originalButtonContent = submitButton.innerHTML;
+
+                submitButton.disabled = true;
+                submitButton.innerHTML =
+                    "<i class='bx bx-loader-alt bx-spin' aria-hidden='true'></i> Sending...";
+                statusMessage.textContent = "";
+                statusMessage.className = "contact-form-status";
+
+                try {
+                    await emailjs.sendForm(
+                        EMAILJS_SERVICE_ID,
+                        EMAILJS_TEMPLATE_ID,
+                        contactForm,
+                        {
+                            publicKey: EMAILJS_PUBLIC_KEY
+                        }
+                    );
+
+                    contactForm.reset();
+                    statusMessage.textContent =
+                        "Your message was sent successfully. Thank you!";
+                    statusMessage.className =
+                        "contact-form-status contact-form-status-success";
+                } catch (error) {
+                    console.error("EmailJS submission failed:", error);
+
+                    statusMessage.textContent =
+                        "Your message could not be sent. Please try again or email me directly.";
+                    statusMessage.className =
+                        "contact-form-status contact-form-status-error";
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonContent;
+                }
+            });
+        });
+    </script>
 
     <!-- JAVASCRIPT -->
     <script src="script.js"></script>

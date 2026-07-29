@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const homeLinks = document.querySelectorAll('a[href="#home"]');
     const navLinks = document.querySelectorAll("header .navlist a");
     const sections = document.querySelectorAll("section");
+    const projectCards = document.querySelectorAll(".project-card");
 
     /* =========================================
        HELPER FUNCTIONS
@@ -24,16 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!menuIcon || !navList) return;
 
         navList.classList.remove("open");
+
         menuIcon.classList.add("bx-menu");
         menuIcon.classList.remove("bx-x");
+
+        menuIcon.setAttribute("aria-expanded", "false");
+        menuIcon.setAttribute("aria-label", "Open navigation menu");
     }
 
     function updateActiveSection() {
-
         let currentSection = "";
 
         sections.forEach(section => {
-
             const sectionTop = section.offsetTop - 160;
             const sectionHeight = section.offsetHeight;
 
@@ -51,11 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         navLinks.forEach(link => {
-            link.classList.remove("active");
+            const linkTarget = link.getAttribute("href");
 
-            if (link.getAttribute("href") === `#${currentSection}`) {
-                link.classList.add("active");
-            }
+            link.classList.toggle(
+                "active",
+                linkTarget === `#${currentSection}`
+            );
         });
     }
 
@@ -64,13 +68,24 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================= */
 
     if (menuIcon && navList) {
-
         menuIcon.addEventListener("click", () => {
-            navList.classList.toggle("open");
-            menuIcon.classList.toggle("bx-menu");
-            menuIcon.classList.toggle("bx-x");
-        });
+            const isOpen = navList.classList.toggle("open");
 
+            menuIcon.classList.toggle("bx-menu", !isOpen);
+            menuIcon.classList.toggle("bx-x", isOpen);
+
+            menuIcon.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuIcon.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+        });
     }
 
     /* =========================================
@@ -78,9 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================= */
 
     homeLinks.forEach(link => {
-
         link.addEventListener("click", event => {
-
             event.preventDefault();
 
             closeMobileMenu();
@@ -89,9 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 top: 0,
                 behavior: "smooth"
             });
-
         });
-
     });
 
     /* =========================================
@@ -99,24 +110,108 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================= */
 
     navLinks.forEach(link => {
-
         link.addEventListener("click", () => {
-
             if (link.getAttribute("href") !== "#home") {
                 closeMobileMenu();
             }
+        });
+    });
 
+    /* =========================================
+       CLOSE MOBILE MENU ON ESCAPE
+    ========================================= */
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeMobileMenu();
+        }
+    });
+
+    /* =========================================
+       PROJECT DOCUMENTATION CAROUSELS
+    ========================================= */
+
+    projectCards.forEach(card => {
+        const pages = Array.from(
+            card.querySelectorAll(".project-page")
+        );
+
+        const nextButton = card.querySelector(".project-next");
+
+        if (!nextButton || pages.length <= 1) return;
+
+        let currentPage = 0;
+
+        function showPage(index) {
+            currentPage =
+                (index + pages.length) % pages.length;
+
+            pages.forEach((page, pageIndex) => {
+                const isActive = pageIndex === currentPage;
+
+                page.classList.toggle("active", isActive);
+
+                page.setAttribute(
+                    "aria-hidden",
+                    String(!isActive)
+                );
+            });
+
+            const isDocumentationPage = currentPage > 0;
+
+            card.classList.toggle(
+                "show-documentation",
+                isDocumentationPage
+            );
+
+            nextButton.setAttribute(
+                "aria-label",
+                isDocumentationPage
+                    ? "Return to project overview"
+                    : "View project documentation"
+            );
+
+            nextButton.setAttribute(
+                "title",
+                isDocumentationPage
+                    ? "Return to overview"
+                    : "View documentation"
+            );
+        }
+
+        nextButton.addEventListener("click", () => {
+            showPage(currentPage + 1);
         });
 
+        nextButton.addEventListener("keydown", event => {
+            if (event.key === "ArrowRight") {
+                event.preventDefault();
+                showPage(currentPage + 1);
+            }
+
+            if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                showPage(currentPage - 1);
+            }
+        });
+
+        showPage(0);
     });
 
     /* =========================================
        INITIALIZE
     ========================================= */
 
-    window.addEventListener("scroll", updateActiveSection);
-    window.addEventListener("resize", updateActiveSection);
+    window.addEventListener(
+        "scroll",
+        updateActiveSection,
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "resize",
+        updateActiveSection
+    );
 
     updateActiveSection();
-
 });
