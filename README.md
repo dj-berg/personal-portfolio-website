@@ -9,8 +9,7 @@ A responsive personal portfolio website showcasing my professional experience, t
 ## 📸 Preview
 
 ### Desktop
-<!-- Replace with your desktop screenshot -->
-![Portfolio Desktop Preview](YOUR-DESKTOP-SCREENSHOT-PATH)
+<img width="1876" height="897" alt="image" src="https://github.com/user-attachments/assets/f25457c3-2451-4000-82d7-0450b8e66802" />
 
 ### Mobile
 <!-- Replace with your mobile screenshot -->
