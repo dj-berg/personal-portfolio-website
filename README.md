@@ -89,8 +89,7 @@ Provides a functional contact form powered by EmailJS along with links to my pro
 
 The website was designed to provide a consistent experience across different screen sizes.
 
-<!-- Replace with a screenshot showing desktop/mobile responsiveness -->
-![Responsive Design Preview](YOUR-RESPONSIVE-SCREENSHOT-PATH)
+<img width="1301" height="893" alt="image" src="https://github.com/user-attachments/assets/f4474bdb-00cd-4ef3-8a30-b33b1f61c4e5" />
 
 The layout adapts navigation, typography, project cards, images, spacing, and other interface elements for desktop, tablet, and mobile devices.
 
