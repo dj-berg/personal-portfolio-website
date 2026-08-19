@@ -1,170 +1,137 @@
-﻿# Daniel J. Berg Portfolio
+# Daniel J. Berg — Personal Portfolio
 
-A modern, responsive personal portfolio website showcasing my education, technical skills, professional experience, and software/IT projects.
+A responsive personal portfolio website showcasing my professional experience, technical skills, projects, certifications, and background in software engineering, information technology, and cybersecurity.
 
-**Live Website:** https://danieljberg.com
-
----
-
-## About
-
-This portfolio was designed and developed to serve as a central location for recruiters, employers, and fellow developers to learn more about my background and experience.
-
-The website highlights:
-
-- Education
-- Professional experience
-- Technical skills
-- Software engineering projects
-- IT and networking projects
-- Certifications
-- Contact form powered by EmailJS
+🌐 **Live Website:** [danieljberg.com](https://danieljberg.com)
 
 ---
 
-## Features
+## 📸 Preview
 
-- Responsive design for desktop, tablet, and mobile
-- Modern glassmorphism-inspired UI
-- Interactive project cards
-- Animated navigation
-- Smooth scrolling
-- EmailJS contact form
-- GitHub Pages deployment
-- Accessible semantic HTML
+### Desktop
+<!-- Replace with your desktop screenshot -->
+![Portfolio Desktop Preview](YOUR-DESKTOP-SCREENSHOT-PATH)
+
+### Mobile
+<!-- Replace with your mobile screenshot -->
+![Portfolio Mobile Preview](YOUR-MOBILE-SCREENSHOT-PATH)
 
 ---
 
-## Technologies
+## 📖 About the Project
+
+I designed and developed this portfolio as a central place to showcase my experience, technical projects, skills, and continued growth as a Computer Science student.
+
+The website highlights my professional experience as an Applications Engineer Intern, software engineering projects, hands-on IT projects, cybersecurity interests, and technical training.
+
+The site was built from the ground up using HTML, CSS, and JavaScript and is deployed through GitHub Pages with a custom domain.
+
+---
+
+## ✨ Key Features
+
+- Responsive design for desktop, tablet, and mobile devices
+- Interactive navigation with mobile hamburger menu
+- Professional experience showcase
+- Software engineering and IT project portfolio
+- Technical skills and focus areas
+- Certifications and technical training
+- Functional contact form
+- Social and professional profile links
+- Custom domain with HTTPS
+- Responsive layouts and components across multiple screen sizes
+
+---
+
+## 🛠️ Technologies Used
 
 ### Frontend
-
 - HTML5
 - CSS3
-- JavaScript (ES6)
+- JavaScript
 
-### Libraries & Services
-
-- Boxicons
-- EmailJS
+### Tools & Services
+- Git
+- GitHub
 - GitHub Pages
-
-### Design
-
-- Responsive Design
-- Flexbox
-- CSS Grid
-- Glassmorphism
-- CSS Animations
+- EmailJS
+- Visual Studio Code
 
 ---
 
-## Featured Projects
+## 📂 Website Sections
 
-### Enterprise Feature Flag Management Platform
+### 🏠 Home
+Introduces who I am and provides quick access to my professional profiles and portfolio content.
 
-Enterprise software engineering project involving feature flags, event-driven architecture, and cloud technologies.
+### 👤 About
+Provides additional background about my education, experience, interests, and career direction.
 
-**Technologies**
+### 🎯 Focus Areas
+Highlights my primary technical interests across software engineering, information technology, and cybersecurity.
 
-- React
-- TypeScript
-- AWS
-- DynamoDB
-- ECS
-- API Gateway
-- Amazon MSK
-- Cognito
+### 💼 Experience
+Showcases my professional experience, responsibilities, technologies, and contributions.
 
----
+### 🛠️ Skills
+Organizes the technologies, tools, platforms, and technical concepts I have experience working with.
 
-### Enterprise IT Infrastructure Lab
+### 💻 Projects
+Highlights software engineering and hands-on IT projects with descriptions, technologies, and supporting documentation.
 
-Virtual enterprise lab focused on building real-world IT infrastructure.
+### 📜 Certifications
+Displays certifications and technical training I have completed or am currently pursuing.
 
-Current technologies include:
-
-- Windows Server
-- VMware Workstation
-- Active Directory
-- DNS
-- DHCP
-- Group Policy
-- Windows Administration
+### 📬 Contact
+Provides a functional contact form powered by EmailJS along with links to my professional profiles.
 
 ---
 
-### Personal Portfolio Website
+## 📱 Responsive Design
 
-Designed and developed this portfolio website from scratch.
+The website was designed to provide a consistent experience across different screen sizes.
 
-Highlights include:
+<!-- Replace with a screenshot showing desktop/mobile responsiveness -->
+![Responsive Design Preview](YOUR-RESPONSIVE-SCREENSHOT-PATH)
 
-- Responsive layouts
-- Interactive project cards
-- Modern UI
-- Contact integration
-- GitHub deployment
+The layout adapts navigation, typography, project cards, images, spacing, and other interface elements for desktop, tablet, and mobile devices.
 
 ---
 
-### Autonomous Search & Rescue Vehicle
+## 💡 What I Learned
 
-University engineering project involving autonomous navigation and object retrieval.
+Building and maintaining this portfolio gave me hands-on experience with:
 
-Technologies:
-
-- MATLAB
-- LEGO Mindstorms EV3
-
----
-
-## Contact
-
-If you'd like to connect regarding internships, software engineering, IT, networking, or cybersecurity opportunities, feel free to reach out.
-
-**Website**
-
-https://danieljberg.com
-
-**LinkedIn**
-
-https://www.linkedin.com/in/daniel-j-berg
-
-**GitHub**
-
-https://github.com/dj-berg
+- Developing responsive layouts using CSS
+- Designing interfaces for multiple screen sizes
+- Manipulating the DOM with JavaScript
+- Creating responsive navigation
+- Structuring and maintaining a multi-section website
+- Integrating a third-party contact service with EmailJS
+- Using Git and GitHub for version control
+- Deploying a production website with GitHub Pages
+- Configuring a custom domain and HTTPS
+- Iteratively improving UI/UX based on testing across devices
 
 ---
 
-## Running Locally
+## 🚀 Deployment
 
-Clone the repository:
+The website is hosted using **GitHub Pages** and connected to a custom domain.
 
-```bash
-git clone https://github.com/dj-berg/personal-portfolio-website.git
-```
-
-Open the project:
-
-```bash
-cd personal-portfolio-website
-```
-
-Launch:
-
-```bash
-index.html
-```
-
-or use the VS Code Live Server extension.
+🌐 **Visit the portfolio:** [https://danieljberg.com](https://danieljberg.com)
 
 ---
 
-## License
+## 📬 Connect With Me
 
-This project is intended as my personal portfolio.
+- 🌐 [Portfolio](https://danieljberg.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/danieljberg)
+- 💻 [GitHub](https://github.com/dj-berg)
+- 📧 Email: danielberg313@gmail.com
 
-Feel free to use the project for inspiration, but please do not copy the design, branding, or content directly.
+---
 
-© 2026 Daniel J. Berg. All rights reserved.
+<p align="center">
+  Designed & developed by Daniel J. Berg
+</p>
