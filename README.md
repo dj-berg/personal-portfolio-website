@@ -12,8 +12,7 @@ A responsive personal portfolio website showcasing my professional experience, t
 <img width="1876" height="897" alt="image" src="https://github.com/user-attachments/assets/f25457c3-2451-4000-82d7-0450b8e66802" />
 
 ### Mobile
-<!-- Replace with your mobile screenshot -->
-![Portfolio Mobile Preview](YOUR-MOBILE-SCREENSHOT-PATH)
+<img width="497" height="902" alt="image" src="https://github.com/user-attachments/assets/7b70d2ef-fba7-48aa-97ac-983ea11f3ac6" />
 
 ---
 
