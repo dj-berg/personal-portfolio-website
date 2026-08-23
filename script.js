@@ -6,7 +6,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================
-       DOM ELEMENTS
+       01. DOM ELEMENTS
     ========================================= */
 
     const menuIcon = document.getElementById("menu-icon");
@@ -17,8 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const projectCards = document.querySelectorAll(".project-card");
 
+
     /* =========================================
-       HELPER FUNCTIONS
+       02. HELPER FUNCTIONS
     ========================================= */
 
     function closeMobileMenu() {
@@ -26,53 +27,93 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navList.classList.remove("open");
 
+        document.documentElement.classList.remove("menu-open");
+        document.body.classList.remove("menu-open");
+
         menuIcon.classList.add("bx-menu");
         menuIcon.classList.remove("bx-x");
 
         menuIcon.setAttribute("aria-expanded", "false");
-        menuIcon.setAttribute("aria-label", "Open navigation menu");
+        menuIcon.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
     }
 
+
+    /* =========================================
+       03. ACTIVE NAVIGATION SECTION
+    ========================================= */
+
     function updateActiveSection() {
+        if (!sections.length) return;
+
         let currentSection = "";
 
+        const headerHeight =
+            document.querySelector("header")?.offsetHeight || 0;
+
+        const scrollPosition =
+            window.scrollY + headerHeight + 80;
+
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 160;
-            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop;
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
 
-            const isCurrentSection =
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight;
-
-            if (isCurrentSection) {
+            if (
+                scrollPosition >= sectionTop &&
+                scrollPosition < sectionBottom
+            ) {
                 currentSection = section.id;
             }
         });
 
-        if (!currentSection && sections.length > 0) {
-            currentSection = sections[0].id;
+        if (!currentSection) {
+            currentSection = sections[0]?.id || "";
         }
 
         navLinks.forEach(link => {
-            const linkTarget = link.getAttribute("href");
+            const target = link.getAttribute("href");
 
             link.classList.toggle(
                 "active",
-                linkTarget === `#${currentSection}`
+                target === `#${currentSection}`
             );
         });
     }
 
+
     /* =========================================
-       MOBILE MENU
+       04. MOBILE MENU
     ========================================= */
 
     if (menuIcon && navList) {
-        menuIcon.addEventListener("click", () => {
-            const isOpen = navList.classList.toggle("open");
 
-            menuIcon.classList.toggle("bx-menu", !isOpen);
-            menuIcon.classList.toggle("bx-x", isOpen);
+        menuIcon.addEventListener("click", () => {
+
+            const isOpen =
+                navList.classList.toggle("open");
+
+            document.documentElement.classList.toggle(
+                "menu-open",
+                isOpen
+            );
+
+            document.body.classList.toggle(
+                "menu-open",
+                isOpen
+            );
+
+            menuIcon.classList.toggle(
+                "bx-menu",
+                !isOpen
+            );
+
+            menuIcon.classList.toggle(
+                "bx-x",
+                isOpen
+            );
 
             menuIcon.setAttribute(
                 "aria-expanded",
@@ -88,12 +129,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
     /* =========================================
-       HOME / LOGO SCROLL FIX
+       05. HOME / LOGO SCROLL
     ========================================= */
 
     homeLinks.forEach(link => {
+
         link.addEventListener("click", event => {
+
             event.preventDefault();
 
             closeMobileMenu();
@@ -105,113 +149,414 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
     /* =========================================
-       CLOSE MOBILE MENU ON NAVIGATION
+       06. CLOSE MOBILE MENU AFTER NAVIGATION
     ========================================= */
 
     navLinks.forEach(link => {
+
         link.addEventListener("click", () => {
+
             if (link.getAttribute("href") !== "#home") {
                 closeMobileMenu();
             }
         });
     });
 
+
     /* =========================================
-       CLOSE MOBILE MENU ON ESCAPE
+       07. ESCAPE KEY
     ========================================= */
 
     document.addEventListener("keydown", event => {
+
         if (event.key === "Escape") {
             closeMobileMenu();
         }
     });
 
+
     /* =========================================
-       PROJECT DOCUMENTATION CAROUSELS
+       08. PROJECT DOCUMENTATION CAROUSELS
     ========================================= */
 
     projectCards.forEach(card => {
+
         const pages = Array.from(
             card.querySelectorAll(".project-page")
         );
 
-        const nextButton = card.querySelector(".project-next");
+        /*
+         * Support both:
+         *
+         * .project-prev / .project-next
+         *
+         * and the existing design where only
+         * .project-next is present.
+         */
 
-        if (!nextButton || pages.length <= 1) return;
+        const nextButton =
+            card.querySelector(".project-next");
+
+        const prevButton =
+            card.querySelector(".project-prev");
+
+        const indicators = Array.from(
+            card.querySelectorAll(
+                ".project-indicator, .project-dot"
+            )
+        );
+
+        const pageCount = card.querySelector(".project-page-count");
+
+        /*
+         * Cards without multiple pages do not
+         * need carousel behavior.
+         */
+
+        if (pages.length <= 1) {
+            return;
+        }
 
         let currentPage = 0;
 
+
+        /* =====================================
+           SHOW PROJECT PAGE
+        ===================================== */
+
         function showPage(index) {
+
+            /*
+             * Wrap around:
+             *
+             * last → first
+             * first → last
+             */
+
             currentPage =
                 (index + pages.length) % pages.length;
 
-            pages.forEach((page, pageIndex) => {
-                const isActive = pageIndex === currentPage;
 
-                page.classList.toggle("active", isActive);
+            /* ---------------------------------
+               Update slides
+            --------------------------------- */
+
+            pages.forEach((page, pageIndex) => {
+
+                const isActive =
+                    pageIndex === currentPage;
+
+                page.classList.toggle(
+                    "active",
+                    isActive
+                );
 
                 page.setAttribute(
                     "aria-hidden",
                     String(!isActive)
                 );
+
+                /*
+                 * Prevent keyboard focus from
+                 * entering hidden project pages
+                 * when supported by the browser.
+                 */
+
+                if (isActive) {
+                    page.removeAttribute("inert");
+                } else {
+                    page.setAttribute("inert", "");
+                }
             });
 
-            const isDocumentationPage = currentPage > 0;
+
+            /* ---------------------------------
+               Documentation state
+            --------------------------------- */
+
+            const isDocumentationPage =
+                currentPage > 0;
 
             card.classList.toggle(
                 "show-documentation",
                 isDocumentationPage
             );
 
-            nextButton.setAttribute(
-                "aria-label",
-                isDocumentationPage
-                    ? "Return to project overview"
-                    : "View project documentation"
+
+            /* ---------------------------------
+               Current slide metadata
+            --------------------------------- */
+
+            card.dataset.projectPage =
+                String(currentPage);
+
+            card.dataset.projectPageNumber =
+                String(currentPage + 1);
+
+            card.dataset.projectPageCount =
+                String(pages.length);
+
+            if (pageCount) {
+                const pageLabel = pages[currentPage]
+                    .querySelector(".project-page-label")
+                    ?.textContent
+                    .trim();
+
+                pageCount.textContent = `${currentPage + 1} / ${pages.length}${pageLabel ? ` · ${pageLabel}` : ""}`;
+            }
+
+
+            /* ---------------------------------
+               Indicators
+            --------------------------------- */
+
+            indicators.forEach(
+                (indicator, indicatorIndex) => {
+
+                    const isActive =
+                        indicatorIndex === currentPage;
+
+                    indicator.classList.toggle(
+                        "active",
+                        isActive
+                    );
+
+                    indicator.setAttribute(
+                        "aria-current",
+                        isActive ? "true" : "false"
+                    );
+                }
             );
 
-            nextButton.setAttribute(
-                "title",
-                isDocumentationPage
-                    ? "Return to overview"
-                    : "View documentation"
+
+            /* ---------------------------------
+               Next button accessibility
+            --------------------------------- */
+
+            if (nextButton) {
+
+                const nextPage =
+                    (currentPage + 1) % pages.length;
+
+                /*
+                 * With two slides this keeps the
+                 * original Overview ↔ Documentation
+                 * wording.
+                 */
+
+                if (pages.length === 2) {
+
+                    nextButton.setAttribute(
+                        "aria-label",
+                        currentPage === 0
+                            ? "View project documentation"
+                            : "Return to project overview"
+                    );
+
+                    nextButton.setAttribute(
+                        "title",
+                        currentPage === 0
+                            ? "View documentation"
+                            : "Return to overview"
+                    );
+
+                } else {
+
+                    nextButton.setAttribute(
+                        "aria-label",
+                        nextPage === 0
+                            ? "Return to project overview"
+                            : `View project page ${nextPage + 1}`
+                    );
+
+                    nextButton.setAttribute(
+                        "title",
+                        nextPage === 0
+                            ? "Return to overview"
+                            : `Next page (${nextPage + 1} of ${pages.length})`
+                    );
+                }
+            }
+
+
+            /* ---------------------------------
+               Previous button accessibility
+            --------------------------------- */
+
+            if (prevButton) {
+
+                const previousPage =
+                    (
+                        currentPage -
+                        1 +
+                        pages.length
+                    ) % pages.length;
+
+                prevButton.setAttribute(
+                    "aria-label",
+                    previousPage === 0
+                        ? "Return to project overview"
+                        : `View project page ${previousPage + 1}`
+                );
+
+                prevButton.setAttribute(
+                    "title",
+                    previousPage === 0
+                        ? "Return to overview"
+                        : `Previous page (${previousPage + 1} of ${pages.length})`
+                );
+            }
+        }
+
+
+        /* =====================================
+           NEXT PAGE
+        ===================================== */
+
+        function nextPage() {
+            showPage(currentPage + 1);
+        }
+
+
+        /* =====================================
+           PREVIOUS PAGE
+        ===================================== */
+
+        function previousPage() {
+            showPage(currentPage - 1);
+        }
+
+
+        /* =====================================
+           NEXT BUTTON
+        ===================================== */
+
+        if (nextButton) {
+
+            nextButton.addEventListener(
+                "click",
+                nextPage
             );
         }
 
-        nextButton.addEventListener("click", () => {
-            showPage(currentPage + 1);
-        });
 
-        nextButton.addEventListener("keydown", event => {
-            if (event.key === "ArrowRight") {
-                event.preventDefault();
-                showPage(currentPage + 1);
-            }
+        /* =====================================
+           PREVIOUS BUTTON
+        ===================================== */
 
-            if (event.key === "ArrowLeft") {
-                event.preventDefault();
-                showPage(currentPage - 1);
+        if (prevButton) {
+
+            prevButton.addEventListener(
+                "click",
+                previousPage
+            );
+        }
+
+
+        /* =====================================
+           INDICATOR / DOT NAVIGATION
+        ===================================== */
+
+        indicators.forEach(
+            (indicator, indicatorIndex) => {
+
+                indicator.addEventListener(
+                    "click",
+                    () => {
+                        showPage(indicatorIndex);
+                    }
+                );
             }
-        });
+        );
+
+
+        /* =====================================
+           KEYBOARD CAROUSEL NAVIGATION
+        ===================================== */
+
+        card.addEventListener(
+            "keydown",
+            event => {
+
+                /*
+                 * Don't hijack arrow keys while
+                 * someone is typing into a field.
+                 */
+
+                const tagName =
+                    event.target.tagName;
+
+                if (
+                    tagName === "INPUT" ||
+                    tagName === "TEXTAREA" ||
+                    tagName === "SELECT"
+                ) {
+                    return;
+                }
+
+
+                if (event.key === "ArrowRight") {
+
+                    event.preventDefault();
+
+                    nextPage();
+                }
+
+
+                if (event.key === "ArrowLeft") {
+
+                    event.preventDefault();
+
+                    previousPage();
+                }
+
+
+                /*
+                 * Home returns to the project's
+                 * overview slide.
+                 */
+
+                if (event.key === "Home") {
+
+                    event.preventDefault();
+
+                    showPage(0);
+                }
+            }
+        );
+
+
+        /* =====================================
+           INITIALIZE PROJECT
+        ===================================== */
 
         showPage(0);
     });
 
+
     /* =========================================
-       INITIALIZE
+       09. WINDOW EVENTS
     ========================================= */
 
     window.addEventListener(
         "scroll",
         updateActiveSection,
-        { passive: true }
+        {
+            passive: true
+        }
     );
 
     window.addEventListener(
         "resize",
         updateActiveSection
     );
+
+
+    /* =========================================
+       10. INITIALIZE
+    ========================================= */
 
     updateActiveSection();
 });
