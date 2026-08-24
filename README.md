@@ -1,6 +1,6 @@
 # 🌐 Personal Portfolio Website
 
-A responsive personal portfolio website designed and developed to showcase my professional experience, technical projects, skills, certifications, and background across software engineering, information technology, and cybersecurity.
+A responsive personal portfolio website designed and developed to showcase my **professional experience, technical projects, skills, certifications, and background across software engineering, information technology, and cybersecurity**.
 
 Built from the ground up with **HTML, CSS, and JavaScript**, deployed through **GitHub Pages**, and connected to a custom domain with HTTPS.
 
@@ -10,62 +10,55 @@ Built from the ground up with **HTML, CSS, and JavaScript**, deployed through **
 
 ## 📸 Project Preview
 
-### Desktop
+![Personal Portfolio Desktop View](assets/images/home/home-view.png)
 
-<img width="1876" height="897" alt="Daniel J. Berg portfolio desktop view" src="https://github.com/user-attachments/assets/f25457c3-2451-4000-82d7-0450b8e66802" />
-
-### Mobile
-
-<img width="497" height="902" alt="Daniel J. Berg portfolio mobile view" src="https://github.com/user-attachments/assets/7b70d2ef-fba7-48aa-97ac-983ea11f3ac6" />
+*Desktop view of the personal portfolio website.*
 
 ---
 
 ## 🎯 Project Overview
 
-I designed and developed this website as a central portfolio for presenting my professional experience, technical projects, skills, and continued growth as a Computer Science student.
+I designed and developed this website as a central portfolio for presenting my professional experience, technical projects, skills, and continued development.
 
-Rather than using a website builder or portfolio template, the site was developed using **HTML, CSS, and JavaScript**, giving me direct control over its structure, styling, responsive behavior, and interactive components.
-
-The project covers the complete process of building and maintaining a public website:
-
-```text
-Design
-   │
-   ▼
-Frontend Development
-   │
-   ▼
-Responsive Testing
-   │
-   ▼
-Git Version Control
-   │
-   ▼
-GitHub Deployment
-   │
-   ▼
-Custom Domain + HTTPS
-   │
-   ▼
-Continuous Updates
-```
-
-The portfolio continues to evolve as I complete new projects, gain professional experience, and expand my technical skills.
+Rather than using a website builder or portfolio template, the site was built with **HTML, CSS, and JavaScript**, providing direct control over its structure, styling, responsive behavior, and interactive functionality.
 
 ---
 
 ## ✨ Key Features
 
-- 📱 **Responsive Design** — Layouts optimized for desktop, tablet, and mobile devices
-- 🧭 **Interactive Navigation** — Desktop navigation and responsive mobile hamburger menu
-- 💼 **Professional Experience** — Dedicated presentation of roles, contributions, and technologies
-- 💻 **Project Portfolio** — Software engineering and hands-on IT projects with supporting documentation
-- 🛠️ **Technical Skills** — Organized presentation of technologies, platforms, tools, and concepts
-- 📜 **Certifications & Training** — Technical education and certification progress
-- 📬 **Functional Contact Form** — Email delivery through EmailJS
-- 🔗 **Professional Profiles** — Integrated GitHub, LinkedIn, and other professional links
-- 🌐 **Custom Domain** — Public deployment through `danieljberg.com`
-- 🔒 **HTTPS** — Secure delivery of the public website
+- 📱 **Responsive Design** — Layouts optimized for desktop, intermediate, and mobile screen sizes
+- 🧭 **Responsive Navigation** — Desktop navigation with a mobile hamburger menu
+- 💼 **Experience & Projects** — Dedicated sections for professional experience and technical projects
+- 🛠️ **Skills & Certifications** — Organized presentation of technologies, tools, training, and certifications
+- 📬 **Functional Contact Form** — Contact form integrated with EmailJS
+- 🌐 **Public Deployment** — Hosted through GitHub Pages with a custom domain and HTTPS
+
+---
+
+## 📱 Responsive Design
+
+The website was designed to maintain its visual identity and usability across different screen sizes rather than simply shrinking the desktop layout.
+
+### Responsive View
+
+![Responsive Portfolio View](assets/images/home/home-responsive.png)
+
+### Mobile View
+
+![Mobile Portfolio View](assets/images/home/home-view-mobile.png)
+
+Responsive behavior includes adjustments to:
+
+- Navigation
+- Typography
+- Section spacing
+- Content positioning
+- Project cards
+- Images
+- Buttons
+- Header behavior
+
+These changes allow the same portfolio content to remain accessible and visually consistent across desktop, tablet-sized, and mobile displays.
 
 ---
 
@@ -80,59 +73,37 @@ The portfolio continues to evolve as I complete new projects, gain professional 
 | **Version Control** | Git, GitHub |
 | **Hosting** | GitHub Pages |
 | **Development** | Visual Studio Code |
-| **Domain** | Custom domain + HTTPS |
-
----
-
-## 📱 Responsive Web Design
-
-Responsive behavior was an important part of the project rather than an afterthought.
-
-<img width="1301" height="893" alt="Responsive portfolio website layout" src="https://github.com/user-attachments/assets/f4474bdb-00cd-4ef3-8a30-b33b1f61c4e5" />
-
-The interface adapts across different viewport sizes, including changes to:
-
-- Navigation
-- Typography
-- Section spacing
-- Project cards
-- Images
-- Buttons
-- Content positioning
-- Header behavior
-- Mobile navigation
-
-The goal was to maintain the same visual identity and usability across desktop and mobile layouts rather than simply shrinking the desktop interface.
+| **Domain** | Custom Domain + HTTPS |
 
 ---
 
 ## ⚙️ Frontend Functionality
 
-JavaScript provides interactive behavior throughout the website, while CSS handles the responsive layouts and visual presentation.
+The website uses lightweight frontend technologies without requiring a JavaScript framework.
 
-Frontend functionality includes:
+Implemented functionality includes:
 
-- Responsive navigation
+- Responsive desktop and mobile navigation
 - Mobile hamburger menu behavior
-- Interactive page elements
 - DOM manipulation
+- Interactive page elements
 - Contact form handling
-- External profile and project navigation
+- Project and external profile navigation
 - Responsive interface behavior
 
-The site intentionally uses a lightweight frontend architecture without requiring a JavaScript framework.
+HTML provides the site structure, CSS controls the visual design and responsive layouts, and JavaScript handles interactive behavior.
 
 ---
 
 ## 📬 Contact Integration
 
-The website includes a functional contact form integrated with **EmailJS**.
+The website includes a functional contact form powered by **EmailJS**.
 
 ```text
 Portfolio Contact Form
          │
          ▼
- JavaScript Validation
+     JavaScript
          │
          ▼
       EmailJS
@@ -141,38 +112,48 @@ Portfolio Contact Form
    Email Delivery
 ```
 
-This allows visitors to contact me directly through the website without requiring a custom backend email server.
+This allows visitors to send a message directly through the portfolio without requiring a custom backend email server.
 
 ---
 
 ## 🚀 Deployment
 
-The website is deployed through **GitHub Pages** and connected to the custom domain:
+The website is deployed through **GitHub Pages** and connected to a custom domain with HTTPS.
 
-**[danieljberg.com](https://danieljberg.com)**
+```text
+Local Development
+       │
+       ▼
+      Git
+       │
+       ▼
+     GitHub
+       │
+       ▼
+ GitHub Pages
+       │
+       ▼
+ Custom Domain
+       │
+       ▼
+     HTTPS
+```
 
-The deployment setup includes:
+🌐 **Live Website:** [danieljberg.com](https://danieljberg.com)
 
-- Git-based source control
-- GitHub repository hosting
-- GitHub Pages deployment
-- Custom domain configuration
-- HTTPS support
-
-Updates pushed to the deployed repository can be reflected on the public portfolio, providing a straightforward workflow for maintaining the site as my experience and projects grow.
+Git-based deployment provides a straightforward workflow for maintaining and updating the portfolio as new experience, projects, and skills are added.
 
 ---
 
-## 📂 Portfolio Content
+## 📂 Website Content
 
-The website brings several areas of my technical background into one interface:
+The portfolio organizes my professional and technical background into dedicated sections:
 
 ```text
 Portfolio
 │
 ├── Home
 ├── About
-├── Focus Areas
 ├── Experience
 ├── Skills
 ├── Projects
@@ -180,37 +161,26 @@ Portfolio
 └── Contact
 ```
 
-Together, these sections provide a centralized view of my professional experience, technical development, projects, and career interests.
+Together, these sections provide a centralized view of my experience, technical development, and project work.
 
 ---
 
-## 💡 What I Learned
+## 💡 What This Project Demonstrates
 
-Building and maintaining this portfolio provided hands-on experience with:
+Building and maintaining the portfolio demonstrates experience with:
 
-- Developing responsive interfaces with HTML and CSS
-- Designing layouts for multiple screen sizes
-- Writing JavaScript for interactive frontend behavior
-- Manipulating the DOM
-- Building responsive navigation
-- Structuring and maintaining a multi-section website
-- Integrating a third-party email service
-- Using Git and GitHub for version control
-- Deploying a public website through GitHub Pages
-- Configuring a custom domain and HTTPS
-- Testing interfaces across desktop and mobile devices
-- Iteratively improving UI/UX
-- Maintaining and expanding a long-term software project
+- Responsive frontend development
+- HTML, CSS, and JavaScript
+- Responsive UI/UX design
+- DOM manipulation and frontend interactivity
+- Third-party service integration
+- Git and GitHub version control
+- GitHub Pages deployment
+- Custom domain and HTTPS configuration
+- Cross-device interface testing
+- Iterative website development and maintenance
 
----
-
-## 🎯 Project Purpose
-
-Beyond serving as my personal website, this project demonstrates my ability to take a frontend project through the complete development lifecycle:
-
-**Design → Development → Testing → Version Control → Deployment → Maintenance**
-
-The portfolio itself also serves as a central location for the other technical projects documented across my GitHub profile.
+The project demonstrates the complete process of taking a frontend website from **design and development through deployment and continued maintenance**.
 
 ---
 
