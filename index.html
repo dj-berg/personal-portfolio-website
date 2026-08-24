@@ -16,7 +16,7 @@
         content="0JEt_Z4jQm0X-rLRX2EvQZgQJqB9_5w8gCiiEiB51sM">
 
     <!-- Primary SEO -->
-    <title>Daniel J. Berg | Computer Science, IT &amp; Cybersecurity Portfolio</title>
+    <title>Daniel J. Berg | Portfolio</title>
 
     <meta
         name="description"
@@ -35,11 +35,11 @@
         href="https://danieljberg.com/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico?v=2">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg?v=2" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png?v=2" sizes="96x96">
+    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png?v=2" sizes="180x180">
+    <link rel="manifest" href="/site.webmanifest?v=2">
 
     <!-- Open Graph -->
     <meta
@@ -639,9 +639,9 @@
         </div>
 
         <!-- COMPLETED SOFTWARE & ENGINEERING PROJECTS -->
-        <div class="project-group">
+        <div class="project-group software-project-group">
             <div class="project-group-header">
-                <span>Featured Projects</span>
+                <span>Software Development Projects</span>
                 <p class="project-group-note">
                     Projects with documentation highlighting the build, implementation, and
                     technical work behind each solution.
@@ -650,509 +650,178 @@
 
             <div class="portfolio-grid projects-grid">
 
-                <!-- 1. Real-Time Cloud Feature Flag Platform — 4 slides -->
-                <article class="project-card featured-project feature-flag-case-study">
-                    <div class="project-pages">
+                <!-- 1. Real-Time Cloud Feature Flag Platform -->
+                <article class="project-card project-summary-card project-summary-featured">
+                    <h3>Real-Time Cloud Feature Flag Platform</h3>
+                    <p class="project-summary">
+                        A cloud-based platform for controlling application features from one dashboard
+                        and delivering changes to connected applications in real time.
+                    </p>
 
-                        <div class="project-page active">
-                            <div class="project-card-header">
-                                <i class='bx bx-git-branch' aria-hidden="true"></i>
-                            </div>
-
-                            <span class="project-page-label">Real-Time Cloud Feature Flag Platform</span>
-                            <h3>Overview</h3>
-
-                            <p>
-                                A cloud-based platform for turning application features on or off from one
-                                dashboard and delivering those changes to connected applications in real time.
-                                Built as a hands-on cloud and software engineering project.
-                            </p>
-
-                            <div class="feature-flag-capability-grid" aria-label="Feature flag project capabilities">
-                                <div class="feature-flag-capability">
-                                    <i class='bx bx-slider-alt' aria-hidden="true"></i>
-                                    <strong>Centralized Feature Control</strong>
-                                    <span>Manage all flags in one place</span>
-                                </div>
-                                <div class="feature-flag-capability">
-                                    <i class='bx bx-broadcast' aria-hidden="true"></i>
-                                    <strong>Real-Time Delivery</strong>
-                                    <span>Changes propagate instantly</span>
-                                </div>
-                                <div class="feature-flag-capability">
-                                    <i class='bx bx-link-alt' aria-hidden="true"></i>
-                                    <strong>Connected Applications</strong>
-                                    <span>Updates reach connected apps</span>
-                                </div>
-                            </div>
-
-                            <div class="feature-flag-tech-stack" aria-label="Verified technology stack">
-                                <span class="feature-flag-tech-label">Tech Stack</span>
-                                <ul class="feature-flag-facts">
-                                    <li>AWS</li>
-                                    <li>TypeScript</li>
-                                    <li>React</li>
-                                    <li>DynamoDB</li>
-                                    <li>Amazon MSK</li>
-                                    <li>Centrifugo</li>
-                                    <li>SSE</li>
-                                    <li>OpenFeature</li>
-                                    <li>OpenTofu</li>
-                                </ul>
-                            </div>
-
-                            <a href="https://github.com/dj-berg/real-time-cloud-feature-flag-platform"
-                               target="_blank" rel="noopener noreferrer"
-                               class="btn project-repo-btn">
-                                <i class='bx bxl-github' aria-hidden="true"></i>
-                                View GitHub Repository
-                            </a>
-                        </div>
-
-                        <div class="project-page">
-                            <div class="project-card-header">
-                                <i class='bx bx-git-branch' aria-hidden="true"></i>
-                            </div>
-
-                            <span class="project-page-label">Real-Time Cloud Feature Flag Platform</span>
-                            <h3>What Was Built?</h3>
-
-                            <p>
-                                A centralized dashboard to create, search, filter, and enable or disable feature flags.
-                            </p>
-
-                            <div class="feature-flag-comparison" aria-label="Feature flag dashboard before and after comparison">
-                                <figure class="feature-flag-state">
-                                    <div class="feature-flag-image-wrap">
-                                        <img src="assets/images/projects/feature-flag/flag-disabled.png"
-                                             alt="Feature Flag Control dashboard showing a feature flag disabled"
-                                             loading="lazy" decoding="async">
-                                    </div>
-                                    <figcaption>Feature Off</figcaption>
-                                </figure>
-                                <span class="feature-flag-arrow" aria-hidden="true">&rarr;</span>
-                                <figure class="feature-flag-state">
-                                    <div class="feature-flag-image-wrap">
-                                        <img src="assets/images/projects/feature-flag/flag-enabled.png"
-                                             alt="Feature Flag Control dashboard showing feature flags enabled"
-                                             loading="lazy" decoding="async">
-                                    </div>
-                                    <figcaption>Feature On</figcaption>
-                                </figure>
-                            </div>
-
-                            <ul class="feature-flag-facts" aria-label="Feature flag dashboard capabilities">
-                                <li>Create / Manage Flags</li>
-                                <li>Search / Filter</li>
-                                <li>Enable / Disable</li>
-                                <li>View Current State</li>
-                            </ul>
-
-                            <a href="https://github.com/dj-berg/real-time-cloud-feature-flag-platform"
-                               target="_blank" rel="noopener noreferrer"
-                               class="btn project-repo-btn">
-                                <i class='bx bxl-github' aria-hidden="true"></i>
-                                View GitHub Repository
-                            </a>
-                        </div>
-
-                        <div class="project-page feature-flag-architecture-page">
-                            <div class="project-docs">
-                                <span class="project-page-label">Real-Time Cloud Feature Flag Platform</span>
-                                <h4>How Does It Work?</h4>
-                                <p>
-                                    A dashboard change is stored, sent through the real-time system,
-                                    and received by the connected application.
-                                </p>
-
-                                <div class="feature-flag-architecture" aria-label="Feature flag event delivery architecture">
-                                    <div class="feature-flag-architecture-stage">
-                                        <span class="feature-flag-architecture-stage-label">Manage</span>
-                                        <span class="feature-flag-architecture-stage-description">Change the feature</span>
-                                        <div class="feature-flag-architecture-node">Feature Flag Dashboard</div>
-                                        <span class="feature-flag-architecture-arrow" aria-hidden="true">&darr;</span>
-                                        <div class="feature-flag-architecture-node">Feature Flag API</div>
-                                    </div>
-                                    <span class="feature-flag-architecture-stage-arrow" aria-hidden="true">&rarr;</span>
-                                    <div class="feature-flag-architecture-stage">
-                                        <span class="feature-flag-architecture-stage-label">Store</span>
-                                        <span class="feature-flag-architecture-stage-description">Save the new state</span>
-                                        <div class="feature-flag-architecture-node">DynamoDB</div>
-                                        <span class="feature-flag-architecture-arrow" aria-hidden="true">&darr;</span>
-                                        <div class="feature-flag-architecture-node">DynamoDB Streams</div>
-                                    </div>
-                                    <span class="feature-flag-architecture-stage-arrow" aria-hidden="true">&rarr;</span>
-                                    <div class="feature-flag-architecture-stage">
-                                        <span class="feature-flag-architecture-stage-label">Deliver</span>
-                                        <span class="feature-flag-architecture-stage-description">Send the update</span>
-                                        <div class="feature-flag-architecture-node">Kafka / Amazon MSK</div>
-                                        <span class="feature-flag-architecture-arrow" aria-hidden="true">&darr;</span>
-                                        <div class="feature-flag-architecture-node">Centrifugo + SSE</div>
-                                    </div>
-                                    <span class="feature-flag-architecture-stage-arrow" aria-hidden="true">&rarr;</span>
-                                    <div class="feature-flag-architecture-stage">
-                                        <span class="feature-flag-architecture-stage-label">Update</span>
-                                        <span class="feature-flag-architecture-stage-description">Application receives the change</span>
-                                        <div class="feature-flag-architecture-node">Consumer Application</div>
-                                        <span class="feature-flag-architecture-arrow" aria-hidden="true">&darr;</span>
-                                        <div class="feature-flag-architecture-node">OpenFeature Integration</div>
-                                    </div>
-                                </div>
-
-                                <a href="https://github.com/dj-berg/real-time-cloud-feature-flag-platform"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="btn project-repo-btn">
-                                    <i class='bx bxl-github' aria-hidden="true"></i>
-                                    View GitHub Repository
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-page feature-flag-validation-page">
-                            <div class="project-docs">
-                                <span class="project-page-label">Real-Time Cloud Feature Flag Platform</span>
-                                <h4>How Is It Proven?</h4>
-                                <p>
-                                    The consumer application was tested before and after changing the flag,
-                                    proving the complete system worked.
-                                </p>
-
-                                <div class="feature-flag-comparison feature-flag-consumer-comparison" aria-label="Consumer application before and after comparison">
-                                    <figure class="feature-flag-state">
-                                        <figcaption>Before &mdash; Fraud Alerts Unavailable</figcaption>
-                                        <div class="feature-flag-image-wrap">
-                                            <img src="assets/images/projects/feature-flag/consumer-disabled.png"
-                                                 alt="Consumer application with the selected feature disabled"
-                                                 loading="lazy" decoding="async">
-                                        </div>
-                                    </figure>
-                                    <span class="feature-flag-transition" aria-hidden="true">
-                                        <span class="feature-flag-arrow">&darr;</span>
-                                        <small>Flag Enabled in Dashboard</small>
-                                    </span>
-                                    <figure class="feature-flag-state feature-flag-after-state">
-                                        <figcaption>After &mdash; Fraud Alerts Available</figcaption>
-                                        <div class="feature-flag-image-wrap">
-                                            <img src="assets/images/projects/feature-flag/consumer-enabled.png"
-                                                 alt="Consumer application after the feature flag is enabled"
-                                                 loading="lazy" decoding="async">
-                                        </div>
-                                    </figure>
-                                </div>
-
-                                <ul class="feature-flag-facts feature-flag-proof-facts" aria-label="Validation evidence">
-                                    <li>Flag Changed</li>
-                                    <li>Update Delivered</li>
-                                    <li>Consumer Updated</li>
-                                    <li>End-to-End Flow Verified</li>
-                                </ul>
-
-                                <a href="https://github.com/dj-berg/real-time-cloud-feature-flag-platform"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="btn project-repo-btn">
-                                    <i class='bx bxl-github' aria-hidden="true"></i>
-                                    View GitHub Repository
-                                </a>
-                            </div>
-                        </div>
-
+                    <div class="project-before-after" aria-label="Feature flag dashboard changing from off to on">
+                        <figure>
+                            <img src="assets/images/projects/feature-flag/flag-disabled.png"
+                                 alt="Feature Flag Control dashboard with a feature disabled"
+                                 loading="lazy" decoding="async">
+                            <figcaption>Flag Off</figcaption>
+                        </figure>
+                        <span class="project-before-after-arrow" aria-hidden="true">&darr;</span>
+                        <figure>
+                            <img src="assets/images/projects/feature-flag/flag-enabled.png"
+                                 alt="Feature Flag Control dashboard with the feature enabled"
+                                 loading="lazy" decoding="async">
+                            <figcaption>Flag On</figcaption>
+                        </figure>
                     </div>
 
-                    <div class="project-carousel-controls" aria-label="Feature flag project case study controls">
-                        <button class="project-prev" type="button" aria-label="View previous feature flag case study slide">
-                            <i class='bx bx-chevron-left' aria-hidden="true"></i>
-                        </button>
-                        <span class="project-page-count" aria-live="polite">1/4</span>
-                        <button class="project-next" type="button" aria-label="View next feature flag case study slide">
-                            <i class='bx bx-chevron-right' aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </article>
-                <!-- 2. Autonomous Vehicle Navigation System — 3 slides -->
-                <article class="project-card">
-                    <div class="project-pages">
+                    <ul class="project-overview-points">
+                        <li><strong>Purpose</strong><span>Centralize feature management without requiring application redeployment.</span></li>
+                        <li><strong>Functionality</strong><span>Creates, searches, filters, and controls flags while delivering event-driven updates to connected consumers through OpenFeature integration.</span></li>
+                        <li><strong>Experience Gained</strong><span>Applied cloud, frontend, event-streaming, data-storage, and infrastructure technologies in one connected system.</span></li>
+                    </ul>
 
-                        <div class="project-page active">
-                            <div class="project-card-header">
-                                <i class='bx bx-bot' aria-hidden="true"></i>
-                            </div>
+                    <div class="project-divider" aria-hidden="true"></div>
+                    <ul class="project-tools" aria-label="Feature flag platform technologies">
+                        <li>AWS</li>
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>DynamoDB</li>
+                        <li>Amazon MSK</li>
+                        <li>OpenFeature</li>
+                    </ul>
 
-                            <span class="project-page-label">Overview</span>
-                            <h3>Autonomous Vehicle Navigation System</h3>
-
-                            <p>
-                                Collaborated on a four-person FSE 100 engineering team to design,
-                                program, test, and refine an autonomous LEGO Mindstorms EV3 vehicle
-                                using MATLAB.
-                            </p>
-
-                            <ul class="project-highlights">
-                                <li>Programmed sensor-based autonomous navigation and turning behavior.</li>
-                                <li>Used environmental color markers to control vehicle actions.</li>
-                                <li>Tested and refined the system for passenger pickup and safe return.</li>
-                            </ul>
-
-                            <div class="project-divider" aria-hidden="true"></div>
-
-                            <ul class="project-tools" aria-label="Autonomous vehicle project technologies">
-                                <li>MATLAB</li>
-                                <li>LEGO Mindstorms EV3</li>
-                                <li>Color Sensor</li>
-                                <li>Touch Sensor</li>
-                                <li>Distance Sensor</li>
-                                <li>Robotics</li>
-                                <li>Testing</li>
-                            </ul>
-
-                            <a href="https://github.com/dj-berg/autonomous-vehicle-navigation-system"
-                               target="_blank" rel="noopener noreferrer"
-                               class="btn project-repo-btn">
-                                <i class='bx bxl-github' aria-hidden="true"></i>
-                                View GitHub Repository
-                            </a>
-                        </div>
-
-                        <div class="project-page">
-                            <img src="assets/images/projects/auto-car/robot.png"
-                                 alt="Autonomous Vehicle Navigation System engineering project"
-                                 class="project-image"
-                                 loading="lazy"
-                                 decoding="async">
-
-                            <div class="project-docs">
-                                <span class="project-page-label">Engineering Process</span>
-                                <h4>Navigation &amp; Sensor Logic</h4>
-                                <p>
-                                    The vehicle combined sensor input with programmed decision
-                                    logic to navigate the course and respond to environmental markers.
-                                </p>
-                                <ul class="project-highlights">
-                                    <li>Touch and distance sensing supported navigation decisions.</li>
-                                    <li>Color detection triggered pickup, drop-off, stop, and course behaviors.</li>
-                                    <li>MATLAB logic coordinated movement and vehicle responses.</li>
-                                    <li>Iterative testing was used to improve reliability.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="project-page">
-                            <div class="project-docs">
-                                <span class="project-page-label">Results &amp; Teamwork</span>
-                                <h4>Engineering Build Results</h4>
-                                <p>
-                                    The final system combined mechanical design, programming,
-                                    sensor integration, and team-based testing into a working
-                                    autonomous vehicle.
-                                </p>
-                                <ul class="project-highlights">
-                                    <li>Four-person engineering team</li>
-                                    <li>Autonomous maze navigation</li>
-                                    <li>Passenger pickup and drop-off mechanism</li>
-                                    <li>Repeated physical testing and refinement</li>
-                                    <li>Documented design decisions and lessons learned</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="project-carousel-controls" aria-label="Autonomous vehicle project documentation controls">
-                        <button class="project-prev" type="button" aria-label="View previous project slide">
-                            <i class='bx bx-chevron-left' aria-hidden="true"></i>
-                        </button>
-                        <span class="project-page-count" aria-live="polite">1 / 3</span>
-                        <button class="project-next" type="button" aria-label="View next project slide">
-                            <i class='bx bx-chevron-right' aria-hidden="true"></i>
-                        </button>
+                    <div class="project-actions">
+                        <a href="https://github.com/dj-berg/real-time-cloud-feature-flag-platform"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn project-repo-btn">
+                            <i class='bx bxl-github' aria-hidden="true"></i>
+                            View GitHub Repository
+                        </a>
                     </div>
                 </article>
 
-                <!-- 3. Personal Portfolio Website — 2 slides -->
-                <article class="project-card">
-                    <div class="project-pages">
+                <!-- 2. Autonomous Vehicle Navigation System -->
+                <article class="project-card project-summary-card">
+                    <h3>Autonomous Vehicle Navigation System</h3>
+                    <p class="project-summary">
+                        A four-person engineering team project to design, program, test, and refine an
+                        autonomous LEGO Mindstorms EV3 vehicle using MATLAB.
+                    </p>
 
-                        <div class="project-page active">
-                            <div class="project-card-header">
-                                <i class='bx bx-window-alt' aria-hidden="true"></i>
-                            </div>
+                    <img src="assets/images/projects/auto-car/robot-car.png"
+                         alt="Autonomous LEGO Mindstorms EV3 robot car"
+                         class="project-summary-image project-summary-image-robot"
+                         loading="lazy" decoding="async">
 
-                            <span class="project-page-label">Overview</span>
-                            <h3>Personal Portfolio Website</h3>
+                    <ul class="project-overview-points">
+                        <li><strong>Purpose</strong><span>Build a vehicle capable of navigating a course, completing passenger tasks, and returning safely.</span></li>
+                        <li><strong>Functionality</strong><span>Uses color, touch, and distance sensors with programmed decision logic to control navigation and turning behavior.</span></li>
+                        <li><strong>Experience Gained</strong><span>Programmed sensor-based behavior and strengthened robotics, iterative testing, troubleshooting, and engineering teamwork skills.</span></li>
+                    </ul>
 
-                            <p>
-                                Designed, developed, and deployed a responsive portfolio website
-                                to present my experience, technical skills, projects, and professional
-                                development through a polished interface.
-                            </p>
+                    <div class="project-divider" aria-hidden="true"></div>
+                    <ul class="project-tools" aria-label="Autonomous vehicle technologies">
+                        <li>MATLAB</li>
+                        <li>LEGO Mindstorms EV3</li>
+                        <li>Color Sensor</li>
+                        <li>Touch Sensor</li>
+                        <li>Distance Sensor</li>
+                    </ul>
 
-                            <ul class="project-highlights">
-                                <li>Created responsive desktop, tablet, and mobile layouts.</li>
-                                <li>Implemented navigation, reusable components, and interactive project documentation.</li>
-                                <li>Deployed through GitHub Pages with a custom domain, HTTPS, and SEO metadata.</li>
-                            </ul>
-
-                            <div class="project-divider" aria-hidden="true"></div>
-
-                            <ul class="project-tools" aria-label="Portfolio website technologies">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Responsive Design</li>
-                                <li>GitHub Pages</li>
-                                <li>UI/UX</li>
-                                <li>SEO</li>
-                            </ul>
-
-                            <a href="https://github.com/dj-berg/personal-portfolio-website"
-                               target="_blank" rel="noopener noreferrer"
-                               class="btn project-repo-btn">
-                                <i class='bx bxl-github' aria-hidden="true"></i>
-                                View GitHub Repository
-                            </a>
-                            <a href="https://danieljberg.com"
-                               target="_blank" rel="noopener noreferrer"
-                               class="btn project-repo-btn project-live-btn">
-                                <i class='bx bx-link-external' aria-hidden="true"></i>
-                                View danieljberg.com
-                            </a>
-                        </div>
-
-                        <div class="project-page">
-                            <img src="assets/images/projects/personal-portfolio/website.png"
-                                 alt="Responsive personal portfolio website shown on a mobile device"
-                                 class="project-image project-image-website"
-                                 loading="lazy"
-                                 decoding="async">
-
-                            <div class="project-docs">
-                                <span class="project-page-label">Documentation</span>
-                                <h4>Design, Development &amp; Deployment</h4>
-                                <p>
-                                    Built from scratch using HTML, CSS, and JavaScript, then
-                                    deployed through GitHub Pages with a custom domain.
-                                </p>
-                                <ul class="project-highlights">
-                                    <li>Responsive layouts across device sizes</li>
-                                    <li>Reusable cards and consistent interface styling</li>
-                                    <li>Interactive navigation and project documentation</li>
-                                    <li>SEO metadata, HTTPS, and accessibility improvements</li>
-                                </ul>
-
-                                <a href="https://github.com/dj-berg/personal-portfolio-website"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="btn project-repo-btn">
-                                    <i class='bx bxl-github' aria-hidden="true"></i>
-                                    View GitHub Repository
-                                </a>
-                                <a href="https://danieljberg.com"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="btn project-repo-btn project-live-btn">
-                                    <i class='bx bx-link-external' aria-hidden="true"></i>
-                                    View danieljberg.com
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="project-carousel-controls" aria-label="Personal portfolio project documentation controls">
-                        <button class="project-prev" type="button" aria-label="View previous project slide">
-                            <i class='bx bx-chevron-left' aria-hidden="true"></i>
-                        </button>
-                        <span class="project-page-count" aria-live="polite">1 / 2</span>
-                        <button class="project-next" type="button" aria-label="View next project slide">
-                            <i class='bx bx-chevron-right' aria-hidden="true"></i>
-                        </button>
+                    <div class="project-actions">
+                        <a href="https://github.com/dj-berg/autonomous-vehicle-navigation-system"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn project-repo-btn">
+                            <i class='bx bxl-github' aria-hidden="true"></i>
+                            View GitHub Repository
+                        </a>
                     </div>
                 </article>
 
-                <!-- 4. Client Portfolio Website — 2 slides -->
-                <article class="project-card">
-                    <div class="project-pages">
+                <!-- 3. Personal Portfolio Website -->
+                <article class="project-card project-summary-card">
+                    <h3>Personal Portfolio Website</h3>
+                    <p class="project-summary">
+                        A responsive personal portfolio designed and developed to showcase professional
+                        experience, technical skills, projects, and continued development.
+                    </p>
 
-                        <div class="project-page active">
-                            <div class="project-card-header">
-                                <i class='bx bx-briefcase-alt-2' aria-hidden="true"></i>
-                            </div>
+                    <img src="assets/images/projects/personal-portfolio/personal-port.png"
+                         alt="Responsive Daniel J. Berg personal portfolio website"
+                         class="project-summary-image project-summary-image-website"
+                         loading="lazy" decoding="async">
 
-                            <span class="project-page-label">Overview</span>
-                            <h3>Client Portfolio Website</h3>
+                    <ul class="project-overview-points">
+                        <li><strong>Purpose</strong><span>Provide employers and professional connections with one clear view of experience, skills, and technical work.</span></li>
+                        <li><strong>Functionality</strong><span>Adapts across desktop, tablet, and mobile with interactive navigation, project presentation, contact integration, SEO metadata, and accessibility support.</span></li>
+                        <li><strong>Experience Gained</strong><span>Strengthened responsive frontend development, UI/UX, deployment, SEO, accessibility, and long-term website maintenance skills.</span></li>
+                    </ul>
 
-                            <p>
-                                Designed and developed a responsive portfolio website around a
-                                client's branding, content, and communication goals.
-                            </p>
+                    <div class="project-divider" aria-hidden="true"></div>
+                    <ul class="project-tools" aria-label="Personal portfolio technologies">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>GitHub Pages</li>
+                    </ul>
 
-                            <ul class="project-highlights">
-                                <li>Built multi-device layouts and reusable interface components.</li>
-                                <li>Implemented interactive navigation and contact integration.</li>
-                                <li>Deployed the finished site with a custom domain and HTTPS.</li>
-                            </ul>
-
-                            <div class="project-divider" aria-hidden="true"></div>
-
-                            <ul class="project-tools" aria-label="Client portfolio technologies">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>EmailJS</li>
-                                <li>GitHub Pages</li>
-                            </ul>
-
-                            <a href="https://github.com/dj-berg/client-portfolio-website"
-                               target="_blank" rel="noopener noreferrer"
-                               class="btn project-repo-btn">
-                                <i class='bx bxl-github' aria-hidden="true"></i>
-                                View GitHub Repository
-                            </a>
-                            <a href="https://shaylabernal.com"
-                               target="_blank" rel="noopener noreferrer"
-                               class="btn project-repo-btn project-live-btn">
-                                <i class='bx bx-link-external' aria-hidden="true"></i>
-                                View shaylabernal.com
-                            </a>
-                        </div>
-
-                        <div class="project-page">
-                            <div class="project-docs">
-                                <span class="project-page-label">Client Delivery</span>
-                                <h4>From Requirements to Deployment</h4>
-                                <p>
-                                    Translated a client's professional background, visual preferences,
-                                    and communication needs into a responsive website designed for
-                                    real-world use.
-                                </p>
-                                <ul class="project-highlights">
-                                    <li>Organized client content into a clear portfolio structure.</li>
-                                    <li>Adapted visual styling around client branding and presentation goals.</li>
-                                    <li>Configured a functional contact experience with EmailJS.</li>
-                                    <li>Prepared the site for deployment through GitHub Pages.</li>
-                                </ul>
-                                <a href="https://github.com/dj-berg/client-portfolio-website"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="btn project-repo-btn">
-                                    <i class='bx bxl-github' aria-hidden="true"></i>
-                                    View GitHub Repository
-                                </a>
-                                <a href="https://shaylabernal.com"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="btn project-repo-btn project-live-btn">
-                                    <i class='bx bx-link-external' aria-hidden="true"></i>
-                                    View shaylabernal.com
-                                </a>
-                            </div>
-                        </div>
-
+                    <div class="project-actions">
+                        <a href="https://danieljberg.com"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn project-repo-btn project-live-btn">
+                            <i class='bx bx-link-external' aria-hidden="true"></i>
+                            View Live Website
+                        </a>
+                        <a href="https://github.com/dj-berg/personal-portfolio-website"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn project-repo-btn">
+                            <i class='bx bxl-github' aria-hidden="true"></i>
+                            View GitHub Repository
+                        </a>
                     </div>
+                </article>
 
-                    <div class="project-carousel-controls" aria-label="Client portfolio project documentation controls">
-                        <button class="project-prev" type="button" aria-label="View previous project slide">
-                            <i class='bx bx-chevron-left' aria-hidden="true"></i>
-                        </button>
-                        <span class="project-page-count" aria-live="polite">1 / 2</span>
-                        <button class="project-next" type="button" aria-label="View next project slide">
-                            <i class='bx bx-chevron-right' aria-hidden="true"></i>
-                        </button>
+                <!-- 4. Client Portfolio Website -->
+                <article class="project-card project-summary-card">
+                    <h3>Client Portfolio Website</h3>
+                    <p class="project-summary">
+                        A responsive portfolio website designed and developed around a client's
+                        professional background, branding, content, and communication goals.
+                    </p>
+
+                    <img src="assets/images/projects/client-portfolio/client-port.png"
+                         alt="Responsive client portfolio website for Shayla Bernal"
+                         class="project-summary-image project-summary-image-website"
+                         loading="lazy" decoding="async">
+
+                    <ul class="project-overview-points">
+                        <li><strong>Purpose</strong><span>Present the client's professional experience and content through a polished public website.</span></li>
+                        <li><strong>Functionality</strong><span>Provides responsive layouts, reusable interface components, interactive navigation, and EmailJS contact integration.</span></li>
+                        <li><strong>Experience Gained</strong><span>Strengthened client requirements, content organization, brand adaptation, responsive development, and production deployment skills.</span></li>
+                    </ul>
+
+                    <div class="project-divider" aria-hidden="true"></div>
+                    <ul class="project-tools" aria-label="Client portfolio technologies">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>EmailJS</li>
+                        <li>GitHub Pages</li>
+                    </ul>
+
+                    <div class="project-actions">
+                        <a href="https://shaylabernal.com"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn project-repo-btn project-live-btn">
+                            <i class='bx bx-link-external' aria-hidden="true"></i>
+                            View Live Website
+                        </a>
+                        <a href="https://github.com/dj-berg/client-portfolio-website"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn project-repo-btn">
+                            <i class='bx bxl-github' aria-hidden="true"></i>
+                            View GitHub Repository
+                        </a>
                     </div>
                 </article>
 
@@ -1162,7 +831,7 @@
         <!-- IN-PROGRESS IT PROJECTS -->
         <div class="project-group it-project-group">
             <div class="project-group-header">
-                <span>IT Labs &mdash; In Progress</span>
+                <span>Information Technology Projects</span>
                 <p class="project-group-note">
                     Hands-on IT environments focused on support, systems administration,
                     networking, and cloud infrastructure.
