@@ -217,7 +217,7 @@ The portfolio itself also serves as a central location for the other technical p
 ## 📬 Connect With Me
 
 - 🌐 [Portfolio](https://danieljberg.com)
-- 💼 [LinkedIn](https://www.linkedin.com/in/danieljberg)
+- 💼 [LinkedIn](https://www.linkedin.com/in/danieljberg/)
 - 💻 [GitHub](https://github.com/dj-berg)
 - 📧 Email: danielberg313@gmail.com
 

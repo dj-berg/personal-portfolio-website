@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         let currentPage = 0;
+        const boundedCarousel = card.classList.contains("feature-flag-case-study");
 
 
         /* =====================================
@@ -235,8 +236,9 @@ document.addEventListener("DOMContentLoaded", () => {
              * first → last
              */
 
-            currentPage =
-                (index + pages.length) % pages.length;
+            currentPage = boundedCarousel
+                ? Math.max(0, Math.min(index, pages.length - 1))
+                : (index + pages.length) % pages.length;
 
 
             /* ---------------------------------
@@ -299,12 +301,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 String(pages.length);
 
             if (pageCount) {
-                const pageLabel = pages[currentPage]
-                    .querySelector(".project-page-label")
-                    ?.textContent
-                    .trim();
+                const pageNumber = String(currentPage + 1);
+                const totalPages = String(pages.length);
 
-                pageCount.textContent = `${currentPage + 1} / ${pages.length}${pageLabel ? ` · ${pageLabel}` : ""}`;
+                if (boundedCarousel) {
+                    pageCount.textContent = `${pageNumber}/${totalPages}`;
+                } else {
+                    const pageLabel = pages[currentPage]
+                        .querySelector(".project-page-label")
+                        ?.textContent
+                        .trim();
+
+                    pageCount.textContent = `${currentPage + 1} / ${pages.length}${pageLabel ? " \u00b7 " + pageLabel : ""}`;
+                }
             }
 
 
@@ -337,8 +346,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (nextButton) {
 
-                const nextPage =
-                    (currentPage + 1) % pages.length;
+                const nextPage = boundedCarousel
+                    ? Math.min(currentPage + 1, pages.length - 1)
+                    : (currentPage + 1) % pages.length;
+
+                if (boundedCarousel) {
+                    nextButton.disabled = currentPage === pages.length - 1;
+                }
 
                 /*
                  * With two slides this keeps the
@@ -387,12 +401,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (prevButton) {
 
-                const previousPage =
-                    (
+                const previousPage = boundedCarousel
+                    ? Math.max(currentPage - 1, 0)
+                    : (
                         currentPage -
                         1 +
                         pages.length
                     ) % pages.length;
+
+                if (boundedCarousel) {
+                    prevButton.disabled = currentPage === 0;
+                }
 
                 prevButton.setAttribute(
                     "aria-label",
@@ -416,7 +435,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ===================================== */
 
         function nextPage() {
-            showPage(currentPage + 1);
+            if (!boundedCarousel || currentPage < pages.length - 1) {
+                showPage(currentPage + 1);
+            }
         }
 
 
@@ -425,7 +446,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ===================================== */
 
         function previousPage() {
-            showPage(currentPage - 1);
+            if (!boundedCarousel || currentPage > 0) {
+                showPage(currentPage - 1);
+            }
         }
 
 
