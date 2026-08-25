@@ -5729,6 +5729,10 @@ header {
         display:flex;
         width:42px;
         height:42px;
+        box-sizing:border-box;
+        padding:0;
+        border:0;
+        border-radius:10px;
         align-items:center;
         justify-content:center;
         margin-left:auto;
@@ -5752,10 +5756,10 @@ header {
         width:100%;
         height:calc(100svh - var(--mobile-header-height));
         height:calc(100dvh - var(--mobile-header-height));
-        padding:clamp(1.25rem, 3.8vh, 2.25rem) clamp(1.25rem, 6vw, 4rem);
+        padding:clamp(0.9rem, 3vh, 2rem) clamp(1.25rem, 6vw, 4rem);
         align-items:center;
         justify-content:safe center;
-        gap:clamp(0.75rem, 1.8vh, 1.25rem);
+        gap:clamp(0.5rem, 1.6vh, 1.1rem);
         overflow-y:auto;
         overscroll-behavior:contain;
         background:#241C13;
@@ -5769,7 +5773,7 @@ header {
         min-width:180px;
         min-height:52px;
         padding:0.65rem 1rem;
-        font-size:clamp(1.125rem, 1.25vw + 0.8rem, 1.25rem);
+        font-size:clamp(1.0625rem, 1.1vw + 0.72rem, 1.1875rem);
         line-height:1.2;
     }
 
@@ -5805,7 +5809,7 @@ header {
         align-content: center;
         justify-items: stretch;
         column-gap: clamp(1rem, 4vw, 3rem);
-        row-gap: clamp(0.55rem, 1.8vh, 0.9rem);
+        row-gap: clamp(0.5rem, 1.6vh, 0.85rem);
         padding: 1rem clamp(1rem, 6vw, 4rem);
     }
 
@@ -5818,7 +5822,7 @@ header {
         min-width: 0;
         min-height: 46px;
         padding-block: 0.5rem;
-        font-size: clamp(1.125rem, 1.6vw + 0.55rem, 1.25rem);
+        font-size: clamp(1.0625rem, 1.4vw + 0.55rem, 1.1875rem);
     }
 }
 
@@ -5826,14 +5830,14 @@ header {
 #menu-icon::before {
     content: "☰";
     font-family: Arial, sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     font-weight: 800;
     line-height: 1;
 }
 
 #menu-icon.bx-x::before {
     content: "×";
-    font-size: 1.8rem;
+    font-size: 1.45rem;
 }
 
 
