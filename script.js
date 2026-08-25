@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll("header .navlist a");
     const sections = document.querySelectorAll("section");
     const projectCards = document.querySelectorAll(".project-card");
+    let menuScrollPosition = 0;
 
 
     /* =========================================
@@ -29,6 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.documentElement.classList.remove("menu-open");
         document.body.classList.remove("menu-open");
+
+        if (document.body.style.position === "fixed") {
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.left = "";
+            document.body.style.right = "";
+            document.body.style.width = "";
+            window.scrollTo(0, menuScrollPosition);
+        }
 
         menuIcon.classList.add("bx-menu");
         menuIcon.classList.remove("bx-x");
@@ -94,6 +104,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const isOpen =
                 navList.classList.toggle("open");
+
+            if (isOpen) {
+                menuScrollPosition = window.scrollY;
+                document.body.style.position = "fixed";
+                document.body.style.top = `-${menuScrollPosition}px`;
+                document.body.style.left = "0";
+                document.body.style.right = "0";
+                document.body.style.width = "100%";
+            } else {
+                document.body.style.position = "";
+                document.body.style.top = "";
+                document.body.style.left = "";
+                document.body.style.right = "";
+                document.body.style.width = "";
+                window.scrollTo(0, menuScrollPosition);
+            }
 
             document.documentElement.classList.toggle(
                 "menu-open",
