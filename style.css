@@ -5756,10 +5756,10 @@ header {
         width:100%;
         height:calc(100svh - var(--mobile-header-height));
         height:calc(100dvh - var(--mobile-header-height));
-        padding:clamp(0.9rem, 3vh, 2rem) clamp(1.25rem, 6vw, 4rem);
+        padding:clamp(0.85rem, 2.4vh, 1.75rem) clamp(1.25rem, 6vw, 4rem);
         align-items:center;
         justify-content:safe center;
-        gap:clamp(0.5rem, 1.6vh, 1.1rem);
+        gap:clamp(0.125rem, 0.35vh, 0.2rem);
         overflow-y:auto;
         overscroll-behavior:contain;
         background:#241C13;
@@ -5773,7 +5773,7 @@ header {
         min-width:180px;
         min-height:52px;
         padding:0.65rem 1rem;
-        font-size:clamp(1.0625rem, 1.1vw + 0.72rem, 1.1875rem);
+        font-size:clamp(1.0625rem, 0.8vw + 0.8rem, 1.125rem);
         line-height:1.2;
     }
 
@@ -5809,8 +5809,8 @@ header {
         align-content: center;
         justify-items: stretch;
         column-gap: clamp(1rem, 4vw, 3rem);
-        row-gap: clamp(0.5rem, 1.6vh, 0.85rem);
-        padding: 1rem clamp(1rem, 6vw, 4rem);
+        row-gap: clamp(0.25rem, 0.7vh, 0.4rem);
+        padding: clamp(0.75rem, 2.5vh, 1.25rem) clamp(1rem, 6vw, 4rem);
     }
 
     .navlist.open li {
@@ -5822,7 +5822,29 @@ header {
         min-width: 0;
         min-height: 46px;
         padding-block: 0.5rem;
-        font-size: clamp(1.0625rem, 1.4vw + 0.55rem, 1.1875rem);
+        font-size: clamp(1.0625rem, 1vw + 0.8rem, 1.125rem);
+    }
+}
+
+/* Very small, short phones keep all menu links visible in two columns. */
+@media (max-width: 360px) and (max-height: 650px) and (orientation: portrait) {
+    .navlist.open {
+        display:grid;
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        align-content:center;
+        justify-items:stretch;
+        column-gap:clamp(0.5rem, 3vw, 0.85rem);
+        row-gap:clamp(0.25rem, 0.7vh, 0.4rem);
+        padding-block:clamp(0.75rem, 2.4vh, 1.25rem);
+    }
+
+    .navlist.open li {
+        width:100%;
+    }
+
+    .navlist.open a {
+        width:100%;
+        min-width:0;
     }
 }
 
