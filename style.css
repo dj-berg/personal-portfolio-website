@@ -8996,6 +8996,148 @@ textarea:focus-visible {
     }
 }
 
+/* Final Experience-only content hierarchy and accomplishment treatment. */
+.experience .experience-groups {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.experience .experience-group h4 {
+    margin-bottom: 0.65rem;
+    color: var(--accent-secondary);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.experience .experience-highlights {
+    gap: clamp(0.55rem, 1vw, 0.72rem);
+}
+
+.experience .experience-highlights li {
+    padding-left: 1.45rem;
+    font-size: clamp(0.76rem, 0.2vw + 0.68rem, 0.84rem);
+    line-height: 1.58;
+}
+
+.experience .experience-highlights li::before {
+    content: "✓";
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    color: var(--accent-secondary);
+    background: transparent;
+    box-shadow: none;
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.experience .experience-tools {
+    list-style: none;
+}
+
+.experience .experience-tools li {
+    font-size: clamp(0.66rem, 0.12vw + 0.62rem, 0.72rem);
+}
+
+@media (max-width: 767px) {
+    .experience .experience-groups {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .experience .experience-highlights li {
+        padding-left: 1.35rem;
+    }
+}
+
+/* Final Experience-only CTA and header spacing. The resume link uses the
+   shared primary CTA geometry and interaction treatment used on Home. */
+.experience .experience-panel .company-info > span {
+    display: block;
+    margin: 0;
+    padding: 0;
+    color: var(--text-muted);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.experience .experience-header {
+    margin-bottom: clamp(1.35rem, 2.2vw, 1.8rem);
+}
+
+.experience .experience-resume-link.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 132px;
+    min-height: 54px;
+    padding: 0 1.2rem;
+    gap: 0.55rem;
+    color: var(--text-on-accent);
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.25px;
+    box-shadow: 0 10px 24px rgba(212, 161, 55, 0.22);
+    transition: var(--transition);
+    transform: none;
+}
+
+.experience .experience-resume-link.btn > i {
+    flex: 0 0 auto;
+    color: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform var(--transition), color var(--transition);
+}
+
+.experience .experience-resume-link.btn:hover,
+.experience .experience-resume-link.btn:focus-visible {
+    color: var(--text-on-accent);
+    background: var(--primary-light);
+    border-color: var(--primary-light);
+    box-shadow: 0 12px 28px rgba(212, 161, 55, 0.28);
+    transform: translateY(-2px);
+}
+
+.experience .experience-resume-link.btn:hover > i,
+.experience .experience-resume-link.btn:focus-visible > i {
+    color: inherit;
+    transform: translateX(2px);
+}
+
+@media (max-width: 767px) {
+    .experience .experience-header {
+        margin-bottom: 1.3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .experience .experience-resume-link.btn,
+    .experience .experience-resume-link.btn > i {
+        transition: none;
+    }
+
+    .experience .experience-resume-link.btn:hover,
+    .experience .experience-resume-link.btn:focus-visible {
+        transform: none;
+    }
+
+    .experience .experience-resume-link.btn:hover > i,
+    .experience .experience-resume-link.btn:focus-visible > i {
+        transform: none;
+    }
+}
+
 /* ========================================
    EDUCATION — ASU ACADEMIC STORY
    Final authoritative styling for the expanded
