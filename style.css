@@ -3360,16 +3360,6 @@ header,
     letter-spacing: -0.02em;
 }
 
-.about-right .about-title::after {
-    content: "";
-    display: block;
-    width: clamp(3.5rem, 8vw, 6rem);
-    height: 3px;
-    margin-top: 0.9rem;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--cyber-blue), rgba(242, 193, 78, 0));
-}
-
 .about-text-card {
     max-width: 740px;
     padding: clamp(1.15rem, 2vw, 1.75rem);
@@ -3403,12 +3393,6 @@ header,
 @media (max-width: 1100px) {
     .about-text-card {
         max-width: 780px;
-    }
-}
-
-@media (max-width: 767px) {
-    .about-right .about-title::after {
-        margin: 0.75rem auto 0;
     }
 }
 
@@ -7591,11 +7575,6 @@ textarea:focus-visible {
         text-align: center !important;
     }
 
-    .about-right .about-title::after {
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
     .about-text-card {
         display: block !important;
         width: 100% !important;
@@ -7813,6 +7792,353 @@ textarea:focus-visible {
         max-width: 100% !important;
         margin-inline: auto !important;
         padding: 1rem !important;
+    }
+}
+
+/* Final About hierarchy: keep the label and story aligned in the right column. */
+.about-right {
+    align-items: flex-start !important;
+}
+
+.about-content {
+    width: 100%;
+    min-width: 0;
+}
+
+.about-right .about-eyebrow,
+.about-right .about-title,
+.about-right .about-text-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+}
+
+.about-right .about-eyebrow {
+    width: auto !important;
+    margin-bottom: clamp(0.55rem, 1vw, 0.8rem) !important;
+}
+
+.about-right .about-title {
+    max-width: 700px !important;
+    margin-top: 0 !important;
+    margin-bottom: clamp(1.15rem, 2vw, 1.6rem) !important;
+    font-size: clamp(1.65rem, 2.4vw, 2.35rem) !important;
+    line-height: 1.12 !important;
+}
+
+@media (max-width: 767px) {
+    .about-right .about-eyebrow,
+    .about-right .about-title,
+    .about-right .about-text-card {
+        width: 100% !important;
+    }
+
+    .about-right .about-eyebrow {
+        margin-bottom: 0.55rem !important;
+    }
+
+    .about-right .about-title {
+        margin-bottom: 1rem !important;
+        font-size: clamp(1.65rem, 8vw, 2.15rem) !important;
+    }
+}
+
+/* Desktop-only placement preserves the approved visual-left/story-right composition. */
+@media (min-width: 1101px) {
+    .about-layout {
+        grid-template-areas: "visual story";
+    }
+
+    .about-left {
+        grid-area: visual;
+    }
+
+    .about-right {
+        grid-area: story;
+    }
+}
+
+/* Phones: keep the portrait and quick facts in normal document flow. */
+@media (max-width: 767px) {
+    .about-right {
+        width: 100% !important;
+        max-width: 560px !important;
+        align-items: flex-start !important;
+    }
+
+    .about-right .about-title {
+        font-size: clamp(1.9rem, 8vw, 2.5rem) !important;
+        line-height: 1.08 !important;
+    }
+
+    .about-left,
+    .about-visual {
+        width: 100% !important;
+        max-width: 420px !important;
+    }
+
+    .about-visual {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: 317px repeat(3, auto) !important;
+        grid-template-areas:
+            "portrait"
+            "education"
+            "interests"
+            "focus" !important;
+        min-height: 0 !important;
+        height: auto !important;
+        row-gap: 0.8rem !important;
+        margin-inline: auto !important;
+    }
+
+    .about-photo {
+        grid-area: portrait !important;
+    }
+
+    .about-bubble {
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 86px !important;
+        padding: 0.8rem 0.9rem !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .bubble-education {
+        grid-area: education !important;
+    }
+
+    .bubble-interests {
+        grid-area: interests !important;
+    }
+
+    .bubble-focus {
+        grid-area: focus !important;
+    }
+
+    .about-bubble h4 {
+        font-size: 0.82rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .about-bubble p {
+        font-size: clamp(0.68rem, 1.8vw, 0.82rem) !important;
+        line-height: 1.35 !important;
+    }
+}
+
+/* Small phones: make every quick-fact card full width. */
+@media (max-width: 430px) {
+    .about-left,
+    .about-visual {
+        max-width: 340px !important;
+    }
+
+    .about-visual {
+        grid-template-rows: 300px repeat(3, auto) !important;
+    }
+}
+
+/* Tablet: preserve the story-first order while balancing portrait and cards. */
+@media (min-width: 768px) and (max-width: 1100px) {
+    .about-right {
+        width: 100% !important;
+        max-width: 780px !important;
+        align-items: flex-start !important;
+    }
+
+    .about-visual {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-template-rows: 350px auto auto !important;
+        grid-template-areas:
+            "portrait portrait"
+            "education focus"
+            "interests interests" !important;
+        width: min(100%, 520px) !important;
+        min-height: 0 !important;
+        height: auto !important;
+        gap: 0.8rem !important;
+        margin-inline: auto !important;
+    }
+
+    .about-photo {
+        grid-area: portrait !important;
+    }
+
+    .about-bubble {
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 92px !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .bubble-education {
+        grid-area: education !important;
+    }
+
+    .bubble-interests {
+        grid-area: interests !important;
+    }
+
+    .bubble-focus {
+        grid-area: focus !important;
+    }
+}
+
+/* Final mobile/tablet About flow and alignment cleanup. */
+@media (max-width: 1100px) {
+    .about-layout {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: clamp(2rem, 3.5vw, 2.75rem) !important;
+    }
+
+    .about-right,
+    .about-left {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .about-content {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .about-right .about-eyebrow,
+    .about-right .about-title,
+    .about-right .about-text-card {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .about-right .about-eyebrow {
+        margin-bottom: 0.55rem !important;
+    }
+
+    .about-text-card,
+    .about-text-card p {
+        text-align: center !important;
+    }
+
+    .about-bubble {
+        align-items: center !important;
+        text-align: center !important;
+    }
+}
+
+/* Phones: natural DOM flow keeps the portrait before all three cards. */
+@media (max-width: 767px) {
+    .about-right .about-title {
+        font-size: clamp(1.9rem, 8vw, 2.5rem) !important;
+        line-height: 1.08 !important;
+    }
+
+    .about-visual {
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: 317px repeat(3, auto) !important;
+        grid-template-areas: none !important;
+        row-gap: 1.2rem !important;
+        justify-items: stretch !important;
+    }
+
+    .about-photo,
+    .about-bubble {
+        grid-area: auto !important;
+    }
+
+    .about-photo {
+        justify-self: center !important;
+        margin-inline: auto !important;
+        transform: none !important;
+    }
+
+    .bubble-education {
+        margin-top: 1.25rem !important;
+    }
+}
+
+/* Small phones: all quick-fact cards stay full width and stacked. */
+@media (max-width: 430px) {
+    .about-visual {
+        max-width: 340px !important;
+        grid-template-rows: 300px repeat(3, auto) !important;
+    }
+}
+
+/* Tablets: retain centered stacked reading flow without floating cards. */
+@media (min-width: 768px) and (max-width: 1100px) {
+    .about-right .about-title {
+        font-size: clamp(1.9rem, 4.5vw, 2.5rem) !important;
+        line-height: 1.08 !important;
+    }
+
+    .about-visual {
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: 350px repeat(3, auto) !important;
+        grid-template-areas: none !important;
+        row-gap: 1.2rem !important;
+        justify-items: stretch !important;
+    }
+
+    .about-photo,
+    .about-bubble {
+        grid-area: auto !important;
+    }
+
+    .about-photo {
+        justify-self: center !important;
+        margin-inline: auto !important;
+        transform: none !important;
+    }
+
+    .bubble-education {
+        margin-top: 1.25rem !important;
+    }
+}
+
+/* Tablet/intermediate portrait composition only; phone and desktop remain unchanged. */
+@media (min-width: 600px) and (max-width: 1100px) {
+    .about-left,
+    .about-visual {
+        width: min(100%, 520px) !important;
+        max-width: 520px !important;
+    }
+
+    .about-visual {
+        grid-template-rows: clamp(424px, 53vw, 584px) repeat(3, auto) !important;
+        row-gap: clamp(2rem, 3.5vw, 2.5rem) !important;
+    }
+
+    .about-blob {
+        top: 0 !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: clamp(300px, 37.5vw, 420px) !important;
+        max-width: 420px !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .about-photo {
+        width: clamp(240px, 30vw, 330px) !important;
+        max-width: 330px !important;
+        height: auto !important;
+        align-self: start !important;
+        transform: none !important;
+    }
+
+    .bubble-education {
+        top: 0 !important;
+        margin-top: 0 !important;
     }
 }
 /* ========================================
