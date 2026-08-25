@@ -358,6 +358,12 @@ header {
     background: var(--cyber-blue);
     color: var(--purple-dark);
 }
+
+.home .btn > i {
+    flex: 0 0 auto;
+    font-size: 1rem;
+    line-height: 1;
+}
 .skills-card,
 .project-card,
 .timeline-item,
@@ -10652,5 +10658,78 @@ textarea:focus-visible {
 @media (prefers-reduced-motion: reduce) {
     .activity-card {
         transition: none;
+    }
+}
+
+/* Home CTA hover states. */
+.home .btn {
+    transition: var(--transition);
+    transform: none;
+}
+
+.home .btn > i {
+    color: inherit;
+    transition: transform var(--transition), color var(--transition);
+}
+
+.home .btn:first-child {
+    color: var(--text-on-accent);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.home .btn:first-child:hover,
+.home .btn:first-child:focus-visible {
+    color: var(--text-on-accent);
+    background: var(--primary-light);
+    border-color: var(--primary-light);
+    box-shadow: 0 12px 28px rgba(212, 161, 55, 0.28);
+    transform: translateY(-2px);
+}
+
+.home .btn:first-child:hover > i,
+.home .btn:first-child:focus-visible > i {
+    transform: translateX(2px);
+}
+
+.home .btn:nth-child(2) {
+    color: var(--primary-light);
+    background: transparent;
+    border-color: var(--primary-light);
+    box-shadow: none;
+}
+
+.home .btn:nth-child(2):hover,
+.home .btn:nth-child(2):focus-visible {
+    color: var(--primary-light);
+    background: rgba(212, 161, 55, 0.12);
+    border-color: var(--primary-light);
+    box-shadow: 0 0 18px rgba(212, 161, 55, 0.18);
+    transform: translateY(-2px);
+}
+
+.home .btn:nth-child(2):hover > i,
+.home .btn:nth-child(2):focus-visible > i {
+    transform: translateX(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home .btn,
+    .home .btn > i {
+        transition: none;
+    }
+
+    .home .btn:first-child:hover,
+    .home .btn:first-child:focus-visible,
+    .home .btn:nth-child(2):hover,
+    .home .btn:nth-child(2):focus-visible {
+        transform: none;
+    }
+
+    .home .btn:first-child:hover > i,
+    .home .btn:first-child:focus-visible > i,
+    .home .btn:nth-child(2):hover > i,
+    .home .btn:nth-child(2):focus-visible > i {
+        transform: none;
     }
 }
