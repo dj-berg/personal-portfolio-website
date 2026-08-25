@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll("header .navlist a");
     const sections = document.querySelectorAll("section");
     const projectCards = document.querySelectorAll(".project-card");
-    let menuScrollPosition = 0;
+    let menuScrollPosition = {
+        top: 0,
+        left: 0
+    };
 
 
     /* =========================================
@@ -37,7 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.left = "";
             document.body.style.right = "";
             document.body.style.width = "";
-            window.scrollTo(0, menuScrollPosition);
+            window.scrollTo({
+                top: menuScrollPosition.top,
+                left: menuScrollPosition.left,
+                behavior: "instant"
+            });
         }
 
         menuIcon.classList.add("bx-menu");
@@ -48,6 +55,31 @@ document.addEventListener("DOMContentLoaded", () => {
             "aria-label",
             "Open navigation menu"
         );
+    }
+
+    function openMobileMenu() {
+        if (!menuIcon || !navList) return;
+
+        menuScrollPosition = {
+            top: window.scrollY,
+            left: window.scrollX
+        };
+
+        navList.classList.add("open");
+
+        document.documentElement.classList.add("menu-open");
+        document.body.classList.add("menu-open");
+
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${menuScrollPosition.top}px`;
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+
+        menuIcon.classList.remove("bx-menu");
+        menuIcon.classList.add("bx-x");
+        menuIcon.setAttribute("aria-expanded", "true");
+        menuIcon.setAttribute("aria-label", "Close navigation menu");
     }
 
 
@@ -101,57 +133,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuIcon && navList) {
 
         menuIcon.addEventListener("click", () => {
-
-            const isOpen =
-                navList.classList.toggle("open");
-
-            if (isOpen) {
-                menuScrollPosition = window.scrollY;
-                document.body.style.position = "fixed";
-                document.body.style.top = `-${menuScrollPosition}px`;
-                document.body.style.left = "0";
-                document.body.style.right = "0";
-                document.body.style.width = "100%";
-            } else {
-                document.body.style.position = "";
-                document.body.style.top = "";
-                document.body.style.left = "";
-                document.body.style.right = "";
-                document.body.style.width = "";
-                window.scrollTo(0, menuScrollPosition);
+            if (navList.classList.contains("open")) {
+                closeMobileMenu();
+                return;
             }
 
-            document.documentElement.classList.toggle(
-                "menu-open",
-                isOpen
-            );
-
-            document.body.classList.toggle(
-                "menu-open",
-                isOpen
-            );
-
-            menuIcon.classList.toggle(
-                "bx-menu",
-                !isOpen
-            );
-
-            menuIcon.classList.toggle(
-                "bx-x",
-                isOpen
-            );
-
-            menuIcon.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-            menuIcon.setAttribute(
-                "aria-label",
-                isOpen
-                    ? "Close navigation menu"
-                    : "Open navigation menu"
-            );
+            openMobileMenu();
         });
     }
 

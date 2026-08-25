@@ -5714,6 +5714,7 @@ header {
     .logo{
         margin:0;
         flex:0 0 auto;
+        font-size:clamp(1.75rem, 3vw, 1.875rem);
     }
 
     nav{
@@ -5751,10 +5752,10 @@ header {
         width:100%;
         height:calc(100svh - var(--mobile-header-height));
         height:calc(100dvh - var(--mobile-header-height));
-        padding:0.5rem clamp(1.25rem, 6vw, 4rem);
+        padding:clamp(1.25rem, 3.8vh, 2.25rem) clamp(1.25rem, 6vw, 4rem);
         align-items:center;
         justify-content:safe center;
-        gap:clamp(0.65rem, 1.8vh, 1.15rem);
+        gap:clamp(0.75rem, 1.8vh, 1.25rem);
         overflow-y:auto;
         overscroll-behavior:contain;
         background:#241C13;
@@ -5764,11 +5765,16 @@ header {
     }
 
     .navlist.open a{
+        width:min(100%, 24rem);
         min-width:180px;
         min-height:52px;
         padding:0.65rem 1rem;
-        font-size:clamp(1rem, 1.25vw + 0.72rem, 1.22rem);
+        font-size:clamp(1.125rem, 1.25vw + 0.8rem, 1.25rem);
         line-height:1.2;
+    }
+
+    .navlist.open li{
+        flex:0 0 auto;
     }
 
     .navlist.open a::after{
@@ -5799,8 +5805,8 @@ header {
         align-content: center;
         justify-items: stretch;
         column-gap: clamp(1rem, 4vw, 3rem);
-        row-gap: clamp(0.35rem, 1.4vh, 0.7rem);
-        padding: 0.65rem clamp(1rem, 6vw, 4rem);
+        row-gap: clamp(0.55rem, 1.8vh, 0.9rem);
+        padding: 1rem clamp(1rem, 6vw, 4rem);
     }
 
     .navlist.open li {
@@ -5810,9 +5816,9 @@ header {
     .navlist.open a {
         width: 100%;
         min-width: 0;
-        min-height: 44px;
-        padding-block: 0.45rem;
-        font-size: clamp(0.96rem, 1.6vw, 1.12rem);
+        min-height: 46px;
+        padding-block: 0.5rem;
+        font-size: clamp(1.125rem, 1.6vw + 0.55rem, 1.25rem);
     }
 }
 
