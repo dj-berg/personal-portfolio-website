@@ -380,6 +380,9 @@
         <div class="experience-header">
             <span class="hero-kicker experience-eyebrow">EXPERIENCE</span>
             <h2 class="experience-title">Professional Experience</h2>
+            <p class="experience-intro">
+                Hands-on experience contributing to software development and supporting customers in fast-paced professional environments.
+            </p>
         </div>
 
         <div class="experience-stack">
@@ -489,10 +492,10 @@
     <section id="education" class="education">
 
         <div class="education-header">
-            <span class="education-subtitle">Academic Background</span>
+            <span class="hero-kicker education-subtitle">Academic Background</span>
             <h2 class="education-title">Education</h2>
             <p class="education-intro">
-                The academic foundation behind my work in software, systems, IT, and cybersecurity.
+                Academic experience building a foundation in computer science, cybersecurity, software development, and information technology.
             </p>
         </div>
 
@@ -524,31 +527,40 @@
 
                 <div class="education-details">
                     <div class="education-detail-group">
-                        <span class="education-detail-label">Core Coursework</span>
-                        <ul class="education-topics" aria-label="Completed computer science foundation">
-                            <li>Programming</li>
+                        <span class="education-detail-label">Relevant Coursework</span>
+                        <ul class="education-topics" aria-label="Relevant completed coursework">
                             <li>Data Structures &amp; Algorithms</li>
                             <li>Software Engineering</li>
                             <li>Computer Systems</li>
                             <li>Discrete Mathematics</li>
                             <li>Probability &amp; Statistics</li>
-                        </ul>
-                    </div>
-
-                    <div class="education-detail-group">
-                        <span class="education-detail-label">Upper-Division Focus</span>
-                        <span class="education-detail-note">Current &amp; upcoming coursework</span>
-                        <ul class="education-topics" aria-label="Upper-division academic focus">
-                            <li>Operating Systems</li>
-                            <li>Information Assurance</li>
-                            <li>Database Management</li>
-                            <li>Programming Languages</li>
-                            <li>Cybersecurity</li>
-                            <li>Senior Capstone</li>
+                            <li>Programming</li>
                         </ul>
                     </div>
                 </div>
 
+            </article>
+
+            <article class="education-card education-secondary-card">
+                <div class="education-school-header">
+                    <img
+                        src="assets/images/education/MDN.png"
+                        alt="Marcos de Niza High School logo"
+                        class="education-logo education-secondary-logo"
+                        loading="lazy"
+                        decoding="async">
+
+                    <div class="education-school-info">
+                        <span class="education-school">Marcos de Niza High School</span>
+                        <h3>High School Diploma</h3>
+
+                        <div class="education-meta">
+                            <span>Graduated May 2024</span>
+                            <span aria-hidden="true">•</span>
+                            <span>Tempe, Arizona</span>
+                        </div>
+                    </div>
+                </div>
             </article>
         </div>
 
@@ -582,8 +594,7 @@
                 <article class="project-card project-summary-card project-summary-featured">
                     <h3>Real-Time Cloud Feature Flag Platform</h3>
                     <p class="project-summary">
-                        A cloud-based platform for controlling application features from one dashboard
-                        and delivering changes to connected applications in real time.
+                        A cloud-based platform for controlling application features from one dashboard and delivering changes to connected applications in real time.
                     </p>
 
                     <div class="project-before-after" aria-label="Feature flag dashboard changing from off to on">
@@ -602,11 +613,10 @@
                         </figure>
                     </div>
 
-                    <ul class="project-overview-points">
-                        <li><strong>Purpose</strong><span>Centralize feature management without requiring application redeployment.</span></li>
-                        <li><strong>Functionality</strong><span>Creates, searches, filters, and controls flags while delivering event-driven updates to connected consumers through OpenFeature integration.</span></li>
-                        <li><strong>Experience Gained</strong><span>Applied cloud, frontend, event-streaming, data-storage, and infrastructure technologies in one connected system.</span></li>
-                    </ul>
+                    <div class="project-key-outcome">
+                        <span>Key Outcome</span>
+                        <p>Built an end-to-end real-time feature-management workflow using cloud infrastructure, event streaming, and a consumer SDK.</p>
+                    </div>
 
                     <div class="project-divider" aria-hidden="true"></div>
                     <ul class="project-tools" aria-label="Feature flag platform technologies">
@@ -632,20 +642,20 @@
                 <article class="project-card project-summary-card">
                     <h3>Autonomous Vehicle Navigation System</h3>
                     <p class="project-summary">
-                        A four-person engineering team project to design, program, test, and refine an
-                        autonomous LEGO Mindstorms EV3 vehicle using MATLAB.
+                        An autonomous LEGO EV3 vehicle designed and programmed to navigate a physical course using sensor-based logic.
                     </p>
 
-                    <img src="assets/images/projects/auto-car/robot-car.png"
-                         alt="Autonomous LEGO Mindstorms EV3 robot car"
-                         class="project-summary-image project-summary-image-robot"
-                         loading="lazy" decoding="async">
+                    <div class="project-square-image">
+                        <img src="assets/images/projects/auto-car/robot-car.png"
+                             alt="Autonomous LEGO Mindstorms EV3 robot car"
+                             class="project-summary-image project-summary-image-robot"
+                             loading="lazy" decoding="async">
+                    </div>
 
-                    <ul class="project-overview-points">
-                        <li><strong>Purpose</strong><span>Build a vehicle capable of navigating a course, completing passenger tasks, and returning safely.</span></li>
-                        <li><strong>Functionality</strong><span>Uses color, touch, and distance sensors with programmed decision logic to control navigation and turning behavior.</span></li>
-                        <li><strong>Experience Gained</strong><span>Programmed sensor-based behavior and strengthened robotics, iterative testing, troubleshooting, and engineering teamwork skills.</span></li>
-                    </ul>
+                    <div class="project-key-outcome">
+                        <span>Key Outcome</span>
+                        <p>Built and programmed an autonomous navigation system using multiple sensors and decision logic to complete a physical course.</p>
+                    </div>
 
                     <div class="project-divider" aria-hidden="true"></div>
                     <ul class="project-tools" aria-label="Autonomous vehicle technologies">
@@ -670,8 +680,7 @@
                 <article class="project-card project-summary-card">
                     <h3>Personal Portfolio Website</h3>
                     <p class="project-summary">
-                        A responsive personal portfolio designed and developed to showcase professional
-                        experience, technical skills, projects, and continued development.
+                        A responsive personal portfolio designed and developed to showcase professional experience, technical skills, projects, and background.
                     </p>
 
                     <img src="assets/images/projects/personal-portfolio/personal-port.png"
@@ -679,11 +688,10 @@
                          class="project-summary-image project-summary-image-website"
                          loading="lazy" decoding="async">
 
-                    <ul class="project-overview-points">
-                        <li><strong>Purpose</strong><span>Provide employers and professional connections with one clear view of experience, skills, and technical work.</span></li>
-                        <li><strong>Functionality</strong><span>Adapts across desktop, tablet, and mobile with interactive navigation, project presentation, contact integration, SEO metadata, and accessibility support.</span></li>
-                        <li><strong>Experience Gained</strong><span>Strengthened responsive frontend development, UI/UX, deployment, SEO, accessibility, and long-term website maintenance skills.</span></li>
-                    </ul>
+                    <div class="project-key-outcome">
+                        <span>Key Outcome</span>
+                        <p>Designed, developed, and deployed a responsive professional portfolio with reusable structure, responsive behavior, SEO, and long-term maintainability.</p>
+                    </div>
 
                     <div class="project-divider" aria-hidden="true"></div>
                     <ul class="project-tools" aria-label="Personal portfolio technologies">
@@ -691,6 +699,7 @@
                         <li>CSS</li>
                         <li>JavaScript</li>
                         <li>GitHub Pages</li>
+                        <li>SEO</li>
                     </ul>
 
                     <div class="project-actions">
@@ -713,8 +722,7 @@
                 <article class="project-card project-summary-card">
                     <h3>Client Portfolio Website</h3>
                     <p class="project-summary">
-                        A responsive portfolio website designed and developed around a client's
-                        professional background, branding, content, and communication goals.
+                        A responsive website designed and developed around a client's professional background, branding, content, and communication goals.
                     </p>
 
                     <img src="assets/images/projects/client-portfolio/client-port.png"
@@ -722,11 +730,10 @@
                          class="project-summary-image project-summary-image-website"
                          loading="lazy" decoding="async">
 
-                    <ul class="project-overview-points">
-                        <li><strong>Purpose</strong><span>Present the client's professional experience and content through a polished public website.</span></li>
-                        <li><strong>Functionality</strong><span>Provides responsive layouts, reusable interface components, interactive navigation, and EmailJS contact integration.</span></li>
-                        <li><strong>Experience Gained</strong><span>Strengthened client requirements, content organization, brand adaptation, responsive development, and production deployment skills.</span></li>
-                    </ul>
+                    <div class="project-key-outcome">
+                        <span>Key Outcome</span>
+                        <p>Delivered a responsive client-facing website with reusable components, professional branding, and responsive layouts.</p>
+                    </div>
 
                     <div class="project-divider" aria-hidden="true"></div>
                     <ul class="project-tools" aria-label="Client portfolio technologies">
@@ -777,16 +784,17 @@
 
                     <h3>Active Directory &amp; Windows Administration Lab</h3>
                     <p>
-                        Building an enterprise-style Windows environment focused on identity,
-                        access, name resolution, and resource administration used in IT support
-                        and junior systems administration.
+                        A hands-on Windows administration environment focused on Active Directory, users, permissions, and system administration.
                     </p>
 
+                    <div class="project-implementation">
+                        <h4>Implementing</h4>
                     <ul class="project-highlights">
                         <li>Developing hands-on Active Directory user, group, and account administration experience.</li>
                         <li>Working with DNS, authentication, and Group Policy concepts in a Windows domain environment.</li>
                         <li>Practicing file-share and permission management for organizational resources.</li>
                     </ul>
+                    </div>
 
                     <div class="project-divider" aria-hidden="true"></div>
 
@@ -809,16 +817,17 @@
 
                     <h3>IT Help Desk &amp; Ticketing Environment</h3>
                     <p>
-                        Building practical help desk experience with osTicket while developing
-                        troubleshooting, documentation, prioritization, and communication skills
-                        used in entry-level IT support.
+                        A practical help desk environment focused on ticket workflows, troubleshooting, documentation, and IT support.
                     </p>
 
+                    <div class="project-implementation">
+                        <h4>Implementing</h4>
                     <ul class="project-highlights">
                         <li>Learning ticket intake, categorization, prioritization, assignment, escalation, and resolution workflows.</li>
                         <li>Practicing structured troubleshooting and technical documentation.</li>
                         <li>Developing familiarity with SLAs and clear end-user communication.</li>
                     </ul>
+                    </div>
 
                     <div class="project-divider" aria-hidden="true"></div>
 
@@ -841,16 +850,17 @@
 
                     <h3>Azure Networking &amp; Virtual Infrastructure Lab</h3>
                     <p>
-                        Developing hands-on Microsoft Azure experience with virtual
-                        infrastructure, networking, IP connectivity, and VPN concepts
-                        relevant to cloud-based IT environments.
+                        A hands-on cloud and networking environment using Microsoft Azure for virtual infrastructure and connectivity practice.
                     </p>
 
+                    <div class="project-implementation">
+                        <h4>Implementing</h4>
                     <ul class="project-highlights">
                         <li>Building familiarity with Azure virtual machines and supporting cloud resources.</li>
                         <li>Practicing virtual networking, IP addressing, connectivity testing, and troubleshooting.</li>
                         <li>Developing practical understanding of VPNs and secure remote connectivity.</li>
                     </ul>
+                    </div>
 
                     <div class="project-divider" aria-hidden="true"></div>
 
@@ -895,9 +905,7 @@
             </h2>
 
             <p class="skills-intro">
-                A practical toolkit built through internship work, completed projects,
-                coursework, and hands-on labs. Some areas are professional strengths;
-                others are skills I’m actively developing.
+                Technical and professional skills developed through hands-on experience, projects, coursework, and professional work.
             </p>
 
         </div>
@@ -914,15 +922,13 @@
                     <li>Java</li>
                     <li>JavaScript</li>
                     <li>TypeScript</li>
-                    <li>React</li>
                     <li>Python</li>
-                    <li>MATLAB</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
+                    <li>React</li>
+                    <li>HTML / CSS</li>
                     <li>SQL</li>
                     <li>REST APIs</li>
                     <li>Git</li>
-                    <li>Bitbucket</li>
+                    <li>MATLAB</li>
                 </ul>
 
             </article>
@@ -937,18 +943,13 @@
                     <li>Windows</li>
                     <li>Windows Server</li>
                     <li>Active Directory</li>
-                    <li>User & Group Administration</li>
-                    <li>Group Policy</li>
-                    <li>File Shares & Permissions</li>
-                    <li>osTicket</li>
-                    <li>Help Desk Support</li>
-                    <li>Technical Documentation</li>
                     <li>Microsoft 365</li>
+                    <li>PowerShell</li>
+                    <li>Group Policy</li>
+                    <li>osTicket</li>
                     <li>Hardware Support</li>
                     <li>Software Troubleshooting</li>
-                    <li>System Configuration</li>
                     <li>VMware Workstation</li>
-                    <li>PowerShell</li>
                 </ul>
 
             </article>
@@ -965,12 +966,11 @@
                     <li>DNS</li>
                     <li>DHCP</li>
                     <li>VPN</li>
+                    <li>Routing</li>
+                    <li>Switching</li>
                     <li>Virtual Networks</li>
                     <li>Network Connectivity</li>
                     <li>Network Troubleshooting</li>
-                    <li>Routing</li>
-                    <li>Switching</li>
-                    <li>Virtualization</li>
                 </ul>
 
             </article>
@@ -982,16 +982,14 @@
                 <h3>Cloud & DevOps</h3>
 
                 <ul class="skills-list" aria-label="Cloud DevOps skills">
-                    <li>Microsoft Azure</li>
-                    <li>Azure Virtual Machines</li>
-                    <li>Cloud Infrastructure</li>
                     <li>AWS</li>
+                    <li>Microsoft Azure</li>
                     <li>DynamoDB</li>
                     <li>Kafka / Amazon MSK</li>
+                    <li>Docker</li>
                     <li>Terraform / OpenTofu</li>
                     <li>GitHub</li>
                     <li>Bitbucket</li>
-                    <li>Docker</li>
                     <li>Linux</li>
                 </ul>
 
@@ -1008,10 +1006,9 @@
                     <li>Network Security</li>
                     <li>Vulnerability Assessment</li>
                     <li>Access Control</li>
-                    <li>Encryption Fundamentals</li>
                     <li>OWASP Top 10</li>
+                    <li>Encryption Fundamentals</li>
                     <li>Secure Computing Practices</li>
-                    <li>Risk Awareness</li>
                 </ul>
 
             </article>
@@ -1028,11 +1025,10 @@
                     <li>Team Collaboration</li>
                     <li>Customer Service</li>
                     <li>Adaptability</li>
-                    <li>Technical Documentation</li>
                     <li>Agile</li>
                     <li>Jira</li>
                     <li>Code Review</li>
-                    <li>Time Management</li>
+                    <li>Technical Documentation</li>
                 </ul>
 
             </article>
@@ -1050,9 +1046,8 @@
             <h2 class="certifications-title">Certifications</h2>
 
             <p class="certifications-intro">
-                Industry certification preparation supporting my transition into
-                entry-level IT support and future systems, networking, and
-                cybersecurity opportunities.
+                Industry certification preparation supporting my continued development
+                across IT, systems, networking, and cybersecurity.
             </p>
         </div>
 
@@ -1082,10 +1077,10 @@
                     </div>
 
                     <p>
-                        Currently preparing for the CompTIA A+ certification to build
-                        and validate foundational knowledge in computer hardware,
-                        operating systems, networking, troubleshooting, security,
-                        virtualization, and end-user support.
+                        Currently preparing for the CompTIA A+ certification, building
+                        foundational knowledge across hardware, operating systems,
+                        networking, troubleshooting, security, virtualization, and
+                        end-user support.
                     </p>
 
                     <div class="certification-divider" aria-hidden="true"></div>
@@ -1113,8 +1108,8 @@
             <span class="activities-subtitle">Beyond the Classroom</span>
             <h2 class="activities-title">Activities</h2>
             <p class="activities-intro">
-                Professional development, technical involvement, and experiences that
-                support continuous learning, collaboration, and career growth.
+                Technical communities and activities supporting continued learning,
+                collaboration, and professional growth.
             </p>
         </div>
 
@@ -1130,17 +1125,18 @@
                 </div>
 
                 <div class="activity-content">
-                    <span class="activity-type">Technical Community</span>
+                    <span class="activity-type">Software Development</span>
                     <h3>Software Developers Association (SoDA)</h3>
-                    <p class="activity-organization">Arizona State University • Tempe</p>
+                    <p class="activity-role">Member</p>
+                    <p class="activity-organization">Arizona State University • Tempe, AZ</p>
                     <p>
-                        Participating in ASU's software development community through technical
-                        workshops, projects, industry events, and peer networking.
+                        Participating in technical workshops, projects, industry events, and peer
+                        networking within ASU's software development community.
                     </p>
+                    <div class="activity-divider" aria-hidden="true"></div>
                     <ul class="activity-topics" aria-label="SoDA focus areas">
                         <li>Software Development</li>
                         <li>Technical Workshops</li>
-                        <li>Projects</li>
                         <li>Industry Networking</li>
                     </ul>
                 </div>
@@ -1156,19 +1152,20 @@
                 </div>
 
                 <div class="activity-content">
-                    <span class="activity-type">IT &amp; Professional Community</span>
+                    <span class="activity-type">Information Technology</span>
                     <h3>Department of Information Systems Club (DISC)</h3>
-                    <p class="activity-organization">Arizona State University • Tempe</p>
+                    <p class="activity-role">Member</p>
+                    <p class="activity-organization">Arizona State University • Tempe, AZ</p>
                     <p>
-                        Engaging with ASU's information systems community through IT career
-                        development, employer events, professional networking, and technical
-                        opportunities.
+                        Participating in IT career development, employer events, professional
+                        networking, and technical opportunities within ASU's information systems
+                        community.
                     </p>
+                    <div class="activity-divider" aria-hidden="true"></div>
                     <ul class="activity-topics" aria-label="DISC focus areas">
                         <li>Information Systems</li>
                         <li>IT Careers</li>
                         <li>Employer Networking</li>
-                        <li>Career Development</li>
                     </ul>
                 </div>
             </article>
@@ -1185,8 +1182,8 @@
         <h2 class="contact-title">Contact Me</h2>
 
         <p class="contact-intro">
-            Interested in discussing IT, cybersecurity, software development,
-            internships, or early-career opportunities? I'd love to connect.
+            Interested in connecting about IT, cybersecurity, software development,
+            or career opportunities? I'd love to hear from you.
         </p>
     </div>
 
@@ -1257,8 +1254,8 @@
                         class="contact-email-btn"
                         aria-label="Send message to Daniel Berg">
 
-                        <i class='bx bx-send' aria-hidden="true"></i>
                         Send Message
+                        <i class='bx bx-send' aria-hidden="true"></i>
 
                     </button>
 
@@ -1369,16 +1366,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p class="footer-brand">Daniel<span>.</span></p>
-
-        <p class="footer-focus">Software &bull; IT &bull; Cloud &bull; Cybersecurity</p>
-
-        <div class="footer-divider" aria-hidden="true"></div>
-
-        <p class="copyright">
-            © 2026 Daniel J. Berg. All rights reserved.
-        </p>
-
+        <p class="copyright">© 2026 Daniel J. Berg. All rights reserved.</p>
     </footer>
 
 

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = document.getElementById("menu-icon");
     const navList = document.querySelector(".navlist");
 
-    const homeLinks = document.querySelectorAll('a[href="#home"]');
+    const headerLinks = document.querySelectorAll('header a[href^="#"]');
     const navLinks = document.querySelectorAll("header .navlist a");
     const sections = document.querySelectorAll("section");
     const projectCards = document.querySelectorAll(".project-card");
@@ -40,11 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.left = "";
             document.body.style.right = "";
             document.body.style.width = "";
+
+            const previousScrollBehavior =
+                document.documentElement.style.scrollBehavior;
+
+            document.documentElement.style.scrollBehavior = "auto";
             window.scrollTo({
                 top: menuScrollPosition.top,
                 left: menuScrollPosition.left,
-                behavior: "instant"
+                behavior: "auto"
             });
+            document.documentElement.style.scrollBehavior =
+                previousScrollBehavior;
         }
 
         menuIcon.classList.add("bx-menu");
@@ -125,6 +132,52 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    function setActiveNavLink(hash) {
+        navLinks.forEach(link => {
+            link.classList.toggle(
+                "active",
+                link.getAttribute("href") === hash
+            );
+        });
+    }
+
+    function navigateToSection(link) {
+        const hash = link.getAttribute("href");
+
+        if (!hash || !hash.startsWith("#")) return;
+
+        const target = document.getElementById(hash.slice(1));
+
+        if (!target) return;
+
+        /*
+         * Close and unlock the mobile menu before starting the scroll.
+         * This prevents the fixed-body restoration from racing the
+         * browser's native hash navigation on the first tap.
+         */
+        closeMobileMenu();
+
+        if (hash === "#home") {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+        } else {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest"
+            });
+        }
+
+        if (window.history?.pushState) {
+            window.history.pushState(null, "", hash);
+        }
+
+        setActiveNavLink(hash);
+    }
+
 
     /* =========================================
        04. MOBILE MENU
@@ -144,42 +197,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       05. HOME / LOGO SCROLL
+       05. HEADER / LOGO NAVIGATION
     ========================================= */
 
-    homeLinks.forEach(link => {
-
+    headerLinks.forEach(link => {
         link.addEventListener("click", event => {
-
             event.preventDefault();
-
-            closeMobileMenu();
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            navigateToSection(link);
         });
     });
 
 
     /* =========================================
-       06. CLOSE MOBILE MENU AFTER NAVIGATION
-    ========================================= */
-
-    navLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            if (link.getAttribute("href") !== "#home") {
-                closeMobileMenu();
-            }
-        });
-    });
-
-
-    /* =========================================
-       07. ESCAPE KEY
+       06. ESCAPE KEY
     ========================================= */
 
     document.addEventListener("keydown", event => {
@@ -191,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       08. PROJECT DOCUMENTATION CAROUSELS
+       07. PROJECT DOCUMENTATION CAROUSELS
     ========================================= */
 
     projectCards.forEach(card => {
@@ -573,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       09. WINDOW EVENTS
+       08. WINDOW EVENTS
     ========================================= */
 
     window.addEventListener(
@@ -591,7 +621,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       10. INITIALIZE
+       09. INITIALIZE
     ========================================= */
 
     updateActiveSection();
