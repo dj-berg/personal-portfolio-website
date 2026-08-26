@@ -11,11 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const menuIcon = document.getElementById("menu-icon");
     const navList = document.querySelector(".navlist");
+    const header = document.querySelector("header");
 
     const headerLinks = document.querySelectorAll('header a[href^="#"]');
     const navLinks = document.querySelectorAll("header .navlist a");
     const sections = document.querySelectorAll("section");
     const projectCards = document.querySelectorAll(".project-card");
+    let currentSection = "";
+    let navigationIntent = null;
     let menuScrollPosition = {
         top: 0,
         left: 0
@@ -67,6 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function openMobileMenu() {
         if (!menuIcon || !navList) return;
 
+        updateActiveSection();
+
         menuScrollPosition = {
             top: window.scrollY,
             left: window.scrollX
@@ -94,51 +99,149 @@ document.addEventListener("DOMContentLoaded", () => {
        03. ACTIVE NAVIGATION SECTION
     ========================================= */
 
-    function updateActiveSection() {
-        if (!sections.length) return;
+    function setActiveSection(sectionId) {
+        if (!sectionId) return;
 
-        let currentSection = "";
-
-        const headerHeight =
-            document.querySelector("header")?.offsetHeight || 0;
-
-        const scrollPosition =
-            window.scrollY + headerHeight + 80;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionBottom =
-                sectionTop + section.offsetHeight;
-
-            if (
-                scrollPosition >= sectionTop &&
-                scrollPosition < sectionBottom
-            ) {
-                currentSection = section.id;
-            }
-        });
-
-        if (!currentSection) {
-            currentSection = sections[0]?.id || "";
-        }
+        currentSection = sectionId;
 
         navLinks.forEach(link => {
-            const target = link.getAttribute("href");
-
             link.classList.toggle(
                 "active",
-                target === `#${currentSection}`
+                link.getAttribute("href") === `#${currentSection}`
             );
         });
     }
 
-    function setActiveNavLink(hash) {
-        navLinks.forEach(link => {
-            link.classList.toggle(
-                "active",
-                link.getAttribute("href") === hash
-            );
+    function getCurrentSection() {
+        if (!sections.length) return "";
+
+        const headerHeight =
+            header?.getBoundingClientRect().height || 0;
+
+        const usableViewportHeight =
+            Math.max(0, window.innerHeight - headerHeight);
+
+        const activationLine =
+            headerHeight + Math.min(120, Math.max(48, usableViewportHeight * 0.2));
+
+        let visibleSection = sections[0].id;
+
+        sections.forEach(section => {
+            if (section.getBoundingClientRect().top <= activationLine) {
+                visibleSection = section.id;
+            }
         });
+
+        return visibleSection;
+    }
+
+    function isAtNavigationTarget(target) {
+        if (!target) return false;
+
+        if (target.id === "home") {
+            return window.scrollY <= 1;
+        }
+
+        const headerHeight =
+            header?.getBoundingClientRect().height || 0;
+
+        return Math.abs(
+            target.getBoundingClientRect().top - headerHeight
+        ) <= 1;
+    }
+
+    function finishNavigationIntent() {
+        if (!navigationIntent) return;
+
+        const target = navigationIntent.target;
+        navigationIntent = null;
+        setActiveSection(target.id);
+    }
+
+    function cancelNavigationIntent() {
+        if (!navigationIntent) return;
+
+        navigationIntent = null;
+        updateActiveSection();
+    }
+
+    function updateActiveSection() {
+        if (!sections.length) return;
+
+        if (navigationIntent) {
+            setActiveSection(navigationIntent.target.id);
+
+            if (isAtNavigationTarget(navigationIntent.target)) {
+                finishNavigationIntent();
+            }
+
+            return;
+        }
+
+        setActiveSection(getCurrentSection());
+    }
+
+    function scrollToSection(target, behavior = "auto") {
+        if (!target) return;
+
+        const prefersReducedMotion =
+            window.matchMedia?.("(prefers-reduced-motion: reduce)")
+                .matches;
+
+        const scrollBehavior =
+            behavior === "smooth" && !prefersReducedMotion
+                ? "smooth"
+                : "auto";
+
+        if (target.id === "home") {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: scrollBehavior
+            });
+            return;
+        }
+
+        const headerHeight =
+            header?.getBoundingClientRect().height || 0;
+
+        const targetY =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight;
+
+        window.scrollTo({
+            top: Math.max(0, targetY),
+            left: window.scrollX,
+            behavior: scrollBehavior
+        });
+    }
+
+    function cleanHomeUrl() {
+        if (
+            window.history?.replaceState &&
+            (window.location.pathname !== "/" || window.location.hash)
+        ) {
+            window.history.replaceState(null, "", "/");
+        }
+    }
+
+    function navigateFromCurrentUrl(behavior = "auto") {
+        const hash = window.location.hash;
+        const sectionId = hash ? hash.slice(1) : "home";
+        const target = document.getElementById(sectionId) ||
+            document.getElementById("home");
+
+        if (!target) return;
+
+        navigationIntent = null;
+
+        if (target.id === "home") {
+            cleanHomeUrl();
+        }
+
+        scrollToSection(target, behavior);
+        setActiveSection(target.id);
     }
 
     function navigateToSection(link) {
@@ -157,25 +260,23 @@ document.addEventListener("DOMContentLoaded", () => {
          */
         closeMobileMenu();
 
-        if (hash === "#home") {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: "smooth"
-            });
-        } else {
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest"
-            });
-        }
+        navigationIntent = {
+            target
+        };
 
-        if (window.history?.pushState) {
+        setActiveSection(target.id);
+
+        scrollToSection(target, "smooth");
+
+        if (target.id === "home") {
+            cleanHomeUrl();
+        } else if (
+            window.history?.pushState &&
+            window.location.hash !== hash
+        ) {
             window.history.pushState(null, "", hash);
         }
 
-        setActiveNavLink(hash);
     }
 
 
@@ -216,6 +317,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (event.key === "Escape") {
             closeMobileMenu();
+        }
+
+        if (
+            event.key === "ArrowUp" ||
+            event.key === "ArrowDown" ||
+            event.key === "PageUp" ||
+            event.key === "PageDown" ||
+            event.key === "Home" ||
+            event.key === "End" ||
+            event.key === " "
+        ) {
+            cancelNavigationIntent();
         }
     });
 
@@ -619,10 +732,47 @@ document.addEventListener("DOMContentLoaded", () => {
         updateActiveSection
     );
 
+    window.addEventListener("wheel", cancelNavigationIntent, {
+        passive: true
+    });
+
+    window.addEventListener("touchstart", cancelNavigationIntent, {
+        passive: true
+    });
+
+    window.addEventListener("pointerdown", cancelNavigationIntent, {
+        passive: true
+    });
+
+    window.addEventListener("scrollend", () => {
+        if (!navigationIntent) {
+            updateActiveSection();
+            return;
+        }
+
+        if (isAtNavigationTarget(navigationIntent.target)) {
+            finishNavigationIntent();
+        } else {
+            cancelNavigationIntent();
+        }
+    });
+
+    window.addEventListener("popstate", () => {
+        navigationIntent = null;
+        closeMobileMenu();
+        navigateFromCurrentUrl("auto");
+    });
+
+    window.addEventListener("hashchange", () => {
+        navigationIntent = null;
+        navigateFromCurrentUrl("auto");
+    });
+
 
     /* =========================================
        09. INITIALIZE
     ========================================= */
 
+    navigateFromCurrentUrl("auto");
     updateActiveSection();
 });

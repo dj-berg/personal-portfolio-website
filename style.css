@@ -12515,3 +12515,25 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/* Keep the shared header offset aligned with the hamburger breakpoint. */
+@media (max-width: 1200px) {
+    :root {
+        --current-header-height: var(--mobile-header-height);
+    }
+
+    body {
+        padding-top: var(--current-header-height);
+    }
+}
+
+/* Subtle section settling for mouse/trackpad users; touch scrolling stays free. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-snap-type: y proximity;
+    }
+
+    section {
+        scroll-snap-align: start;
+    }
+}
