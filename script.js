@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const projectCards = document.querySelectorAll(".project-card");
     let currentSection = "";
-    let navigationIntent = null;
     let menuScrollPosition = {
         top: 0,
         left: 0
@@ -135,69 +134,20 @@ document.addEventListener("DOMContentLoaded", () => {
         return visibleSection;
     }
 
-    function isAtNavigationTarget(target) {
-        if (!target) return false;
-
-        if (target.id === "home") {
-            return window.scrollY <= 1;
-        }
-
-        const headerHeight =
-            header?.getBoundingClientRect().height || 0;
-
-        return Math.abs(
-            target.getBoundingClientRect().top - headerHeight
-        ) <= 1;
-    }
-
-    function finishNavigationIntent() {
-        if (!navigationIntent) return;
-
-        const target = navigationIntent.target;
-        navigationIntent = null;
-        setActiveSection(target.id);
-    }
-
-    function cancelNavigationIntent() {
-        if (!navigationIntent) return;
-
-        navigationIntent = null;
-        updateActiveSection();
-    }
-
     function updateActiveSection() {
         if (!sections.length) return;
-
-        if (navigationIntent) {
-            setActiveSection(navigationIntent.target.id);
-
-            if (isAtNavigationTarget(navigationIntent.target)) {
-                finishNavigationIntent();
-            }
-
-            return;
-        }
 
         setActiveSection(getCurrentSection());
     }
 
-    function scrollToSection(target, behavior = "auto") {
+    function scrollToSection(target) {
         if (!target) return;
-
-        const prefersReducedMotion =
-            window.matchMedia?.("(prefers-reduced-motion: reduce)")
-                .matches;
-
-        const scrollBehavior =
-            behavior === "smooth" && !prefersReducedMotion
-                ? "smooth"
-                : "auto";
 
         if (target.id === "home") {
             window.scrollTo({
                 top: 0,
                 left: 0,
-                behavior: scrollBehavior
+                behavior: "auto"
             });
             return;
         }
@@ -213,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({
             top: Math.max(0, targetY),
             left: window.scrollX,
-            behavior: scrollBehavior
+            behavior: "auto"
         });
     }
 
@@ -226,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function navigateFromCurrentUrl(behavior = "auto") {
+    function navigateFromCurrentUrl() {
         const hash = window.location.hash;
         const sectionId = hash ? hash.slice(1) : "home";
         const target = document.getElementById(sectionId) ||
@@ -234,13 +184,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!target) return;
 
-        navigationIntent = null;
-
         if (target.id === "home") {
             cleanHomeUrl();
         }
 
-        scrollToSection(target, behavior);
+        scrollToSection(target);
         setActiveSection(target.id);
     }
 
@@ -260,13 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
          */
         closeMobileMenu();
 
-        navigationIntent = {
-            target
-        };
-
         setActiveSection(target.id);
 
-        scrollToSection(target, "smooth");
+        scrollToSection(target);
 
         if (target.id === "home") {
             cleanHomeUrl();
@@ -319,17 +263,6 @@ document.addEventListener("DOMContentLoaded", () => {
             closeMobileMenu();
         }
 
-        if (
-            event.key === "ArrowUp" ||
-            event.key === "ArrowDown" ||
-            event.key === "PageUp" ||
-            event.key === "PageDown" ||
-            event.key === "Home" ||
-            event.key === "End" ||
-            event.key === " "
-        ) {
-            cancelNavigationIntent();
-        }
     });
 
 
@@ -732,40 +665,13 @@ document.addEventListener("DOMContentLoaded", () => {
         updateActiveSection
     );
 
-    window.addEventListener("wheel", cancelNavigationIntent, {
-        passive: true
-    });
-
-    window.addEventListener("touchstart", cancelNavigationIntent, {
-        passive: true
-    });
-
-    window.addEventListener("pointerdown", cancelNavigationIntent, {
-        passive: true
-    });
-
-    window.addEventListener("scrollend", () => {
-        if (!navigationIntent) {
-            updateActiveSection();
-            return;
-        }
-
-        if (isAtNavigationTarget(navigationIntent.target)) {
-            finishNavigationIntent();
-        } else {
-            cancelNavigationIntent();
-        }
-    });
-
     window.addEventListener("popstate", () => {
-        navigationIntent = null;
         closeMobileMenu();
-        navigateFromCurrentUrl("auto");
+        navigateFromCurrentUrl();
     });
 
     window.addEventListener("hashchange", () => {
-        navigationIntent = null;
-        navigateFromCurrentUrl("auto");
+        navigateFromCurrentUrl();
     });
 
 
@@ -773,6 +679,6 @@ document.addEventListener("DOMContentLoaded", () => {
        09. INITIALIZE
     ========================================= */
 
-    navigateFromCurrentUrl("auto");
+    navigateFromCurrentUrl();
     updateActiveSection();
 });
