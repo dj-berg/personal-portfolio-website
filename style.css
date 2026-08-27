@@ -5258,7 +5258,7 @@ header {
 @media (max-width: 1200px) {
     header {
         min-height: var(--mobile-header-height);
-        padding: 0.75rem var(--page-x-mobile);
+        padding: 0.75rem clamp(1.25rem, 5vw, 1.5rem);
     }
 }
 
