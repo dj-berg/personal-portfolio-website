@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <!-- META / PAGE SETUP -->
+    <!-- ========================================
+         DOCUMENT HEAD / METADATA
+    ======================================== -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta
         name="viewport"
@@ -100,8 +101,6 @@
         name="color-scheme"
         content="dark light">
 
-    <!-- A dedicated 1200x630 social preview image can be added later; the existing portrait is retained for now. -->
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -161,7 +160,9 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- ========================================
+         HEADER / NAVIGATION
+    ======================================== -->
     <header>
         <a href="#home" class="logo">
             <span>D</span>aniel.
@@ -192,7 +193,9 @@
 
     <main>
 
-<!-- HOME SECTION -->
+<!-- ========================================
+     HOME
+======================================== -->
 <section id="home" class="home">
 
     <div class="home-content">
@@ -202,14 +205,6 @@
         </span>
 
         <h1>Hi! I'm Daniel J. Berg</h1>
-
-        <!-- Mobile Profile Image -->
-        <div class="profile-inline">
-            <img
-                src="assets/images/home/home.png"
-                alt="Daniel Berg portrait"
-                decoding="async">
-        </div>
 
         <p>
             I'm a Computer Science (Cybersecurity) student at Arizona State University with a strong interest in IT, cybersecurity, and software development. I enjoy learning new technologies, building hands-on projects, and solving real-world problems. I'm excited to continue growing my skills and exploring where a career in technology takes me.
@@ -244,8 +239,8 @@
 
     </div>
 
-    <!-- Desktop Profile Image -->
-    <div class="home-img desktop-only">
+    <!-- Responsive profile visual -->
+    <div class="home-img">
 
         <div class="img-box">
 
@@ -276,7 +271,9 @@
 
 </section>
 
-<!-- ABOUT SECTION -->
+<!-- ========================================
+     ABOUT
+======================================== -->
     <section id="about" class="about">
 
         <div class="about-layout">
@@ -313,7 +310,7 @@
 
                 <div class="about-visual">
 
-                    <!-- Decorative Teal / Aqua Blob -->
+                    <!-- Decorative profile backdrop -->
                     <div class="about-blob" aria-hidden="true">
                         <svg
                             viewBox="0 0 500 500"
@@ -351,19 +348,19 @@
                         decoding="async">
 
                     <div class="about-bubble bubble-education">
-                        <i class='bx bxs-graduation'></i>
+                        <i class='bx bxs-graduation' aria-hidden="true"></i>
                         <h4>Education</h4>
                         <p>B.S. Computer Science<br>(Cybersecurity)</p>
                     </div>
 
                     <div class="about-bubble bubble-interests">
-                        <i class='bx bx-target-lock'></i>
+                        <i class='bx bx-target-lock' aria-hidden="true"></i>
                         <h4>Technical Interests</h4>
                         <p>IT · Networking<br>Cybersecurity · Cloud<br>Software Development · AI</p>
                     </div>
 
                     <div class="about-bubble bubble-focus">
-                        <i class='bx bx-briefcase'></i>
+                        <i class='bx bx-briefcase' aria-hidden="true"></i>
                         <h4>Current Role</h4>
                         <p>Applications Engineer Intern<br>University of Phoenix</p>
                     </div>
@@ -375,10 +372,12 @@
 
     </section>
 
-<!-- EXPERIENCE SECTION -->
+<!-- ========================================
+     EXPERIENCE
+======================================== -->
     <section id="experience" class="experience">
         <div class="experience-header">
-            <span class="hero-kicker experience-eyebrow">EXPERIENCE</span>
+            <span class="hero-kicker">EXPERIENCE</span>
             <h2 class="experience-title">Professional Experience</h2>
             <p class="experience-intro">
                 Hands-on experience contributing to software development and supporting customers in fast-paced professional environments.
@@ -488,7 +487,9 @@
         </div>
     </section>
 
-<!-- EDUCATION SECTION -->
+<!-- ========================================
+     EDUCATION
+======================================== -->
     <section id="education" class="education">
 
         <div class="education-header">
@@ -500,6 +501,7 @@
         </div>
 
         <div class="education-container">
+            <!-- Arizona State University -->
             <article class="education-card">
 
                 <div class="education-school-header">
@@ -541,12 +543,13 @@
 
             </article>
 
+            <!-- Marcos de Niza High School -->
             <article class="education-card education-secondary-card">
                 <div class="education-school-header">
                     <img
                         src="assets/images/education/mdn.png"
                         alt="Marcos de Niza High School logo"
-                        class="education-logo education-secondary-logo"
+                        class="education-logo"
                         loading="lazy"
                         decoding="async">
 
@@ -566,7 +569,9 @@
 
     </section>
 
-<!-- PROJECTS SECTION -->
+<!-- ========================================
+     PROJECTS
+======================================== -->
     <section id="projects" class="portfolio projects">
 
         <div class="portfolio-header">
@@ -578,7 +583,7 @@
             </p>
         </div>
 
-        <!-- COMPLETED SOFTWARE & ENGINEERING PROJECTS -->
+        <!-- Software development projects -->
         <div class="project-group software-project-group">
             <div class="project-group-header">
                 <span>Software Development Projects</span>
@@ -590,14 +595,14 @@
 
             <div class="portfolio-grid projects-grid">
 
-                <!-- 1. Real-Time Cloud Feature Flag Platform -->
+                <!-- Real-time cloud feature flag platform -->
                 <article class="project-card project-summary-card project-summary-featured">
                     <h3>Real-Time Cloud Feature Flag Platform</h3>
                     <p class="project-summary">
                         A cloud-based platform for controlling application features from one dashboard and delivering changes to connected applications in real time.
                     </p>
 
-                    <div class="project-before-after" aria-label="Feature flag dashboard changing from off to on">
+                    <div class="project-before-after">
                         <figure>
                             <img src="assets/images/projects/feature-flag/flag-disabled.png"
                                  alt="Feature Flag Control dashboard with a feature disabled"
@@ -638,7 +643,7 @@
                     </div>
                 </article>
 
-                <!-- 2. Autonomous Vehicle Navigation System -->
+                <!-- Autonomous vehicle navigation system -->
                 <article class="project-card project-summary-card">
                     <h3>Autonomous Vehicle Navigation System</h3>
                     <p class="project-summary">
@@ -676,7 +681,7 @@
                     </div>
                 </article>
 
-                <!-- 3. Personal Portfolio Website -->
+                <!-- Personal portfolio website -->
                 <article class="project-card project-summary-card">
                     <h3>Personal Portfolio Website</h3>
                     <p class="project-summary">
@@ -718,7 +723,7 @@
                     </div>
                 </article>
 
-                <!-- 4. Client Portfolio Website -->
+                <!-- Client portfolio website -->
                 <article class="project-card project-summary-card">
                     <h3>Client Portfolio Website</h3>
                     <p class="project-summary">
@@ -763,7 +768,7 @@
             </div>
         </div>
 
-        <!-- IN-PROGRESS IT PROJECTS -->
+        <!-- In-progress IT projects -->
         <div class="project-group it-project-group">
             <div class="project-group-header">
                 <span>Information Technology Projects</span>
@@ -775,7 +780,7 @@
 
             <div class="portfolio-grid projects-grid">
 
-                <!-- 5. Active Directory — one current overview only -->
+                <!-- Active Directory and Windows administration lab -->
                 <article class="project-card">
                     <div class="project-card-header">
                         <i class='bx bx-server' aria-hidden="true"></i>
@@ -808,7 +813,7 @@
                     </ul>
                 </article>
 
-                <!-- 6. Help Desk — one current overview only -->
+                <!-- IT help desk and ticketing environment -->
                 <article class="project-card">
                     <div class="project-card-header">
                         <i class='bx bx-support' aria-hidden="true"></i>
@@ -841,7 +846,7 @@
                     </ul>
                 </article>
 
-                <!-- 7. Azure — one current overview only -->
+                <!-- Azure networking and virtual infrastructure lab -->
                 <article class="project-card">
                     <div class="project-card-header">
                         <i class='bx bx-cloud' aria-hidden="true"></i>
@@ -891,7 +896,9 @@
 
     </section>
 
-<!-- SKILLS SECTION -->
+<!-- ========================================
+     SKILLS
+======================================== -->
     <section id="skills" class="skills">
 
         <div class="skills-header">
@@ -1037,7 +1044,9 @@
 
     </section>
 
-<!-- CERTIFICATIONS SECTION -->
+<!-- ========================================
+     CERTIFICATIONS
+======================================== -->
     <section id="certifications" class="certifications">
 
         <div class="certifications-header">
@@ -1102,7 +1111,9 @@
 
     </section>
 
-<!-- ACTIVITIES SECTION -->
+<!-- ========================================
+     ACTIVITIES
+======================================== -->
     <section id="activities" class="activities">
         <div class="activities-header">
             <span class="activities-subtitle">Beyond the Classroom</span>
@@ -1173,7 +1184,9 @@
         </div>
     </section>
 
-<!-- CONTACT SECTION -->
+<!-- ========================================
+     CONTACT
+======================================== -->
     <section id="contact" class="contact">
 
     <div class="contact-header">
@@ -1275,19 +1288,19 @@
             <div class="contact-details">
 
                 <div class="contact-item">
-                    <i class='bx bx-envelope'></i>
+                    <i class='bx bx-envelope' aria-hidden="true"></i>
                     <span>Email</span>
                     <p>danielberg313@gmail.com</p>
                 </div>
 
                 <div class="contact-item">
-                    <i class='bx bx-phone'></i>
+                    <i class='bx bx-phone' aria-hidden="true"></i>
                     <span>Phone</span>
                     <p>(602) 715-8964</p>
                 </div>
 
                 <div class="contact-item">
-                    <i class='bx bx-map'></i>
+                    <i class='bx bx-map' aria-hidden="true"></i>
                     <span>Location</span>
                     <p>Chandler, Arizona, USA</p>
                 </div>
@@ -1305,7 +1318,7 @@
                     class="social-btn"
                     aria-label="Daniel Berg LinkedIn">
 
-                    <i class='bx bxl-linkedin'></i>
+                    <i class='bx bxl-linkedin' aria-hidden="true"></i>
                 </a>
 
                 <a
@@ -1315,7 +1328,7 @@
                     class="social-btn"
                     aria-label="Daniel Berg GitHub">
 
-                    <i class='bx bxl-github'></i>
+                    <i class='bx bxl-github' aria-hidden="true"></i>
                 </a>
 
                 <a
@@ -1325,7 +1338,7 @@
                     class="social-btn"
                     aria-label="Daniel Berg Facebook">
 
-                    <i class='bx bxl-facebook-circle'></i>
+                    <i class='bx bxl-facebook-circle' aria-hidden="true"></i>
                 </a>
 
                 <a
@@ -1350,7 +1363,7 @@
                     class="social-btn"
                     aria-label="Daniel Berg Instagram">
 
-                    <i class='bx bxl-instagram'></i>
+                    <i class='bx bxl-instagram' aria-hidden="true"></i>
                 </a>
 
             </div>
@@ -1364,81 +1377,15 @@
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
     <footer class="footer">
         <p class="copyright">© 2026 Daniel J. Berg. All rights reserved.</p>
     </footer>
 
 
-    <!-- EMAILJS CONTACT FORM -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const contactForm = document.getElementById("contact-form");
-            const statusMessage = document.getElementById("contact-form-status");
-            const submitButton = contactForm?.querySelector('button[type="submit"]');
-
-            if (!contactForm || !statusMessage || !submitButton) {
-                return;
-            }
-
-            const EMAILJS_SERVICE_ID = "service_3uvsbni";
-            const EMAILJS_TEMPLATE_ID = "template_h9nlekg";
-            const EMAILJS_PUBLIC_KEY = "VkVXmCBWffsrQg6wy";
-
-            contactForm.addEventListener("submit", async (event) => {
-                event.preventDefault();
-
-                if (
-                    EMAILJS_SERVICE_ID.startsWith("YOUR_") ||
-                    EMAILJS_TEMPLATE_ID.startsWith("YOUR_") ||
-                    EMAILJS_PUBLIC_KEY.startsWith("YOUR_")
-                ) {
-                    statusMessage.textContent =
-                        "EmailJS still needs your Service ID, Template ID, and Public Key.";
-                    statusMessage.className =
-                        "contact-form-status contact-form-status-error";
-                    return;
-                }
-
-                const originalButtonContent = submitButton.innerHTML;
-
-                submitButton.disabled = true;
-                submitButton.innerHTML =
-                    "<i class='bx bx-loader-alt bx-spin' aria-hidden='true'></i> Sending...";
-                statusMessage.textContent = "";
-                statusMessage.className = "contact-form-status";
-
-                try {
-                    await emailjs.sendForm(
-                        EMAILJS_SERVICE_ID,
-                        EMAILJS_TEMPLATE_ID,
-                        contactForm,
-                        {
-                            publicKey: EMAILJS_PUBLIC_KEY
-                        }
-                    );
-
-                    contactForm.reset();
-                    statusMessage.textContent =
-                        "Your message was sent successfully. Thank you!";
-                    statusMessage.className =
-                        "contact-form-status contact-form-status-success";
-                } catch (error) {
-                    console.error("EmailJS submission failed:", error);
-
-                    statusMessage.textContent =
-                        "Your message could not be sent. Please try again or email me directly.";
-                    statusMessage.className =
-                        "contact-form-status contact-form-status-error";
-                } finally {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalButtonContent;
-                }
-            });
-        });
-    </script>
-
-    <!-- JAVASCRIPT -->
+    <!-- Site behavior -->
     <script src="script.js"></script>
 
 </body>
