@@ -10,55 +10,34 @@ Built from the ground up with **HTML, CSS, and JavaScript**, deployed through **
 
 ## 📸 Project Preview
 
+### Desktop
 ![Personal Portfolio Desktop View](assets/images/home/home-view.png)
 
-*Desktop view of the personal portfolio website.*
+### Responsive
+![Personal Portfolio Responsive View](assets/images/home/home-responsive.png)
+
+### Mobile
+![Personal Portfolio Mobile View](assets/images/home/home-view-mobile.png)
 
 ---
 
 ## 🎯 Project Overview
 
-I designed and developed this website as a central portfolio for presenting my professional experience, technical projects, skills, and continued development.
+I designed and developed this website as a central portfolio for presenting my professional experience, education, technical skills, projects, certifications, and continued development.
 
-Rather than using a website builder or portfolio template, the site was built with **HTML, CSS, and JavaScript**, providing direct control over its structure, styling, responsive behavior, and interactive functionality.
+Rather than using a website builder or portfolio template, the site was built directly with **HTML, CSS, and JavaScript**, providing full control over its structure, styling, responsive behavior, and interactive functionality.
 
 ---
 
 ## ✨ Key Features
 
-- 📱 **Responsive Design** — Layouts optimized for desktop, intermediate, and mobile screen sizes
-- 🧭 **Responsive Navigation** — Desktop navigation with a mobile hamburger menu
-- 💼 **Experience & Projects** — Dedicated sections for professional experience and technical projects
-- 🛠️ **Skills & Certifications** — Organized presentation of technologies, tools, training, and certifications
-- 📬 **Functional Contact Form** — Contact form integrated with EmailJS
-- 🌐 **Public Deployment** — Hosted through GitHub Pages with a custom domain and HTTPS
-
----
-
-## 📱 Responsive Design
-
-The website was designed to maintain its visual identity and usability across different screen sizes rather than simply shrinking the desktop layout.
-
-### Responsive View
-
-![Responsive Portfolio View](assets/images/home/home-responsive.png)
-
-### Mobile View
-
-![Mobile Portfolio View](assets/images/home/home-view-mobile.png)
-
-Responsive behavior includes adjustments to:
-
-- Navigation
-- Typography
-- Section spacing
-- Content positioning
-- Project cards
-- Images
-- Buttons
-- Header behavior
-
-These changes allow the same portfolio content to remain accessible and visually consistent across desktop, tablet-sized, and mobile displays.
+- 📱 **Responsive Design** — Optimized layouts across desktop, tablet, and mobile devices
+- 🧭 **Responsive Navigation** — Desktop navigation with an adaptive hamburger menu
+- 💼 **Professional Portfolio** — Dedicated sections for experience, education, skills, projects, and certifications
+- 🖥️ **Interactive Frontend** — JavaScript-powered navigation, interface behavior, and form handling
+- 📬 **Contact Integration** — Functional contact form powered by EmailJS
+- ♿ **Accessibility** — Keyboard focus states, reduced-motion support, and semantic accessibility considerations
+- 🌐 **Production Deployment** — GitHub Pages hosting with a custom domain and HTTPS
 
 ---
 
@@ -69,7 +48,7 @@ These changes allow the same portfolio content to remain accessible and visually
 | **Structure** | HTML5 |
 | **Styling** | CSS3 |
 | **Interactivity** | JavaScript |
-| **Contact Integration** | EmailJS |
+| **Contact** | EmailJS |
 | **Version Control** | Git, GitHub |
 | **Hosting** | GitHub Pages |
 | **Development** | Visual Studio Code |
@@ -77,48 +56,17 @@ These changes allow the same portfolio content to remain accessible and visually
 
 ---
 
-## ⚙️ Frontend Functionality
+## 📱 Responsive Design
 
-The website uses lightweight frontend technologies without requiring a JavaScript framework.
+The website was designed to adapt its layout and navigation across different viewport sizes rather than simply scaling down the desktop experience.
 
-Implemented functionality includes:
-
-- Responsive desktop and mobile navigation
-- Mobile hamburger menu behavior
-- DOM manipulation
-- Interactive page elements
-- Contact form handling
-- Project and external profile navigation
-- Responsive interface behavior
-
-HTML provides the site structure, CSS controls the visual design and responsive layouts, and JavaScript handles interactive behavior.
-
----
-
-## 📬 Contact Integration
-
-The website includes a functional contact form powered by **EmailJS**.
-
-```text
-Portfolio Contact Form
-         │
-         ▼
-     JavaScript
-         │
-         ▼
-      EmailJS
-         │
-         ▼
-   Email Delivery
-```
-
-This allows visitors to send a message directly through the portfolio without requiring a custom backend email server.
+Responsive behavior includes adjustments to **navigation, typography, spacing, content positioning, cards, images, buttons, and header behavior** across desktop, tablet, mobile, portrait, and landscape layouts.
 
 ---
 
 ## 🚀 Deployment
 
-The website is deployed through **GitHub Pages** and connected to a custom domain with HTTPS.
+The website follows a Git-based deployment workflow:
 
 ```text
 Local Development
@@ -133,54 +81,25 @@ Local Development
  GitHub Pages
        │
        ▼
- Custom Domain
-       │
-       ▼
-     HTTPS
+ Custom Domain + HTTPS
 ```
 
-🌐 **Live Website:** [danieljberg.com](https://danieljberg.com)
-
-Git-based deployment provides a straightforward workflow for maintaining and updating the portfolio as new experience, projects, and skills are added.
-
----
-
-## 📂 Website Content
-
-The portfolio organizes my professional and technical background into dedicated sections:
-
-```text
-Portfolio
-│
-├── Home
-├── About
-├── Experience
-├── Skills
-├── Projects
-├── Certifications
-└── Contact
-```
-
-Together, these sections provide a centralized view of my experience, technical development, and project work.
+This provides a simple workflow for maintaining the portfolio as new experience, projects, skills, and certifications are added.
 
 ---
 
 ## 💡 What This Project Demonstrates
 
-Building and maintaining the portfolio demonstrates experience with:
-
 - Responsive frontend development
 - HTML, CSS, and JavaScript
-- Responsive UI/UX design
+- Cross-device UI/UX design
 - DOM manipulation and frontend interactivity
 - Third-party service integration
+- Accessibility considerations
 - Git and GitHub version control
 - GitHub Pages deployment
 - Custom domain and HTTPS configuration
-- Cross-device interface testing
-- Iterative website development and maintenance
-
-The project demonstrates the complete process of taking a frontend website from **design and development through deployment and continued maintenance**.
+- Iterative development and maintenance
 
 ---
 
