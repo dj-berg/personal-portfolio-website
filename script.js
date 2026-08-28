@@ -267,19 +267,42 @@ document.addEventListener("DOMContentLoaded", () => {
         const EMAILJS_SERVICE_ID = "service_3uvsbni";
         const EMAILJS_TEMPLATE_ID = "template_h9nlekg";
         const EMAILJS_PUBLIC_KEY = "VkVXmCBWffsrQg6wy";
+        let statusHideTimer = null;
+
+        const clearStatusMessage = () => {
+            if (statusHideTimer !== null) {
+                window.clearTimeout(statusHideTimer);
+                statusHideTimer = null;
+            }
+
+            statusMessage.textContent = "";
+            statusMessage.className = "contact-form-status";
+            statusMessage.hidden = true;
+        };
+
+        const showStatusMessage = (message, className) => {
+            clearStatusMessage();
+            statusMessage.textContent = message;
+            statusMessage.className = className;
+            statusMessage.hidden = false;
+            statusHideTimer = window.setTimeout(clearStatusMessage, 5000);
+        };
+
+        clearStatusMessage();
 
         contactForm.addEventListener("submit", async (event) => {
             event.preventDefault();
+            clearStatusMessage();
 
             if (
                 EMAILJS_SERVICE_ID.startsWith("YOUR_") ||
                 EMAILJS_TEMPLATE_ID.startsWith("YOUR_") ||
                 EMAILJS_PUBLIC_KEY.startsWith("YOUR_")
             ) {
-                statusMessage.textContent =
-                    "EmailJS still needs your Service ID, Template ID, and Public Key.";
-                statusMessage.className =
-                    "contact-form-status contact-form-status-error";
+                showStatusMessage(
+                    "EmailJS still needs your Service ID, Template ID, and Public Key.",
+                    "contact-form-status contact-form-status-error"
+                );
                 return;
             }
 
@@ -288,8 +311,6 @@ document.addEventListener("DOMContentLoaded", () => {
             submitButton.disabled = true;
             submitButton.innerHTML =
                 "<i class='bx bx-loader-alt bx-spin' aria-hidden='true'></i> Sending...";
-            statusMessage.textContent = "";
-            statusMessage.className = "contact-form-status";
 
             try {
                 await emailjs.sendForm(
@@ -302,17 +323,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 contactForm.reset();
-                statusMessage.textContent =
-                    "Your message was sent successfully. Thank you!";
-                statusMessage.className =
-                    "contact-form-status contact-form-status-success";
+                showStatusMessage(
+                    "Your message was sent successfully. Thank you!",
+                    "contact-form-status contact-form-status-success"
+                );
             } catch (error) {
                 console.error("EmailJS submission failed:", error);
 
-                statusMessage.textContent =
-                    "Your message could not be sent. Please try again or email me directly.";
-                statusMessage.className =
-                    "contact-form-status contact-form-status-error";
+                showStatusMessage(
+                    "Your message could not be sent. Please try again or email me directly.",
+                    "contact-form-status contact-form-status-error"
+                );
             } finally {
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalButtonContent;

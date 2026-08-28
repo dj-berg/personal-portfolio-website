@@ -845,12 +845,6 @@ header {
     transition: var(--transition);
 }
 
-.skills-card:hover .skills-list li {
-    background: rgba(242, 193, 78, 0.15);
-    border-color: rgba(242, 193, 78, 0.42);
-}
-
-
 /* ========================================
    PROJECTS
 ======================================== */
@@ -1040,11 +1034,6 @@ header {
     font-weight: 700;
     line-height: 1.2;
     transition: var(--transition);
-}
-
-.project-card:hover .project-tools li {
-    background: rgba(212, 161, 55, 0.13);
-    border-color: rgba(212, 161, 55, 0.25);
 }
 
 /* ========================================
@@ -3663,11 +3652,6 @@ header {
     border-color: rgba(74, 62, 42, 0.17);
 }
 
-.project-card:hover .project-tools li {
-    background: rgba(242, 193, 78, 0.11);
-    border-color: rgba(242, 193, 78, 0.35);
-}
-
 .project-repo-btn {
     color: var(--purple-dark);
     background: var(--cyber-blue);
@@ -5161,11 +5145,6 @@ header {
     color: var(--text-secondary);
     background: rgba(212, 161, 55, 0.13);
     border-color: rgba(242, 193, 78, 0.24);
-}
-
-.skills-card:hover .skills-list li {
-    background: rgba(212, 161, 55, 0.13);
-    border-color: rgba(212, 161, 55, 0.25);
 }
 
 /* Activities is intentionally simple until activity cards/content are added. */
@@ -8165,11 +8144,6 @@ textarea:focus-visible {
     transition: var(--transition);
 }
 
-.projects .project-card:hover .project-tools li {
-    background: var(--surface-hover);
-    border-color: var(--accent-primary);
-}
-
 .projects .it-project-group .project-tools li {
     color: var(--text-secondary);
     background: var(--surface-hover);
@@ -9177,6 +9151,25 @@ textarea:focus-visible {
 
     .contact .contact-main-card {
         padding: var(--contact-card-padding);
+    }
+}
+
+/* Keep contact controls usable without mobile browser focus zoom. */
+@media (max-width: 1100px) {
+    .contact .contact-form-group input,
+    .contact .contact-form-group textarea {
+        font-size: 16px;
+    }
+
+    .contact .contact-form-status,
+    .contact .contact-form-status-success,
+    .contact .contact-form-status-error {
+        width: 100%;
+        max-width: 640px;
+        margin-inline: auto;
+        text-align: center;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
     }
 }
 
@@ -10420,4 +10413,112 @@ textarea,
 .project-status,
 .certification-status {
     text-shadow: none;
+}
+
+/* Major-card hover system: pointer devices get an outer border glow only. */
+:root {
+    --major-card-hover-border: rgba(242, 193, 78, 0.58);
+    --major-card-hover-shadow:
+        0 18px 38px rgba(26, 20, 13, 0.22),
+        0 0 20px rgba(242, 193, 78, 0.16);
+}
+
+.about .about-text-card {
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .experience .experience-panel:hover,
+    .education .education-card:hover,
+    .projects .project-card:hover,
+    .skills .skills-card:hover,
+    .certifications .certification-card:hover,
+    .activities .activity-card:hover,
+    .contact .contact-item:hover,
+    .about .about-text-card:hover,
+    .experience .experience-panel.featured-experience:hover,
+    .experience .experience-panel.walmart-experience:hover,
+    .education .education-card:not(.education-secondary-card):hover,
+    .education .education-secondary-card:hover {
+        border-color: var(--major-card-hover-border);
+        box-shadow: var(--major-card-hover-shadow);
+    }
+
+    .experience .experience-panel:hover,
+    .education .education-card:not(.education-secondary-card):hover,
+    .projects .project-summary-featured:hover {
+        transform: translateY(-3px);
+    }
+
+    .experience .experience-panel.walmart-experience:hover,
+    .education .education-secondary-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .projects .project-card:not(.project-summary-featured):hover {
+        transform: translateY(-2px);
+    }
+
+    .skills .skills-card:hover {
+        transform: translateY(-8px);
+        background: var(--surface);
+    }
+
+    .certifications .certification-card:hover,
+    .contact .contact-item:hover {
+        background: var(--surface);
+    }
+
+    .certifications .certification-card:hover {
+        transform: translateY(-7px);
+    }
+
+    .contact .contact-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .activities .activity-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .about .about-text-card:hover {
+        transform: translateY(-3px) !important;
+    }
+}
+
+/* Touch devices should not retain parent-card hover styling after a tap. */
+@media (hover: none), (pointer: coarse) {
+    .experience .experience-panel:hover,
+    .education .education-card:hover,
+    .projects .project-card:hover,
+    .skills .skills-card:hover,
+    .certifications .certification-card:hover,
+    .activities .activity-card:hover,
+    .contact .contact-item:hover,
+    .about .about-text-card:hover {
+        transform: none;
+    }
+
+    .skills .skills-card:hover,
+    .certifications .certification-card:hover,
+    .contact .contact-item:hover,
+    .about .about-text-card:hover {
+        background: var(--surface);
+        border-color: var(--border);
+        box-shadow: 0 16px 38px rgba(26, 20, 13, 0.28);
+    }
+
+    .activities .activity-card:hover {
+        border-color: var(--border);
+        box-shadow: 0 16px 32px rgba(26, 20, 13, 0.28);
+    }
+}
+
+/* Use the existing lighter card surface for the certification card in every state. */
+.certifications .certification-card,
+.certifications .certification-card:hover {
+    background: var(--surface-hover);
 }
