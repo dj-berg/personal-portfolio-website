@@ -5621,7 +5621,7 @@ textarea:focus-visible {
         top: auto !important;
         bottom: auto !important;
         width: min(82%, 410px) !important;
-        transform: none !important;
+        transform: none;
     }
 
     .about-photo {
@@ -5757,7 +5757,8 @@ textarea:focus-visible {
         bottom: auto !important;
         width: min(78%, 275px) !important;
         margin: 0 !important;
-        transform: translateX(-50%) !important;
+        transform: none;
+        translate: -50% 0 !important;
     }
 
     .about-photo {
@@ -5786,7 +5787,6 @@ textarea:focus-visible {
         padding: 0.65rem 0.55rem !important;
         border-radius: 16px !important;
         transform: none !important;
-        animation: none !important;
         align-self: stretch !important;
         justify-self: stretch !important;
     }
@@ -6157,7 +6157,6 @@ textarea:focus-visible {
         min-height: 86px !important;
         padding: 0.8rem 0.9rem !important;
         transform: none !important;
-        animation: none !important;
     }
 
     .bubble-education {
@@ -6229,7 +6228,6 @@ textarea:focus-visible {
         min-width: 0 !important;
         min-height: 92px !important;
         transform: none !important;
-        animation: none !important;
     }
 
     .bubble-education {
@@ -6285,6 +6283,7 @@ textarea:focus-visible {
     .about-bubble {
         align-items: center !important;
         text-align: center !important;
+        animation: none !important;
     }
 }
 
@@ -6378,7 +6377,8 @@ textarea:focus-visible {
         bottom: auto !important;
         width: clamp(300px, 37.5vw, 420px) !important;
         max-width: 420px !important;
-        transform: translateX(-50%) !important;
+        transform: none;
+        translate: -50% 0 !important;
     }
 
     .about-photo {
@@ -10423,13 +10423,6 @@ textarea,
         0 0 20px rgba(242, 193, 78, 0.16);
 }
 
-.about .about-text-card {
-    transition:
-        transform var(--transition),
-        border-color var(--transition),
-        box-shadow var(--transition);
-}
-
 @media (hover: hover) and (pointer: fine) {
     .experience .experience-panel:hover,
     .education .education-card:hover,
@@ -10438,7 +10431,6 @@ textarea,
     .certifications .certification-card:hover,
     .activities .activity-card:hover,
     .contact .contact-item:hover,
-    .about .about-text-card:hover,
     .experience .experience-panel.featured-experience:hover,
     .experience .experience-panel.walmart-experience:hover,
     .education .education-card:not(.education-secondary-card):hover,
@@ -10484,9 +10476,6 @@ textarea,
         transform: translateY(-6px);
     }
 
-    .about .about-text-card:hover {
-        transform: translateY(-3px) !important;
-    }
 }
 
 /* Touch devices should not retain parent-card hover styling after a tap. */
@@ -10497,20 +10486,13 @@ textarea,
     .skills .skills-card:hover,
     .certifications .certification-card:hover,
     .activities .activity-card:hover,
-    .contact .contact-item:hover,
-    .about .about-text-card:hover {
+    .contact .contact-item:hover {
         transform: none;
     }
 
     .skills .skills-card:hover,
     .certifications .certification-card:hover,
     .contact .contact-item:hover,
-    .about .about-text-card:hover {
-        background: var(--surface);
-        border-color: var(--border);
-        box-shadow: 0 16px 38px rgba(26, 20, 13, 0.28);
-    }
-
     .activities .activity-card:hover {
         border-color: var(--border);
         box-shadow: 0 16px 32px rgba(26, 20, 13, 0.28);
