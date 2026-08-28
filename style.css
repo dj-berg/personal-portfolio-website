@@ -38,6 +38,9 @@
     --text-on-accent: #1A140D;
     --surface-input: #2A2015;
     --projects-text-muted: #B8A98D;
+    --section-eyebrow-size: clamp(0.66rem, 0.16vw + 0.61rem, 0.74rem);
+    --section-eyebrow-spacing: clamp(1.8px, 0.08vw + 1.6px, 2.5px);
+    --section-heading-size: clamp(1.65rem, 3.2vw, 2.75rem);
 
     /* Compatibility aliases retained by current component styles. */
     --bg-midnight: var(--bg-primary);
@@ -397,7 +400,6 @@ header {
     font-weight: 800;
     line-height: 1.08;
     margin-bottom: 1.15rem;
-    text-shadow: 0 0 24px rgba(242, 193, 78, 0.14);
 }
 
 .home-content p {
@@ -407,7 +409,6 @@ header {
     line-height: 1.68;
     margin-bottom: 1.75rem;
     opacity: 0.96;
-    text-shadow: 0 1px 10px rgba(26, 20, 13, 0.14);
 }
 
 .hero-tags {
@@ -4260,7 +4261,6 @@ header {
 
 .contact-cta h3 {
     color: var(--cream);
-    text-shadow: 0 0 18px rgba(242, 193, 78, 0.12);
 }
 
 /* Contact form layout */
@@ -4590,7 +4590,6 @@ header {
     font-size: clamp(1.45rem, 2.5vw, 1.9rem);
     line-height: 1.2;
     margin-bottom: 1.8rem;
-    text-shadow: 0 0 18px rgba(242, 193, 78, 0.12);
 }
 
 /* Contact form layout */
@@ -10371,4 +10370,54 @@ textarea:focus-visible {
     background: rgba(26, 20, 13, 0.34);
     border-color: rgba(184, 169, 141, 0.28);
     box-shadow: none;
+}
+
+/* Shared section eyebrow and main-heading typography. */
+.hero-kicker,
+.education-subtitle,
+.portfolio-subtitle,
+.skills-subtitle,
+.certifications-subtitle,
+.activities-subtitle,
+.contact-subtitle {
+    font-size: var(--section-eyebrow-size) !important;
+    font-weight: 800 !important;
+    letter-spacing: var(--section-eyebrow-spacing) !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    color: var(--primary-light) !important;
+}
+
+.home-content > h1,
+.about-title,
+.experience-title,
+.education-title,
+.portfolio-title,
+.skills-title,
+.certifications-title,
+.activities-title,
+.contact-title {
+    font-size: var(--section-heading-size) !important;
+    font-weight: 800 !important;
+    line-height: 1.08 !important;
+    color: var(--text-primary) !important;
+}
+
+/* Keep white/cream typography flat in every responsive and interaction state. */
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+small,
+a,
+button,
+input,
+textarea,
+.logo,
+.hero-tags span,
+.project-status,
+.certification-status {
+    text-shadow: none;
 }
