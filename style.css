@@ -10504,3 +10504,83 @@ textarea,
 .certifications .certification-card:hover {
     background: var(--surface-hover);
 }
+
+/* Daniel Experience company-header metadata. Keep Shayla's clean
+   hierarchy while preserving Daniel's brown/gold palette. */
+#experience .experience-panel .company-info h4 {
+    margin: 0 0 0.14rem;
+    font-family: inherit;
+    color: var(--accent-secondary);
+    font-size: 0.83rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+}
+
+#experience .experience-panel .company-info h3 {
+    margin: 0 0 0.35rem;
+    font-family: inherit;
+    color: var(--text-primary);
+    font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+#experience .experience-panel .experience-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.9rem;
+    margin-top: 0.05rem;
+    color: var(--text-muted);
+}
+
+#experience .experience-panel .experience-meta-item {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    gap: 0.34rem;
+    padding: 0;
+    color: var(--text-muted);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+#experience .experience-panel .experience-meta-item > i {
+    flex: 0 0 auto;
+    color: var(--accent-secondary);
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+#experience .experience-panel .experience-meta-item > span {
+    display: inline;
+    padding: 0;
+    color: var(--text-primary);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+@media (max-width: 767px) {
+    #experience .experience-panel .experience-meta {
+        justify-content: center;
+        gap: 0.32rem 0.72rem;
+    }
+
+    #experience .experience-panel .experience-meta-item {
+        font-size: 0.68rem;
+    }
+}
