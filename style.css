@@ -1426,7 +1426,7 @@ header {
     height: 6px;
     border-radius: 50%;
     background: var(--accent-secondary);
-    box-shadow: 0 0 8px rgba(242, 193, 78, 0.34);
+    box-shadow: none;
 }
 
 .experience-divider {
@@ -4616,7 +4616,7 @@ header {
     border-radius: 15px;
     outline: none;
     font: inherit;
-    font-size: 0.86rem;
+    font-size: clamp(0.75rem, calc(0.6875rem + 0.15vw), 0.8125rem);
     line-height: 1.45;
     caret-color: var(--cyber-blue);
     box-shadow:
@@ -4637,6 +4637,7 @@ header {
 .contact-form-group input::placeholder,
 .contact-form-group textarea::placeholder {
     color: rgba(255, 255, 255, 0.52);
+    font-size: inherit;
 }
 
 .contact-form-group input:hover,
@@ -6732,10 +6733,6 @@ textarea:focus-visible {
         width: 42px;
     }
 
-    .experience-panel:hover {
-        transform: none;
-    }
-
     .experience-panel .company-header {
         align-items: flex-start;
         gap: 0.8rem;
@@ -7061,23 +7058,38 @@ textarea:focus-visible {
 }
 
 .experience .experience-highlights li {
-    padding-left: 1.45rem;
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 0.625rem;
+    align-items: start;
+    min-width: 0;
+    padding-left: 0;
     font-size: clamp(0.76rem, 0.2vw + 0.68rem, 0.84rem);
     line-height: 1.58;
 }
 
 .experience .experience-highlights li::before {
     content: "✓";
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: start;
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    box-sizing: border-box;
     color: var(--accent-secondary);
-    background: transparent;
+    background: var(--surface-hover);
+    border: 1px solid rgba(242, 193, 78, 0.28);
+    border-radius: 50%;
+    font-size: 0.8125rem;
     box-shadow: none;
-    font-size: 0.82rem;
-    font-weight: 800;
-    line-height: 1.5;
+    filter: none;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: none;
+    transition: none;
 }
 
 .experience .experience-tools {
@@ -7094,7 +7106,7 @@ textarea:focus-visible {
     }
 
     .experience .experience-highlights li {
-        padding-left: 1.35rem;
+        padding-left: 0;
     }
 }
 
@@ -9142,11 +9154,11 @@ textarea:focus-visible {
     }
 }
 
-/* Keep contact controls usable without mobile browser focus zoom. */
+/* Keep Contact field text compact and consistent across viewport sizes. */
 @media (max-width: 1100px) {
     .contact .contact-form-group input,
     .contact .contact-form-group textarea {
-        font-size: 16px;
+        font-size: clamp(0.75rem, calc(0.6875rem + 0.15vw), 0.8125rem);
     }
 
     .contact .contact-form-status,
@@ -9801,13 +9813,6 @@ textarea:focus-visible {
     .experience-panel .experience-highlights li {
         padding-left: 0;
         text-align: center;
-    }
-
-    .experience-panel .experience-highlights li::before {
-        position: static;
-        display: inline-block;
-        margin-right: 0.35rem;
-        vertical-align: baseline;
     }
 
     .experience-panel .experience-tools {
@@ -10466,27 +10471,6 @@ textarea,
 
 }
 
-/* Touch devices should not retain parent-card hover styling after a tap. */
-@media (hover: none), (pointer: coarse) {
-    .experience .experience-panel:hover,
-    .education .education-card:hover,
-    .projects .project-card:hover,
-    .skills .skills-card:hover,
-    .certifications .certification-card:hover,
-    .activities .activity-card:hover,
-    .contact .contact-item:hover {
-        transform: none;
-    }
-
-    .skills .skills-card:hover,
-    .certifications .certification-card:hover,
-    .contact .contact-item:hover,
-    .activities .activity-card:hover {
-        border-color: var(--border);
-        box-shadow: 0 16px 32px rgba(26, 20, 13, 0.28);
-    }
-}
-
 /* Use the existing lighter card surface for the certification card in every state. */
 .certifications .certification-card,
 .certifications .certification-card:hover {
@@ -10595,5 +10579,86 @@ textarea,
 
     .education-card:not(.education-secondary-card) .education-affiliation {
         margin-bottom: 0.9rem;
+    }
+}
+
+/* Match Shayla's standard section-header sizing; Home remains intentionally
+   excluded because its hero typography has its own scale. */
+#about .about-eyebrow,
+#experience .hero-kicker,
+#education .education-subtitle,
+#projects .portfolio-subtitle,
+#skills .skills-subtitle,
+#certifications .certifications-subtitle,
+#activities .activities-subtitle,
+#contact .contact-subtitle {
+    font-size: clamp(0.65rem, 1.2vw, 0.72rem) !important;
+}
+
+#about .about-title,
+#experience .experience-title,
+#education .education-title,
+#projects .portfolio-title,
+#skills .skills-title,
+#certifications .certifications-title,
+#activities .activities-title,
+#contact .contact-title {
+    font-size: clamp(1.65rem, 7vw, 2rem) !important;
+}
+
+#experience .experience-intro,
+#education .education-intro,
+#projects .portfolio-intro,
+#skills .skills-intro,
+#certifications .certifications-intro,
+#activities .activities-intro,
+#contact .contact-intro {
+    font-size: clamp(0.78rem, 1.7vw, 0.86rem) !important;
+}
+
+@media (min-width: 768px) {
+    #about .about-title,
+    #experience .experience-title,
+    #education .education-title,
+    #projects .portfolio-title,
+    #skills .skills-title,
+    #certifications .certifications-title,
+    #activities .activities-title,
+    #contact .contact-title {
+        font-size: clamp(2rem, 3.6vw, 2.4rem) !important;
+    }
+}
+
+@media (min-width: 1101px) {
+    #about .about-eyebrow,
+    #experience .hero-kicker,
+    #education .education-subtitle,
+    #projects .portfolio-subtitle,
+    #skills .skills-subtitle,
+    #certifications .certifications-subtitle,
+    #activities .activities-subtitle,
+    #contact .contact-subtitle {
+        font-size: 0.72rem !important;
+    }
+
+    #about .about-title,
+    #experience .experience-title,
+    #education .education-title,
+    #projects .portfolio-title,
+    #skills .skills-title,
+    #certifications .certifications-title,
+    #activities .activities-title,
+    #contact .contact-title {
+        font-size: clamp(1.9rem, 3.5vw, 2.4rem) !important;
+    }
+
+    #experience .experience-intro,
+    #education .education-intro,
+    #projects .portfolio-intro,
+    #skills .skills-intro,
+    #certifications .certifications-intro,
+    #activities .activities-intro,
+    #contact .contact-intro {
+        font-size: 0.86rem !important;
     }
 }
