@@ -7624,20 +7624,9 @@ textarea:focus-visible {
     background: transparent;
 }
 
-.education-detail-label {
-    display: block;
-    margin-bottom: 1rem;
-    color: var(--accent-secondary);
-    font-size: 0.66rem;
-    font-weight: 800;
-    line-height: 1.3;
-    letter-spacing: 1.55px;
-    text-transform: uppercase;
-}
-
 .education-topics {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 0.55rem 0.7rem;
     margin: 0;
@@ -7646,7 +7635,6 @@ textarea:focus-visible {
 
 .education-topics li {
     width: max-content;
-    justify-self: center;
     padding: 0.3rem 0.62rem;
     color: var(--text-secondary);
     background: var(--surface-hover);
@@ -10582,5 +10570,30 @@ textarea,
 
     #experience .experience-panel .experience-meta-item {
         font-size: 0.68rem;
+    }
+}
+
+/* ASU affiliation: subordinate to the concentration and above metadata. */
+.education-card:not(.education-secondary-card) .education-concentration {
+    margin-bottom: 0.4rem;
+}
+
+.education-card:not(.education-secondary-card) .education-affiliation {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 1.2rem;
+    color: var(--text-secondary);
+    font-size: clamp(0.72rem, 0.16vw + 0.68rem, 0.8rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+    .education-card:not(.education-secondary-card) .education-concentration {
+        margin-bottom: 0.35rem;
+    }
+
+    .education-card:not(.education-secondary-card) .education-affiliation {
+        margin-bottom: 0.9rem;
     }
 }
