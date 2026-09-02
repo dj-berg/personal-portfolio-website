@@ -1,72 +1,179 @@
 # 🌐 Personal Portfolio Website
 
-A responsive personal portfolio website designed and developed to showcase my **professional experience, technical projects, skills, certifications, and background across software engineering, information technology, and cybersecurity**.
+A responsive personal portfolio website designed and developed to showcase my professional experience, technical projects, skills, certifications, activities, and background across software engineering, information technology, and cybersecurity.
 
-Built from the ground up with **HTML, CSS, and JavaScript**, deployed through **GitHub Pages**, and connected to a custom domain with HTTPS.
+I built the website from the ground up with HTML, CSS, and JavaScript and deployed it through GitHub Pages with a custom domain and HTTPS.
 
 🌐 **Live Website:** [danieljberg.com](https://danieljberg.com)
 
 ---
 
-## 📸 Project Preview
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- EmailJS
+- Git & GitHub
+- GitHub Pages
+- Custom Domain
+- HTTPS
+- Visual Studio Code
+
+---
+
+## 🎨 1. Design My Portfolio
+
+I built the website as a central place to present my experience, projects, technical skills, certifications, and continued development.
+
+The website includes sections for:
+
+- Home
+- About
+- Experience
+- Education
+- Skills
+- Projects
+- Certifications
+- Activities
+- Contact
+
+I created a custom visual style using a brown, gold, and cream color palette with consistent typography, cards, buttons, tags, and section layouts.
+
+Rather than using a website builder or portfolio template, I created the structure and styling directly with HTML and CSS.
 
 ### Desktop
+
 ![Personal Portfolio Desktop View](assets/images/home/home-view.png)
 
+---
+
+## 📱 2. Build the Responsive Layout
+
+I designed the website to work across desktop, intermediate, and mobile screen sizes.
+
+As the screen gets smaller, the layout adjusts its:
+
+- Navigation
+- Content positioning
+- Project and experience cards
+- Images
+- Typography
+- Spacing
+- Buttons
+- Forms
+
+The desktop navigation changes to a hamburger menu on smaller screens so the site remains easy to use across different devices.
+
 ### Responsive
+
 ![Personal Portfolio Responsive View](assets/images/home/home-responsive.png)
 
 ### Mobile
+
 ![Personal Portfolio Mobile View](assets/images/home/home-view-mobile.png)
 
 ---
 
-## 🎯 Project Overview
+## ⚙️ 3. Add Website Interactions
 
-I designed and developed this website as a central portfolio for presenting my professional experience, education, technical skills, projects, certifications, and continued development.
+I used JavaScript to handle the interactive parts of the website.
 
-Rather than using a website builder or portfolio template, the site was built directly with **HTML, CSS, and JavaScript**, providing full control over its structure, styling, responsive behavior, and interactive functionality.
+The site includes:
 
----
+- Responsive navigation
+- Mobile hamburger menu
+- Active navigation states
+- Section navigation
+- Interactive buttons and links
+- Contact form behavior
+- Success and error messages
 
-## ✨ Key Features
-
-- 📱 **Responsive Design** — Optimized layouts across desktop, tablet, and mobile devices
-- 🧭 **Responsive Navigation** — Desktop navigation with an adaptive hamburger menu
-- 💼 **Professional Portfolio** — Dedicated sections for experience, education, skills, projects, and certifications
-- 🖥️ **Interactive Frontend** — JavaScript-powered navigation, interface behavior, and form handling
-- 📬 **Contact Integration** — Functional contact form powered by EmailJS
-- ♿ **Accessibility** — Keyboard focus states, reduced-motion support, and semantic accessibility considerations
-- 🌐 **Production Deployment** — GitHub Pages hosting with a custom domain and HTTPS
+I also included keyboard focus states and reduced-motion support to improve accessibility.
 
 ---
 
-## 🛠️ Technology Stack
+## 💼 4. Showcase My Experience and Projects
 
-| Area | Technologies |
-| --- | --- |
-| **Structure** | HTML5 |
-| **Styling** | CSS3 |
-| **Interactivity** | JavaScript |
-| **Contact** | EmailJS |
-| **Version Control** | Git, GitHub |
-| **Hosting** | GitHub Pages |
-| **Development** | Visual Studio Code |
-| **Domain** | Custom Domain + HTTPS |
+I created dedicated sections to organize my professional experience and technical projects in a way that is easy to browse.
 
----
+My projects cover multiple areas, including:
 
-## 📱 Responsive Design
+- Software engineering
+- Web development
+- Information technology
+- Cloud infrastructure
+- Networking
+- Cybersecurity
 
-The website was designed to adapt its layout and navigation across different viewport sizes rather than simply scaling down the desktop experience.
+Each project card highlights the project, the technologies involved, and provides access to additional information or its GitHub repository when available.
 
-Responsive behavior includes adjustments to **navigation, typography, spacing, content positioning, cards, images, buttons, and header behavior** across desktop, tablet, mobile, portrait, and landscape layouts.
+I also created separate sections for my technical skills, education, certifications, and activities so the website provides a broader view of my background.
 
 ---
 
-## 🚀 Deployment
+## 📬 5. Connect the Contact Form
 
-The website follows a Git-based deployment workflow:
+I connected the contact form to **EmailJS** so visitors can send me a message directly through the website without requiring a custom backend server.
+
+The form collects:
+
+- Name
+- Email
+- Subject
+- Message
+
+JavaScript handles the submission and displays a success or error message depending on the result.
+
+```text
+Visitor
+   │
+   ▼
+Contact Form
+   │
+   ▼
+EmailJS
+   │
+   ▼
+My Email
+```
+
+---
+
+## 📄 6. Add Resume Access
+
+I added my resume to the website as a PDF so recruiters and other visitors can easily access it.
+
+The resume is stored at:
+
+```text
+assets/documents/resume.pdf
+```
+
+This keeps the resume with the project's other assets while separating documents from images and website icons.
+
+---
+
+## 🔎 7. Add Search Engine Files
+
+I added several files to help search engines identify and navigate the website.
+
+These include:
+
+```text
+robots.txt
+sitemap.xml
+```
+
+The site also includes favicon and web manifest files for browser icons and site metadata.
+
+---
+
+## 🌐 8. Deploy the Website
+
+Once the website was ready, I pushed the project to GitHub and deployed it using GitHub Pages.
+
+The deployment flow is:
 
 ```text
 Local Development
@@ -81,37 +188,74 @@ Local Development
  GitHub Pages
        │
        ▼
- Custom Domain + HTTPS
+ Custom Domain
+       │
+       ▼
+danieljberg.com
 ```
 
-This provides a simple workflow for maintaining the portfolio as new experience, projects, skills, and certifications are added.
+I connected my custom domain and configured HTTPS so the finished website could be securely accessed through:
+
+**[danieljberg.com](https://danieljberg.com)**
 
 ---
 
-## 💡 What This Project Demonstrates
+## 🧠 What I Learned
 
-- Responsive frontend development
-- HTML, CSS, and JavaScript
-- Cross-device UI/UX design
-- DOM manipulation and frontend interactivity
-- Third-party service integration
-- Accessibility considerations
-- Git and GitHub version control
-- GitHub Pages deployment
-- Custom domain and HTTPS configuration
-- Iterative development and maintenance
+Building and continuing to improve my portfolio has given me experience managing a complete website from development through deployment.
+
+I practiced:
+
+- Building a website from scratch with HTML, CSS, and JavaScript
+- Creating a consistent visual design across multiple sections
+- Building responsive layouts for different screen sizes
+- Using JavaScript for navigation and interface behavior
+- Creating a mobile navigation system
+- Organizing professional and technical information for a portfolio
+- Integrating a contact form with EmailJS
+- Organizing images, documents, and website assets
+- Using Git and GitHub to manage changes
+- Deploying a website with GitHub Pages
+- Connecting a custom domain and HTTPS
+- Adding basic search engine files such as `robots.txt` and `sitemap.xml`
+
+The biggest takeaway was learning how to build and maintain a complete website that I can continue updating as my experience, skills, and projects grow.
 
 ---
 
-## 📬 Connect With Me
+## 📁 Repository Structure
 
-- 🌐 [Portfolio](https://danieljberg.com)
-- 💼 [LinkedIn](https://www.linkedin.com/in/danieljberg/)
-- 💻 [GitHub](https://github.com/dj-berg)
-- 📧 Email: danielberg313@gmail.com
-
----
-
-<p align="center">
-  <strong>Designed & developed by Daniel J. Berg</strong>
-</p>
+```text
+personal-portfolio-website/
+│
+├── assets/
+│   ├── documents/
+│   │   └── resume.pdf
+│   │
+│   ├── favicons/
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon-96x96.png
+│   │   ├── favicon.ico
+│   │   ├── favicon.svg
+│   │   ├── web-app-manifest-192x192.png
+│   │   └── web-app-manifest-512x512.png
+│   │
+│   └── images/
+│       ├── about/
+│       ├── activities/
+│       ├── certs/
+│       ├── education/
+│       ├── experience/
+│       ├── home/
+│       ├── projects/
+│       └── x-logo.png
+│
+├── CNAME
+├── README.md
+├── index.html
+├── robots.txt
+├── script.js
+├── site.webmanifest
+├── sitemap.xml
+└── style.css
+```
