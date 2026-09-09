@@ -4637,7 +4637,7 @@ header {
 .contact-form-group input::placeholder,
 .contact-form-group textarea::placeholder {
     color: rgba(255, 255, 255, 0.52);
-    font-size: inherit;
+    font-size: clamp(0.75rem, calc(0.6875rem + 0.15vw), 0.8125rem);
 }
 
 .contact-form-group input:hover,
@@ -10099,6 +10099,12 @@ textarea:focus-visible {
 }
 
 @media (max-width: 767px) {
+    /* Prevent mobile browser focus zoom while preserving user zoom. */
+    .contact .contact-form-group input,
+    .contact .contact-form-group textarea {
+        font-size: 16px;
+    }
+
     .home-content > .hero-kicker,
     .home-content > h1,
     .home-content > p,
