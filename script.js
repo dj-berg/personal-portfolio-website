@@ -14,14 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
 
     /* Native dialog supplies focus containment and Escape-to-close. */
-    const resumeButton = document.getElementById("resume-button");
+    const resumeButtons = document.querySelectorAll('[aria-controls="resume-selector"]');
     const resumeSelector = document.getElementById("resume-selector");
+    let resumeTrigger = null;
+    let resumeScrollPosition = { top: 0, left: 0 };
 
-    if (resumeButton && resumeSelector) {
-        resumeButton.addEventListener("click", () => {
-            resumeSelector.showModal();
-            document.documentElement.classList.add("resume-open");
-            document.body.classList.add("resume-open");
+    if (resumeButtons.length && resumeSelector) {
+        resumeButtons.forEach(button => {
+            button.addEventListener("click", event => {
+                event.preventDefault();
+                resumeTrigger = event.currentTarget;
+                resumeScrollPosition = { top: window.scrollY, left: window.scrollX };
+                resumeSelector.showModal();
+                document.documentElement.classList.add("resume-open");
+                document.body.classList.add("resume-open");
+                window.scrollTo({ ...resumeScrollPosition, behavior: "instant" });
+            });
         });
 
         resumeSelector.querySelector(".resume-close").addEventListener("click", () => {
@@ -31,7 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         resumeSelector.addEventListener("close", () => {
             document.documentElement.classList.remove("resume-open");
             document.body.classList.remove("resume-open");
-            resumeButton.focus({ preventScroll: true });
+            resumeTrigger?.focus({ preventScroll: true });
+            window.scrollTo({ ...resumeScrollPosition, behavior: "instant" });
         });
     }
 
