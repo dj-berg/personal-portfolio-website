@@ -191,6 +191,14 @@
         </button>
     </header>
 
+    <dialog id="resume-selector" class="resume-selector" aria-label="Choose a resume">
+        <button type="button" class="resume-close" aria-label="Close resume selector" autofocus>&times;</button>
+        <ul class="resume-options">
+            <li><a class="btn" href="assets/documents/DB_SE_Resume.pdf" target="_blank" rel="noopener noreferrer">Software Engineering Resume <i class="bx bx-code-alt" aria-hidden="true"></i></a></li>
+            <li><a class="btn" href="assets/documents/DB_IT_Resume.pdf" target="_blank" rel="noopener noreferrer">Information Technology Resume <i class="bx bx-desktop" aria-hidden="true"></i></a></li>
+        </ul>
+    </dialog>
+
     <main>
 
 <!-- ========================================
@@ -228,14 +236,15 @@
                 <i class="bx bx-code-alt" aria-hidden="true"></i>
             </a>
 
-            <a
-                href="assets/documents/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+            <button
+                type="button"
+                id="resume-button"
+                aria-haspopup="dialog"
+                aria-controls="resume-selector"
                 class="btn">
                 View Resume
                 <i class="bx bx-file" aria-hidden="true"></i>
-            </a>
+            </button>
 
         </div>
 

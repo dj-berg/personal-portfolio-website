@@ -13,6 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const navList = document.querySelector(".navlist");
     const header = document.querySelector("header");
 
+    /* Native dialog supplies focus containment and Escape-to-close. */
+    const resumeButton = document.getElementById("resume-button");
+    const resumeSelector = document.getElementById("resume-selector");
+
+    if (resumeButton && resumeSelector) {
+        resumeButton.addEventListener("click", () => {
+            resumeSelector.showModal();
+            document.documentElement.classList.add("resume-open");
+            document.body.classList.add("resume-open");
+        });
+
+        resumeSelector.querySelector(".resume-close").addEventListener("click", () => {
+            resumeSelector.close();
+        });
+
+        resumeSelector.addEventListener("close", () => {
+            document.documentElement.classList.remove("resume-open");
+            document.body.classList.remove("resume-open");
+            resumeButton.focus({ preventScroll: true });
+        });
+    }
+
     const headerLinks = document.querySelectorAll('header a[href^="#"]');
     const navLinks = document.querySelectorAll("header .navlist a");
     const sections = document.querySelectorAll("section");

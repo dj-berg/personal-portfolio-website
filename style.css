@@ -325,7 +325,8 @@ header {
     color: var(--purple-dark);
 }
 
-.home .btn > i {
+.home .btn > i,
+.resume-options .btn > i {
     flex: 0 0 auto;
     font-size: 1rem;
     line-height: 1;
@@ -8912,24 +8913,29 @@ textarea:focus-visible {
 }
 
 /* Home CTA hover states. */
-.home .btn {
+.home .btn,
+.resume-options .btn {
     transition: var(--transition);
     transform: none;
 }
 
-.home .btn > i {
+.home .btn > i,
+.resume-options .btn > i {
     color: inherit;
     transition: transform var(--transition), color var(--transition);
 }
 
-.home .btn:first-child {
+.home .btn:first-child,
+.resume-options .btn {
     color: var(--text-on-accent);
     background: var(--primary);
     border-color: var(--primary);
 }
 
 .home .btn:first-child:hover,
-.home .btn:first-child:focus-visible {
+.home .btn:first-child:focus-visible,
+.resume-options .btn:hover,
+.resume-options .btn:focus-visible {
     color: var(--text-on-accent);
     background: var(--primary-light);
     border-color: var(--primary-light);
@@ -8938,7 +8944,9 @@ textarea:focus-visible {
 }
 
 .home .btn:first-child:hover > i,
-.home .btn:first-child:focus-visible > i {
+.home .btn:first-child:focus-visible > i,
+.resume-options .btn:hover > i,
+.resume-options .btn:focus-visible > i {
     transform: translateX(2px);
 }
 
@@ -8965,21 +8973,27 @@ textarea:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
     .home .btn,
-    .home .btn > i {
+    .home .btn > i,
+    .resume-options .btn,
+    .resume-options .btn > i {
         transition: none;
     }
 
     .home .btn:first-child:hover,
     .home .btn:first-child:focus-visible,
     .home .btn:nth-child(2):hover,
-    .home .btn:nth-child(2):focus-visible {
+    .home .btn:nth-child(2):focus-visible,
+    .resume-options .btn:hover,
+    .resume-options .btn:focus-visible {
         transform: none;
     }
 
     .home .btn:first-child:hover > i,
     .home .btn:first-child:focus-visible > i,
     .home .btn:nth-child(2):hover > i,
-    .home .btn:nth-child(2):focus-visible > i {
+    .home .btn:nth-child(2):focus-visible > i,
+    .resume-options .btn:hover > i,
+    .resume-options .btn:focus-visible > i {
         transform: none;
     }
 }
@@ -10674,4 +10688,90 @@ textarea,
     #contact .contact-intro {
         font-size: 0.86rem !important;
     }
+}
+
+/* Resume selector: follows the full-screen mobile navigation styling. */
+html.resume-open,
+body.resume-open {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+#resume-button {
+    cursor: pointer;
+}
+
+.resume-selector {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 4.5rem var(--page-x-mobile);
+    border: 0;
+    color: var(--text-primary);
+    background: var(--bg-alternate);
+    overscroll-behavior: contain;
+    overflow-y: auto;
+}
+
+.resume-selector[open] {
+    display: flex;
+    align-items: safe center;
+    justify-content: center;
+}
+
+.resume-selector::backdrop {
+    background: transparent;
+}
+
+.resume-close {
+    position: fixed;
+    top: 0.85rem;
+    right: var(--page-x-mobile);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: var(--cyber-blue);
+    color: var(--purple-dark);
+    box-shadow: var(--cyber-blue-shadow);
+    font-family: Arial, sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.resume-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 24rem);
+    gap: clamp(1.75rem, 5vh, 3rem);
+    text-align: center;
+}
+
+.resume-options li {
+    width: 100%;
+}
+
+.resume-options .btn {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding-block: 0.65rem;
+}
+
+.resume-selector :focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 4px;
 }
